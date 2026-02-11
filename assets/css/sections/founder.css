@@ -1,0 +1,283 @@
+/* === SECTION 5: FOUNDER === */
+.founder-section {
+	position: sticky;
+	top: 0;
+	z-index: 20;
+	margin-top: -6.6rem;
+	background-color: var(--c-cream);
+	border-top-left-radius: 6.6rem;
+	border-top-right-radius: 6.6rem;
+	padding-top: 10rem;
+	padding-bottom: 0;
+	overflow: hidden;
+}
+
+.founder-section .bg-line-wrapper img {
+	position: absolute;
+	bottom: 10%;
+	top: auto;
+	right: auto;
+	z-index: 0;
+	width: 120rem;
+	left: 0;
+}
+
+.founder-bg-line {
+	position: absolute;
+	top: 10rem;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	pointer-events: none;
+}
+
+.founder-bg-line svg {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.founder__container {
+	position: relative;
+	z-index: 2;
+	display: grid;
+	grid-template-columns: 1fr 1.6fr 1fr; /* Центр чуть шире для фото */
+	align-items: center; /* Выравнивание по центру по вертикали */
+	min-height: 70rem;
+}
+
+/* === КОЛОНКИ === */
+.founder__col {
+	position: relative;
+}
+
+/* Левая колонка */
+.founder__col--left {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+	align-self: start; /* Прижимаем контент к верху */
+}
+
+.founder-title {
+	font-family: var(--f-head);
+	font-weight: 700;
+	font-size: 6.4rem;
+	line-height: 0.9;
+	letter-spacing: -0.04em;
+	margin-bottom: 4rem;
+}
+
+.founder-role {
+	font-family: var(--f-body);
+	font-size: 1.8rem;
+	opacity: 0.7;
+}
+
+/* Карточка Instagram */
+.insta-card {
+	background-color: var(--c-white);
+	border-radius: 3rem;
+	padding: 2.5rem;
+	width: 100%;
+	max-width: 34rem;
+	transition: transform 0.3s ease;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.insta-card__top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.insta-avatar {
+	width: 6rem;
+	height: 6rem;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.insta-btn {
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+	background-color: var(--c-orange);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: transform 0.3s ease;
+	transform: rotate(-45deg);
+}
+
+.insta-card:hover .insta-btn {
+	transform: rotate(0);
+}
+
+.insta-handle {
+	display: block;
+	font-family: var(--f-head);
+	font-weight: 700;
+	font-size: 1.8rem;
+	margin-bottom: 1rem;
+}
+
+.insta-desc {
+	font-size: 1.8rem;
+	line-height: 1.4;
+}
+
+/* Центральная колонка (Фото) */
+.founder__col--center {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	height: 100%;
+}
+
+.founder-photo {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.founder__col--right {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+	align-self: start;
+}
+.mission-card {
+	background-color: var(--c-white);
+	border-radius: 3rem;
+	padding: 4rem;
+}
+
+.mission-text-block {
+	margin-bottom: 3rem;
+}
+
+.mission-text-block p {
+	font-size: 1.6rem;
+	line-height: 1.5;
+	margin-bottom: 2rem;
+	opacity: 0.9;
+}
+
+.mission-text-block p:last-child {
+	margin-bottom: 0;
+}
+
+.mission-highlight {
+	font-family: var(--f-head);
+	font-size: 2rem;
+	font-weight: 700;
+	line-height: 1.3;
+	margin-bottom: 4rem;
+}
+
+/* sections/founder.css -> MOBILE ADAPTIVE */
+
+@media (max-width: 768px) {
+	/* 1. СЕКЦИЯ */
+	.founder-section {
+		position: relative;
+		top: auto;
+		margin-top: -3.2rem;
+		padding: 6rem 0 8rem 0;
+		border-top-left-radius: 3.2rem;
+		border-top-right-radius: 3.2rem;
+		min-height: auto;
+	}
+
+	/* 2. КОНТЕЙНЕР */
+	.founder__container {
+		display: flex;
+		flex-direction: column;
+		gap: 0; /* Отступы будем задавать самим элементам */
+		padding: 0 2rem;
+	}
+
+	/* 3. МАГИЯ: "Растворяем" колонки */
+	/* Это позволяет нам управлять порядком элементов ВНУТРИ колонок */
+	.founder__col--left,
+	.founder__col--center,
+	.founder__col--right {
+		display: contents;
+	}
+
+	/* === ПОРЯДОК ЭЛЕМЕНТОВ (ORDER) === */
+
+	/* 1. Заголовок (в самом верху) */
+	.founder-header {
+		order: 1;
+		width: 100%;
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	/* 2. Фото (под заголовком) */
+	.founder-photo-wrapper {
+		order: 2;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	/* 3. Инста-карточка (под фото) */
+	.insta-card {
+		order: 3;
+		width: 100%;
+		max-width: 100%;
+		margin-bottom: 4rem; /* Отступ до блока миссии */
+	}
+
+	/* 4. Блок миссии (в самом низу) */
+	.mission-card {
+		order: 4;
+		width: 100%;
+		padding: 3rem; /* Уменьшаем отступы внутри */
+	}
+
+	/* === ТИПОГРАФИКА И ДЕТАЛИ === */
+
+	.founder-title {
+		font-size: 4rem;
+		line-height: 1;
+		margin-bottom: 1rem;
+	}
+
+	.founder-role {
+		font-size: 1.8rem;
+		opacity: 0.8;
+	}
+
+	.founder-photo {
+		width: 85%; /* Чуть меньше ширины экрана */
+		height: auto;
+		display: block;
+	}
+
+	.mission-text-block p {
+		font-size: 1.6rem;
+	}
+
+	.mission-highlight {
+		font-size: 1.8rem;
+	}
+
+	/* Кнопка миссии сжимается по тексту */
+	.mission-btn {
+		width: fit-content !important;
+		margin: 0 !important; /* Центрируем, если она стала блочной */
+	}
+
+	/* Фон */
+	.founder-section .bg-line-wrapper img {
+		opacity: 0.2;
+		left: -20%;
+	}
+}

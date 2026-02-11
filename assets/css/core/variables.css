@@ -1,0 +1,28 @@
+:root {
+	--c-white: #ffffff;
+	--c-black: #000000;
+	--c-orange: #ff7b00;
+	--c-cream: #fff1e3;
+	--f-head: 'Inter Tight', sans-serif;
+	--f-body: 'Inter', sans-serif;
+	--scale-desktop: 0.520833333vw;
+	--scale-tablet: 1.5vw;
+	--scale-mobile: 2.5vw;
+
+	/* Header variables default */
+	--h-bg: transparent;
+	--h-content: var(--c-white);
+	--h-border: rgba(255, 255, 255, 0.15);
+	--h-btn-bg: transparent;
+	--h-btn-border: rgba(255, 255, 255, 0.3);
+	--h-btn-text: var(--c-white);
+}
+
+.header--invert {
+	--h-bg: var(--c-white);
+	--h-content: var(--c-black);
+	--h-border: rgba(0, 0, 0, 0.1);
+	--h-btn-bg: var(--c-orange);
+	--h-btn-border: var(--c-orange);
+	--h-btn-text: var(--c-white);
+}

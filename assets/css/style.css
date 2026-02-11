@@ -1,0 +1,22 @@
+/* 1. Ядро и переменные */
+@import url('./core/variables.css');
+@import url('./core/base.css');
+@import url('./core/ui.css');
+
+/* 2. Основные модули сайта */
+@import url('./modules/header.css');
+
+/* 3. Секции (по порядку появления на сайте) */
+@import url('./sections/hero.css');
+@import url('./sections/about.css');
+@import url('./sections/destinations.css');
+@import url('./sections/world.css');
+@import url('./sections/founder.css');
+@import url('./sections/reviews.css');
+@import url('./sections/testimonials.css');
+@import url('./sections/how.css');
+@import url('./sections/steps.css');
+@import url('./sections/cta.css');
+
+/* 4. Подвал */
+@import url('./modules/footer.css');

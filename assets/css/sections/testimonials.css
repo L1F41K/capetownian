@@ -1,0 +1,307 @@
+/* === SECTION 7: TESTIMONIALS === */
+.testimonials-section {
+	position: relative;
+	/* Выше предыдущей секции (25) */
+	z-index: 30;
+	margin-top: -6.6rem;
+
+	background-color: var(--c-orange);
+	color: var(--c-white);
+
+	border-top-left-radius: 6.6rem;
+	border-top-right-radius: 6.6rem;
+
+	padding: 10rem 0 12rem 0;
+	overflow: hidden;
+	box-shadow: 0 -1rem 4rem rgba(0, 0, 0, 0.1);
+}
+
+.testimonials-section .bg-line-wrapper img {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 0;
+	width: 40rem;
+	left: auto;
+}
+
+.testimonials-title {
+	position: relative;
+	z-index: 2;
+	font-family: var(--f-head);
+	font-weight: 600;
+	font-size: 6.4rem;
+	line-height: 0.95;
+	text-align: center;
+	margin: 0 auto 8rem auto;
+	letter-spacing: -0.04em;
+	max-width: 110rem;
+}
+
+/* Сетка карточек */
+.testimonials-grid {
+	position: relative;
+	z-index: 2;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 3rem;
+	margin-bottom: 3rem;
+}
+
+/* Карточка отзыва */
+.testi-card {
+	background-color: var(--c-white);
+	color: var(--c-black);
+	border-radius: 3rem;
+	padding: 4rem;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	transition: transform 0.3s ease;
+}
+
+.testi-header {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	margin-bottom: 3rem;
+}
+
+.testi-avatar {
+	width: 8rem;
+	height: 8rem;
+	border-radius: 50%;
+	object-fit: cover;
+	background-color: #eee; /* Заглушка, если нет фото */
+}
+
+.testi-info {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.testi-name {
+	font-family: var(--f-head);
+	font-size: 3.6rem;
+	font-weight: 500;
+	line-height: 1;
+}
+
+.testi-city {
+	font-size: 1.6rem;
+}
+
+.testi-body {
+	flex-grow: 1;
+	margin-bottom: 4rem;
+}
+
+.testi-body p {
+	font-size: 1.6rem;
+	line-height: 1.4;
+	opacity: 0.9;
+}
+
+/* Кнопка "Читать полностью" внутри карточки */
+.btn-read-more {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	padding: 1.6rem 2.4rem;
+	border: 0.1rem solid #ebebeb; /* Светло-серая рамка */
+	border-radius: 4rem;
+	background: transparent;
+	font-family: var(--f-body);
+	font-size: 1.6rem;
+	color: var(--c-black);
+	transition: 0.3s;
+}
+
+.btn-read-more:hover {
+	border-color: var(--c-orange);
+	color: var(--c-orange);
+}
+
+.btn-plus {
+	width: 2.4rem;
+	height: 2.4rem;
+	background-color: #f5f5f5;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.6rem;
+	line-height: 1;
+	color: #000;
+	transition: 0.3s;
+}
+
+.btn-read-more:hover .btn-plus {
+	background-color: var(--c-orange);
+	color: var(--c-white);
+}
+
+/* Нижняя навигация */
+.testimonials-footer {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.testi-nav {
+	display: flex;
+	gap: 1.5rem;
+}
+
+.nav-circle-btn {
+	width: 7.4rem;
+	height: 7.4rem;
+	border-radius: 50%;
+	background-color: var(--c-white);
+	color: var(--c-black);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 0.3s;
+}
+
+.nav-circle-btn:hover {
+	transform: scale(1.1);
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-all-reviews {
+	display: inline-flex;
+	align-items: center;
+	gap: 2rem;
+	background-color: var(--c-white);
+	color: var(--c-black);
+	padding: 2rem 4rem;
+	border-radius: 6rem;
+	font-size: 1.8rem;
+	font-weight: 500;
+	transition: 0.3s;
+}
+
+.btn-all-reviews:hover {
+	background-color: rgba(255, 255, 255, 0.9);
+	transform: translateY(-0.2rem);
+}
+
+/* sections/testimonials.css -> MOBILE ADAPTIVE */
+
+@media (max-width: 768px) {
+	/* 1. Настройки секции */
+	.testimonials-section {
+		margin-top: -4rem;
+		padding: 6rem 0 8rem 0;
+		border-top-left-radius: 4rem;
+		border-top-right-radius: 4rem;
+		position: relative;
+	}
+
+	/* 2. Заголовок */
+	.testimonials-title {
+		font-size: 3.2rem;
+		line-height: 1.1;
+		text-align: center;
+		margin-bottom: 4rem;
+		padding: 0 2rem;
+	}
+
+	.testimonials-title br {
+		display: none; /* Убираем перенос строки */
+	}
+
+	/* 3. ПРЕВРАЩЕНИЕ ГРИДА В КАРУСЕЛЬ */
+	.testimonials-grid {
+		display: flex; /* Включаем ряд */
+		grid-template-columns: none; /* Выключаем грид */
+		gap: 1.6rem;
+
+		/* Скролл */
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		-webkit-overflow-scrolling: touch;
+
+		/* Отступы, чтобы карточки не резались по краям */
+		padding: 0 2rem 4rem 2rem;
+		margin-bottom: 0; /* Убираем лишний отступ */
+
+		/* Скрываем скроллбар */
+		scrollbar-width: none;
+	}
+
+	.testimonials-grid::-webkit-scrollbar {
+		display: none;
+	}
+
+	/* Карточка (Слайд) */
+	.testi-card {
+		/* Фиксируем ширину, чтобы не сжимались */
+		min-width: 85vw;
+		flex: 0 0 85vw;
+
+		scroll-snap-align: center;
+		border-radius: 2.4rem;
+		padding: 3rem;
+
+		/* Высота авто, но одинаковая у всех */
+		height: auto;
+		display: flex;
+		flex-direction: column;
+	}
+
+	/* Внутренности карточки */
+	.testi-header {
+		margin-bottom: 2rem;
+	}
+
+	.testi-name {
+		font-size: 2.4rem;
+	}
+
+	.testi-body {
+		margin-bottom: 3rem;
+	}
+
+	.testi-body p {
+		font-size: 1.6rem;
+	}
+
+	/* Кнопка "Читать полностью" */
+	.btn-read-more {
+		width: 100%;
+		justify-content: space-between;
+		margin-top: auto; /* Прижимаем к низу */
+	}
+
+	/* 4. ФУТЕР (Стрелки и Кнопка) */
+	.testimonials-footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 2rem;
+		margin-top: 2rem;
+	}
+
+	.testi-nav {
+		display: flex;
+		gap: 1.2rem;
+	}
+
+	.nav-circle-btn {
+		width: 6rem;
+		height: 6rem;
+	}
+
+	/* Кнопка "Все отзывы" */
+	.testimonials-footer .btn {
+		padding: 1.6rem 2.4rem;
+		font-size: 1.6rem;
+		width: fit-content !important; /* Глобальный фикс */
+	}
+}

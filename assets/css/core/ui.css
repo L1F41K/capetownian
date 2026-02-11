@@ -1,0 +1,70 @@
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2.4rem 4.8rem;
+	border-radius: 6rem;
+	font-size: 2rem;
+	font-weight: 400;
+	transition: 0.3s;
+	line-height: 1;
+}
+
+.btn svg {
+	transition: transform 0.3s ease;
+}
+
+.btn:hover svg {
+	transform: rotate(180deg);
+}
+
+.btn--primary {
+	background: var(--c-orange);
+	color: var(--c-white);
+	display: flex;
+	gap: 2rem;
+	padding: 2.4rem 3rem 2.4rem 3.4rem;
+}
+
+.btn--primary svg {
+	width: auto;
+}
+
+.btn--primary--white {
+	background: var(--c-white);
+	color: var(--c-black);
+}
+
+.btn--primary--border {
+	background: var(--c-white);
+	border: 0.1rem solid var(--c-orange);
+	color: var(--c-black);
+}
+
+.btn--primary--border:hover {
+	background: var(--c-orange);
+	color: var(--c-white);
+}
+
+.btn--primary:hover {
+	opacity: 0.9;
+}
+
+.btn--outline {
+	border: 0.1rem solid rgba(255, 255, 255, 0.4);
+	color: var(--c-white);
+}
+
+.btn--outline:hover {
+	border-color: #fff;
+	background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+	.btn {
+		width: fit-content !important;
+		align-self: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

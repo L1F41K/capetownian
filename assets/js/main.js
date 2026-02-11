@@ -267,3 +267,47 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 })
+document.addEventListener('DOMContentLoaded', () => {
+	const wrapper = document.querySelector('.video-wrapper')
+	if (!wrapper) return
+
+	const video = wrapper.querySelector('video')
+	const btn = wrapper.querySelector('.play-btn')
+	const playIcon = btn.querySelector('.play-icon')
+	const pauseIcon = btn.querySelector('.pause-icon')
+
+	// Функция переключения play ↔ pause
+	const toggleVideo = () => {
+		if (video.paused || video.ended) {
+			video.play().catch(err => console.log('Не удалось воспроизвести:', err))
+		} else {
+			video.pause()
+		}
+	}
+
+	// Клик по кнопке → переключение
+	btn.addEventListener('click', toggleVideo)
+
+	// Опционально: клик по видео тоже переключает (удобно на мобильных)
+	// video.addEventListener('click', toggleVideo);
+
+	// Меняем иконку при изменении состояния
+	video.addEventListener('play', () => {
+		playIcon.style.display = 'none'
+		pauseIcon.style.display = 'block'
+		btn.setAttribute('aria-label', 'Pause video')
+	})
+
+	video.addEventListener('pause', () => {
+		playIcon.style.display = 'block'
+		pauseIcon.style.display = 'none'
+		btn.setAttribute('aria-label', 'Play video')
+	})
+
+	video.addEventListener('ended', () => {
+		// Если без loop — возвращаем иконку play
+		playIcon.style.display = 'block'
+		pauseIcon.style.display = 'none'
+		btn.setAttribute('aria-label', 'Play video')
+	})
+})

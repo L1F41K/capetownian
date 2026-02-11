@@ -16,7 +16,11 @@
 	box-shadow: 0 -1rem 4rem rgba(0, 0, 0, 0.05);
 	max-height: 108rem;
 }
-
+.about-section.mission {
+	background-color: transparent;
+	background-image: url(/assets/img/background.png);
+	border-radius: 0;
+}
 .bg-line-wrapper {
 	position: absolute;
 	top: 0;
@@ -61,6 +65,7 @@
 	overflow: hidden;
 	box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.1);
 	flex-shrink: 0;
+	cursor: pointer; /* подсказка, что область кликабельна */
 }
 
 .about-video {
@@ -71,26 +76,23 @@
 	height: 100%;
 	object-fit: cover;
 	z-index: 1;
+	background: #000; /* запасной фон на время загрузки */
 }
 
 .video-cover {
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	inset: 0; /* top:0; left:0; right:0; bottom:0; */
 	z-index: 2;
-	background-color: #000;
-	cursor: pointer;
-	transition: opacity 0.3s;
+	background-color: rgba(0, 0, 0, 0.25); /* лёгкий оверлей вместо #000 */
+	transition: background-color 0.4s ease;
+	pointer-events: none; /* пропускаем клики сквозь оверлей */
 }
 
-.video-poster {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	opacity: 0.8;
+.video-cover:hover {
+	background-color: rgba(0, 0, 0, 0.4);
 }
+
+/* Убрал .video-poster — он больше не нужен, т.к. обложка теперь через оверлей + видео само по себе */
 
 .play-btn {
 	position: absolute;
@@ -103,14 +105,41 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: transform 0.3s;
+	border: none;
+	cursor: pointer;
+	transition:
+		transform 0.3s ease,
+		opacity 0.3s ease;
 	z-index: 3;
+	pointer-events: auto; /* только кнопка реагирует на клики */
 }
 
 .play-btn:hover {
 	transform: scale(1.1);
 }
 
+/* Когда видео играет — можно сделать кнопку чуть прозрачнее (опционально) */
+.play-btn.is-playing {
+	opacity: 0.85; /* или 0.7, если хочешь сильнее приглушить */
+}
+
+/* Иконки внутри кнопки */
+.play-btn svg {
+	width: 24px; /* подогнал под твои 6rem */
+	height: 24px;
+}
+
+.play-btn .pause-icon {
+	display: none; /* по умолчанию скрыта */
+}
+
+.play-btn.is-playing .play-icon {
+	display: none;
+}
+
+.play-btn.is-playing .pause-icon {
+	display: block;
+}
 .about__col--content {
 	display: flex;
 	flex-direction: column;

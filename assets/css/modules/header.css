@@ -11,7 +11,11 @@
 		background 0.3s,
 		border-color 0.3s;
 }
-
+.header.var2 {
+	background: var(--c-white);
+	border-bottom: var(--h-border);
+	color: var(--c-black);
+}
 .header__container {
 	height: 100%;
 	display: flex;
@@ -47,7 +51,9 @@
 	gap: 0.8rem;
 	transition: color 0.3s;
 }
-
+.header.var2 .header__link {
+	color: var(--c-black);
+}
 .header__link:hover {
 	color: var(--c-orange);
 }
@@ -66,7 +72,11 @@
 	transition: stroke 0.3s;
 }
 
-.header__link:hover .nav-arrow path {
+.header.var2 .header__link .nav-arrow path {
+	stroke: var(--c-black);
+}
+.header__link:hover .nav-arrow path,
+.header.var2 .header__link:hover .nav-arrow path {
 	stroke: var(--c-orange);
 }
 
@@ -94,12 +104,16 @@
 	stroke: var(--h-content);
 	transition: stroke 0.3s;
 }
-
+.header.var2 .social-stroke {
+	stroke: var(--c-black);
+}
 .social-fill {
 	fill: var(--h-content);
 	transition: fill 0.3s;
 }
-
+.header.var2 .social-fill {
+	fill: var(--c-black);
+}
 .social-icon:hover .social-stroke {
 	stroke: var(--c-orange);
 }
@@ -134,7 +148,15 @@
 	background: var(--c-orange);
 	color: var(--c-white);
 }
-
+.header.var2 .btn--book {
+	border-color: var(--c-orange);
+	background: var(--c-orange);
+	color: var(--c-white);
+}
+.header.var2 .btn--book:hover {
+	background: var(--h-btn-bg);
+	color: var(--c-black);
+}
 .btn--book svg {
 	width: 2.4rem;
 	height: 2.4rem;

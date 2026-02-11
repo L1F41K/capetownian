@@ -444,18 +444,18 @@
 				<div class="about__col about__col--video">
 					<div class="video-wrapper">
 						<video
-							src="assets/video/ocean.mp4"
-							controls
+							src="/assets/video/ocean.mp4"
 							class="about-video"
+							preload="metadata"
+							muted
+							playsinline
+							loop
 						></video>
+
 						<div class="video-cover">
-							<img
-								src="assets/img/video-poster.jpg"
-								alt="Cape Town view"
-								class="video-poster"
-							/>
-							<button class="play-btn" aria-label="Play video">
+							<button class="play-btn" aria-label="Play / Pause video">
 								<svg
+									class="play-icon"
 									width="11"
 									height="12"
 									viewBox="0 0 11 12"
@@ -466,6 +466,20 @@
 										d="M10.0792 4.41185C10.3573 4.5651 10.5899 4.79386 10.7521 5.07363C10.9143 5.35339 11 5.67362 11 6.00001C11 6.32639 10.9143 6.64662 10.7521 6.92639C10.5899 7.20615 10.3573 7.43492 10.0792 7.58816L2.66151 11.7682C1.4671 12.442 0 11.566 0 10.1807V1.81993C0 0.433972 1.4671 -0.441402 2.66151 0.231178L10.0792 4.41185Z"
 										fill="white"
 									/>
+								</svg>
+
+								<!-- Иконка pause (будет показываться, когда видео играет) -->
+								<svg
+									class="pause-icon"
+									width="11"
+									height="12"
+									viewBox="0 0 11 12"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+									style="display: none"
+								>
+									<rect x="3" y="1" width="2" height="10" fill="white" />
+									<rect x="6" y="1" width="2" height="10" fill="white" />
 								</svg>
 							</button>
 						</div>

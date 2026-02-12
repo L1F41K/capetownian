@@ -13,7 +13,7 @@
 	margin-top: -6.6rem;
 	border-top-left-radius: 6.6rem;
 	border-top-right-radius: 6.6rem;
-	background: var(--c-white) url('/assets/img/background.png') no-repeat center
+	background: var(--c-white) url('assets/img/background.png') no-repeat center
 		bottom;
 	background-size: cover;
 

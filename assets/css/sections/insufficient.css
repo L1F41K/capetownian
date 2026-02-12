@@ -1,0 +1,156 @@
+/* Настройки SVG из твоего ТЗ */
+.dotted-path-container {
+	position: absolute;
+	top: -127px;
+	left: 60%;
+	transform: translateX(-10%) rotate(-4.05deg); /* Угол из ТЗ */
+	pointer-events: none;
+	z-index: 1;
+}
+
+.insufficient-section {
+	position: relative;
+	background-color: #fff;
+	border-radius: 66px 66px 0 0;
+	margin-top: -36px;
+	padding: 0;
+	z-index: 10;
+	overflow: hidden;
+}
+
+.insufficient-content {
+	position: relative;
+	z-index: 2;
+	display: grid;
+	/* Левая и правая колонки фиксированы, центр забирает остаток */
+	grid-template-columns: 346px 1fr 430px;
+	gap: 0 40px;
+	padding: 120px 90px 100px;
+	max-width: 100%; /* На всю ширину экрана */
+}
+
+.ins-col--left {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between; /* Расталкивает контент к краям */
+	height: 100%;
+}
+
+.ins-title {
+	font-family: 'Inter Tight', sans-serif;
+	font-weight: 600;
+	font-size: 78px;
+	line-height: 0.95;
+	letter-spacing: -0.05em;
+	margin-bottom: 0; /* Убираем фиксированный отступ */
+	white-space: nowrap;
+}
+.ins-title .highlight {
+	color: var(--c-orange);
+}
+.insufficient-video {
+	width: 346px;
+	height: 562px;
+	border-radius: 22px;
+	overflow: hidden;
+	flex-shrink: 0;
+	/* margin-top: auto; -- можно использовать это вместо space-between, если элементов больше двух */
+}
+
+/* --- ЦЕНТРАЛЬНАЯ КОЛОНКА --- */
+.ins-col--center {
+	display: flex;
+	justify-content: center; /* Центрируем контент внутри колонки */
+	margin-left: 90px;
+}
+
+.ins-text-content {
+	padding-top: 30px;
+	width: 100%;
+	max-width: 600px; /* Ограничение по ТЗ */
+}
+
+.ins-description {
+	font-family: 'Inter Tight';
+	font-weight: 500;
+	font-style: Medium;
+	font-size: 24px;
+	line-height: 130%;
+	letter-spacing: 0%;
+}
+
+.ins-quote-card {
+	background: #fff5ed;
+	padding: 32px;
+	border-radius: 30px;
+	margin-top: 282px;
+	margin-bottom: 60px;
+	width: 100%; /* Занимает все 600px */
+	font-family: 'Inter Tight';
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 130%;
+}
+
+.ins-subtitle {
+	font-family: 'Inter Tight', sans-serif;
+	font-size: 64px;
+	line-height: 1;
+	margin-bottom: 30px;
+}
+.ins-subtitle .highlight {
+	color: var(--c-orange);
+}
+/* --- ПРАВАЯ КОЛОНКА (Зона для фото) --- */
+.ins-col--right {
+	position: relative; /* Чтобы absolute для карт работал внутри этой зоны */
+}
+.ins-quote-card .highlight-orange {
+	color: var(--c-orange);
+}
+.ins-text {
+	font-family: 'Inter Tight';
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 140%;
+	letter-spacing: 0%;
+	margin-bottom: 18px;
+}
+.mini-card {
+	position: absolute;
+	/* Точные размеры и запрет на сжатие */
+	width: 176.8px !important;
+	height: 191.87px !important;
+	border-radius: 30px;
+	overflow: hidden;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mini-card img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+/* Позиционирование карточек внутри правой колонки (430px) */
+.card-1 {
+	top: 270px;
+	left: -50px;
+	transform: rotate(-15deg);
+}
+.card-2 {
+	top: 270px;
+	right: 60px;
+	transform: scaleX(-1) rotate(-15deg);
+}
+.card-3 {
+	top: 510px;
+	left: -50px;
+	transform: rotate(15deg);
+}
+.card-4 {
+	top: 510px;
+	right: 60px;
+	transform: scaleX(-1) rotate(15deg);
+}

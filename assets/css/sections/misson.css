@@ -1,0 +1,137 @@
+/* Основная секция */
+.mission-landing {
+	position: -webkit-sticky;
+	position: sticky;
+	/* ЛОГИКА STICKY: 
+     Чтобы отступ уменьшился с 232px до 135px, 
+     секция должна "проехать" вверх на 97px (232 - 135 = 97).
+  */
+	top: -97px;
+	z-index: 5;
+
+	height: 1042px;
+	margin-top: -6.6rem;
+	border-top-left-radius: 6.6rem;
+	border-top-right-radius: 6.6rem;
+	background: var(--c-white) url('/assets/img/background.png') no-repeat center
+		bottom;
+	background-size: cover;
+
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+}
+
+.mission-container {
+	width: 100%;
+	padding: 0 90px;
+	box-sizing: border-box;
+	height: 100%;
+}
+
+.mission-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end; /* Видео и нижнее фото прижаты к нижней линии */
+
+	height: 100%;
+	padding-top: 282px; /* Изначальный отступ сверху */
+	padding-bottom: 58px; /* Отступ от низа */
+	box-sizing: border-box;
+	position: relative;
+}
+
+/* --- ЦЕНТРАЛЬНАЯ КОЛОНКА --- */
+.mission-col--center {
+	/* Чтобы заголовок не сжимался боковыми колонками и не прыгал на 4-ю строку,
+     мы вырываем его из общего потока через абсолют, но центрируем по горизонтали. */
+	position: absolute;
+	left: 50%;
+	top: 282px;
+	transform: translateX(-50%);
+
+	width: 100%;
+	/* Подбираем ширину, при которой текст ложится ровно в 3 строки */
+	max-width: 960px;
+	text-align: center;
+	z-index: 1;
+}
+
+.mission-nav {
+	display: block;
+	margin-bottom: 60px; /* Между крошками и заголовком */
+	font-family: 'Inter', sans-serif;
+	font-size: 14px;
+	color: #777;
+}
+
+.mission-title {
+	font-family: 'Inter Tight', sans-serif;
+	font-weight: 600;
+	font-size: 78px;
+	line-height: 100%;
+	letter-spacing: -0.05em; /* -5% */
+	color: #1a1a1a;
+	margin-bottom: 60px;
+
+	/* Гарантируем отсутствие лишних переносов */
+	word-break: keep-all;
+	white-space: normal;
+}
+
+.mission-title .highlight {
+	color: var(--c-orange);
+}
+
+.mission-subtitle {
+	font-family: 'Inter', sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 130%;
+	max-width: 616px;
+	margin: 0 auto;
+}
+
+/* --- ЛЕВАЯ КОЛОНКА (Видео) --- */
+.mission-col--left {
+	flex-shrink: 0;
+	z-index: 2;
+}
+
+.video-wrapper {
+	width: 346px;
+	height: 562px;
+	border-radius: 22px;
+	overflow: hidden;
+}
+
+/* --- ПРАВАЯ КОЛОНКА (Изображения) --- */
+.mission-col--right {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	height: 100%;
+	flex-shrink: 0;
+	z-index: 2;
+}
+
+.img-wrapper {
+	border-radius: 22px;
+	overflow: hidden;
+}
+.img-wrapper img {
+	height: 100%;
+}
+.img-wrapper--top {
+	width: 210px;
+	height: 279px;
+	/* Отрицательный margin, чтобы поднять выше крошек */
+	margin-top: -60px;
+	margin-bottom: auto;
+}
+
+.img-wrapper--bottom {
+	width: 430px;
+	height: 279px;
+	/* Прижато к низу по умолчанию за счет align-items: flex-end */
+}

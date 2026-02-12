@@ -18,7 +18,7 @@ body {
 	font-family: var(--f-body);
 	font-size: 1.6rem;
 	color: var(--c-black);
-	background-color: var(--c-black);
+	background-color: var(--c-white);
 	margin: 0;
 	overflow-x: hidden;
 	-webkit-font-smoothing: antialiased;

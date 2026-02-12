@@ -18,5 +18,7 @@
 @import url('./sections/steps.css');
 @import url('./sections/cta.css');
 
+@import url('./sections/misson.css');
+@import url('./sections/insufficient.css');
 /* 4. Подвал */
 @import url('./modules/footer.css');

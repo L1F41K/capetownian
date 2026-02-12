@@ -268,46 +268,46 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 })
 document.addEventListener('DOMContentLoaded', () => {
-	const wrapper = document.querySelector('.video-wrapper')
-	if (!wrapper) return
+	// Находим ВСЕ обертки видео
+	const wrappers = document.querySelectorAll('.video-wrapper')
 
-	const video = wrapper.querySelector('video')
-	const btn = wrapper.querySelector('.play-btn')
-	const playIcon = btn.querySelector('.play-icon')
-	const pauseIcon = btn.querySelector('.pause-icon')
+	wrappers.forEach(wrapper => {
+		const video = wrapper.querySelector('video')
+		const btn = wrapper.querySelector('.play-btn')
 
-	// Функция переключения play ↔ pause
-	const toggleVideo = () => {
-		if (video.paused || video.ended) {
-			video.play().catch(err => console.log('Не удалось воспроизвести:', err))
-		} else {
-			video.pause()
+		// Проверяем наличие элементов внутри конкретной обертки
+		if (!video || !btn) return
+
+		const playIcon = btn.querySelector('.play-icon')
+		const pauseIcon = btn.querySelector('.pause-icon')
+
+		const toggleVideo = () => {
+			if (video.paused || video.ended) {
+				video.play().catch(err => console.log('Ошибка воспроизведения:', err))
+			} else {
+				video.pause()
+			}
 		}
-	}
 
-	// Клик по кнопке → переключение
-	btn.addEventListener('click', toggleVideo)
+		btn.addEventListener('click', toggleVideo)
 
-	// Опционально: клик по видео тоже переключает (удобно на мобильных)
-	// video.addEventListener('click', toggleVideo);
+		// Слушатели событий теперь привязаны к конкретному видео в цикле
+		video.addEventListener('play', () => {
+			if (playIcon) playIcon.style.display = 'none'
+			if (pauseIcon) pauseIcon.style.display = 'block'
+			btn.setAttribute('aria-label', 'Pause video')
+		})
 
-	// Меняем иконку при изменении состояния
-	video.addEventListener('play', () => {
-		playIcon.style.display = 'none'
-		pauseIcon.style.display = 'block'
-		btn.setAttribute('aria-label', 'Pause video')
-	})
+		video.addEventListener('pause', () => {
+			if (playIcon) playIcon.style.display = 'block'
+			if (pauseIcon) pauseIcon.style.display = 'none'
+			btn.setAttribute('aria-label', 'Play video')
+		})
 
-	video.addEventListener('pause', () => {
-		playIcon.style.display = 'block'
-		pauseIcon.style.display = 'none'
-		btn.setAttribute('aria-label', 'Play video')
-	})
-
-	video.addEventListener('ended', () => {
-		// Если без loop — возвращаем иконку play
-		playIcon.style.display = 'block'
-		pauseIcon.style.display = 'none'
-		btn.setAttribute('aria-label', 'Play video')
+		video.addEventListener('ended', () => {
+			if (playIcon) playIcon.style.display = 'block'
+			if (pauseIcon) pauseIcon.style.display = 'none'
+			btn.setAttribute('aria-label', 'Play video')
+		})
 	})
 })

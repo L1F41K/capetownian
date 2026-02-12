@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="assets/css/style.css" />
 	</head>
 	<body>
-		<header class="header var2" id="header">
+		<header class="header var2" id="header2">
 			<div class="container header__container">
 				<a href="index.html" class="header__logo">
 					<svg
@@ -273,46 +273,101 @@
 				</button>
 			</div>
 		</header>
-		<section class="about-section mission">
-			<div class="container about__container desktop-only">
-				<div class="about__col about__col--video">
+		<section class="mission-landing">
+			<div class="mission-container">
+				<div class="mission-content">
+					<div class="mission-col mission-col--left">
+						<div class="video-wrapper">
+							<video
+								src="/assets/video/IMG_8424.mp4"
+								class="about-video"
+								preload="metadata"
+								muted
+								playsinline
+								loop
+							></video>
+							<div class="video-cover">
+								<button class="play-btn" aria-label="Play / Pause video">
+									<svg class="play-icon" viewBox="0 0 11 12">
+										<path
+											d="M10.0792 4.41185C10.3573 4.5651 10.5899 4.79386 10.7521 5.07363C10.9143 5.35339 11 5.67362 11 6.00001C11 6.32639 10.9143 6.64662 10.7521 6.92639C10.5899 7.20615 10.3573 7.43492 10.0792 7.58816L2.66151 11.7682C1.4671 12.442 0 11.566 0 10.1807V1.81993C0 0.433972 1.4671 -0.441402 2.66151 0.231178L10.0792 4.41185Z"
+											fill="white"
+										/>
+									</svg>
+									<svg class="pause-icon" viewBox="0 0 11 12">
+										<rect x="3" y="1" width="2" height="10" fill="white" />
+										<rect x="6" y="1" width="2" height="10" fill="white" />
+									</svg>
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="mission-col mission-col--center">
+						<nav class="mission-nav">
+							<span class="nav-link">Главная</span>
+							<span class="nav-separator">•</span>
+							<span class="nav-link active">Миссия</span>
+						</nav>
+						<h1 class="mission-title">
+							Если вы можете
+							<span class="highlight"
+								>изменить <br />
+								своё мышление</span
+							>, вы <br />
+							можете
+							<span class="highlight">изменить весь мир</span>
+						</h1>
+						<p class="mission-subtitle">
+							Путешествия для нас — это способ мягко посмотреть на мир и на себя
+							под новым углом
+						</p>
+					</div>
+
+					<div class="mission-col mission-col--right">
+						<div class="img-wrapper img-wrapper--top">
+							<img src="/assets/img/mountains.png" alt="Mountain View" />
+						</div>
+						<div class="img-wrapper img-wrapper--bottom">
+							<img src="/assets/img/beach.png" alt="Beach View" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="insufficient-section">
+			<div class="dotted-path-container">
+				<img src="assets/svg/line-mission.svg" class="ins-svg-line" alt="" />
+			</div>
+
+			<div class="insufficient-content">
+				<div class="ins-col ins-col--left">
+					<h2 class="ins-title">
+						Почему нам<br />
+						<span class="highlight"
+							>недостаточно<br />
+							слова «тур»</span
+						>
+					</h2>
+
 					<div class="video-wrapper">
 						<video
-							src="/assets/video/ocean.mp4"
+							src="/assets/video/capetown.mp4"
 							class="about-video"
 							preload="metadata"
 							muted
 							playsinline
 							loop
 						></video>
-
 						<div class="video-cover">
 							<button class="play-btn" aria-label="Play / Pause video">
-								<!-- Иконка play (остаётся по умолчанию) -->
-								<svg
-									class="play-icon"
-									width="11"
-									height="12"
-									viewBox="0 0 11 12"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
+								<svg class="play-icon" viewBox="0 0 11 12">
 									<path
 										d="M10.0792 4.41185C10.3573 4.5651 10.5899 4.79386 10.7521 5.07363C10.9143 5.35339 11 5.67362 11 6.00001C11 6.32639 10.9143 6.64662 10.7521 6.92639C10.5899 7.20615 10.3573 7.43492 10.0792 7.58816L2.66151 11.7682C1.4671 12.442 0 11.566 0 10.1807V1.81993C0 0.433972 1.4671 -0.441402 2.66151 0.231178L10.0792 4.41185Z"
 										fill="white"
 									/>
 								</svg>
-
-								<!-- Иконка pause (будет показываться, когда видео играет) -->
-								<svg
-									class="pause-icon"
-									width="11"
-									height="12"
-									viewBox="0 0 11 12"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-									style="display: none"
-								>
+								<svg class="pause-icon" viewBox="0 0 11 12">
 									<rect x="3" y="1" width="2" height="10" fill="white" />
 									<rect x="6" y="1" width="2" height="10" fill="white" />
 								</svg>
@@ -320,108 +375,63 @@
 						</div>
 					</div>
 				</div>
-				<div class="about__col about__col--content">
-					<h2 class="about-title">
-						Если вы можете
-						<span class="text-orange"
-							>изменить <br />
-							своё мышление</span
-						>, вы <br />
-						можете <span class="text-orange">изменить весь мир</span>
-					</h2>
-					<p class="about-desc">
-						Путешествия для нас — это способ мягко посмотреть на <br />
-						мир и на себя под новым углом
-					</p>
-				</div>
 
-				<div class="about__col about__col--images">
-					<div class="image-stack">
-						<div class="img-card img-card--top">
-							<img src="assets/img/mountains.png" alt="Whale" />
+				<div class="ins-col ins-col--center">
+					<div class="ins-text-content">
+						<p class="ins-text">
+							Слово «тур» сегодня почти ничего не объясняет.<br />
+							Под ним может скрываться всё что угодно — от экскурсии в<br />
+							автобусе до стандартной программы по туристическим<br />локациям с
+							небольшими украшениями.
+						</p>
+						<p class="ins-description">
+							Но люди, с которыми мы работаем, всё это уже<br />
+							видели. Им важно не просто «куда поехать», а<br />
+							как они будут себя чувствовать в этой поездке.
+						</p>
+
+						<div class="ins-quote-card">
+							Поэтому мы сознательно не называем то, что<br />
+							делаем, «турами».
+							<span class="highlight-orange">Мы говорим «экспириенсы»</span>
+							<br />
+							— и на этой странице объясняем, что мы под <br />
+							этим понимаем.
 						</div>
-						<div class="img-card img-card--bottom">
-							<img src="assets/img/beach.png" alt="Team" />
-						</div>
+
+						<h3 class="ins-subtitle">
+							Что мы называем<br />
+							<span class="highlight">экспириенсом</span>
+						</h3>
+
+						<p class="ins-text">
+							Для нас экспириенс — это не «ещё одна активность по <br />
+							расписанию». Это момент, который остаётся в голове, а не только
+							<br />
+							в телефоне.
+						</p>
+						<p class="ins-description">
+							В нём сходится всё: шум вокруг, внутренний <br />настрой, люди
+							рядом, атмосфера, новый опыт. В <br />
+							какой-то момент человек ловит себя на том, что <br />
+							внутри стало очень тихо, а снаружи — очень <br />
+							живо.
+						</p>
 					</div>
 				</div>
-			</div>
 
-			<div class="container about-mobile mobile-only">
-				<div class="about-mobile__content">
-					<h2 class="about-title">
-						Проект родился на краю Африканского континента <br />
-						<span class="text-orange">из любви к Кейптауну, нашей базе</span>
-					</h2>
-					<p class="about-desc">
-						Прилетая сюда, вы будто прилетаете к нам в дом, где мы вам очень
-						рады и знаем каждый уголок
-					</p>
-					<a href="#" class="btn btn--primary">
-						Подробнее
-						<svg
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<rect
-								class="btn-stroke"
-								x="0.1"
-								y="0.1"
-								width="23.8"
-								height="23.8"
-								rx="11.9"
-								stroke="white"
-								stroke-width="0.2"
-								stroke-dasharray="2 2"
-							/>
-							<path
-								class="btn-stroke"
-								d="M12 17V7M12 7L7 12M12 7L17 12"
-								stroke="white"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-							/>
-						</svg>
-					</a>
-				</div>
-
-				<div class="about-mobile__slider">
-					<div class="about-card">
-						<div class="video-wrapper-mobile">
-							<img
-								src="assets/img/video-poster.jpg"
-								class="about-img"
-								alt="Video"
-								loading="lazy"
-							/>
-							<button class="play-btn mobile-play">
-								<svg width="11" height="12" viewBox="0 0 11 12" fill="none">
-									<path
-										d="M10.0792 4.41185C10.3573 4.5651 10.5899 4.79386 10.7521 5.07363C10.9143 5.35339 11 5.67362 11 6.00001C11 6.32639 10.9143 6.64662 10.7521 6.92639C10.5899 7.20615 10.3573 7.43492 10.0792 7.58816L2.66151 11.7682C1.4671 12.442 0 11.566 0 10.1807V1.81993C0 0.433972 1.4671 -0.441402 2.66151 0.231178L10.0792 4.41185Z"
-										fill="white"
-									/>
-								</svg>
-							</button>
-						</div>
+				<div class="ins-col ins-col--right">
+					<div class="mini-card card-1">
+						<img src="/assets/img/example-1.png" alt="" />
 					</div>
-					<div class="about-card">
-						<img
-							src="assets/img/whale.jpg"
-							class="about-img"
-							alt="Whale"
-							loading="lazy"
-						/>
+					<div class="mini-card card-2">
+						<img src="/assets/img/example-2.png" alt="" />
 					</div>
-					<div class="about-card">
-						<img
-							src="assets/img/team.jpg"
-							class="about-img"
-							alt="Team"
-							loading="lazy"
-						/>
+					<div class="mini-card card-3">
+						<img src="/assets/img/example-3.png" alt="" />
+					</div>
+					<div class="mini-card card-4">
+						<img src="/assets/img/example-4.png" alt="" />
 					</div>
 				</div>
 			</div>

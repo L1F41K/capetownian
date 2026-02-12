@@ -12,6 +12,7 @@
 		border-color 0.3s;
 }
 .header.var2 {
+	position: fixed;
 	background: var(--c-white);
 	border-bottom: var(--h-border);
 	color: var(--c-black);

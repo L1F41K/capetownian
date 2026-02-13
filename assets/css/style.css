@@ -20,5 +20,6 @@
 
 @import url('./sections/misson.css');
 @import url('./sections/insufficient.css');
+@import url('./sections/route.css');
 /* 4. Подвал */
 @import url('./modules/footer.css');

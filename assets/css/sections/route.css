@@ -1,0 +1,189 @@
+.route-section {
+	position: relative;
+	background-color: var(--c-cream);
+	border-radius: 66px;
+	padding: 120px 90px;
+	margin-top: -66px;
+	z-index: 5;
+	overflow: visible;
+}
+
+/* Фоновая линия */
+.route-bg-clip {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	pointer-events: none;
+	z-index: 1;
+	border-radius: 66px;
+}
+
+.route-svg-line {
+	position: absolute;
+	top: 82px;
+	left: 80px;
+	object-fit: cover;
+}
+
+.route-container {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	/* GAP МЕЖДУ КОЛОНКАМИ 90px */
+	gap: 90px;
+	align-items: center;
+	margin-top: 140px;
+}
+
+.route-info {
+	flex: 0 0 450px; /* Немного расширил, чтобы слово "внутренние" точно не переносилось раньше времени */
+}
+
+.route-title {
+	font-family: 'Inter Tight', sans-serif;
+	font-weight: 600;
+	font-size: 78px;
+	line-height: 1; /* Плотный межстрочный интервал для эффекта из макета */
+	letter-spacing: -0.04em;
+	margin-bottom: 65px;
+	text-transform: none; /* Убедись, что нет лишних преобразований текста */
+}
+
+.route-title .highlight {
+	color: var(--c-orange);
+	display: inline; /* Чтобы span не ломал структуру строки */
+}
+
+.route-text-small {
+	font-family: 'Inter Tight', sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 140%;
+	color: #1a1a1a;
+	opacity: 0.7;
+	margin-bottom: 16px;
+}
+
+.route-text-main {
+	font-family: 'Inter Tight', sans-serif;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 130%;
+	color: #1a1a1a;
+}
+
+/* КОНТЕЙНЕР КАРТОЧЕК */
+.route-cards {
+	display: flex;
+	gap: 20px;
+	flex-grow: 1;
+}
+
+.route-card {
+	background: var(--c-white);
+	border-radius: 22px;
+	/* ПАДДИНГ 36px */
+	padding: 36px !important;
+	flex: 1;
+	/* ВЫСОТА КАРТОЧЕК 420px */
+	height: 420px;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+	box-sizing: border-box; /* Чтобы паддинги не раздували высоту */
+}
+
+.card-number {
+	font-family: 'Inter Tight', sans-serif;
+	font-size: 64px;
+	font-weight: 600;
+	color: var(--c-orange);
+	line-height: 1;
+	margin-bottom: 30px;
+}
+
+.card-text {
+	font-family: 'Inter Tight', sans-serif;
+	font-weight: 400;
+	font-size: 18px; /* Немного уменьшил, чтобы влезло в 420px при паддинге 36 */
+	line-height: 130%;
+	margin-bottom: auto;
+}
+
+/* ИЗОБРАЖЕНИЯ */
+.card-image {
+	width: 204.75px !important;
+	height: 151px !important;
+	border-radius: 12px;
+	overflow: hidden;
+	flex-shrink: 0;
+}
+
+.card-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.card-image--top {
+	margin-top: 0;
+	margin-bottom: 45px; /* Фото 02 сверху */
+}
+.route-card.card--cta .card-text {
+	font-size: 18px;
+	line-height: 1.25;
+	letter-spacing: -0.03em;
+	margin-bottom: 0;
+	text-align: left;
+	width: 100%;
+}
+.btn-route-consult {
+	margin-top: auto; /* Прижимает к низу карточки */
+	background-color: var(--c-orange);
+	color: var(--c-white);
+	padding: 12px 20px; /* Компактные отступы */
+	border-radius: 100px;
+	border: 1px solid var(--c-orange);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	text-decoration: none;
+	font-family: 'Inter Tight', sans-serif;
+	font-weight: 500;
+	font-size: 16px; /* Меньше, чем в хедере, для баланса */
+	transition:
+		background-color 0.3s,
+		transform 0.3s;
+}
+
+.btn-route-consult svg {
+	width: 24px;
+	height: 24px;
+	flex-shrink: 0;
+	margin-left: 10px;
+}
+
+/* Анимация при наведении */
+.btn-route-consult:hover {
+	background-color: transparent;
+	color: var(--c-black);
+}
+.btn-route-consult svg {
+	transition: transform 0.3s ease;
+}
+/* Стили для SVG внутри кнопки */
+.btn-route-consult .btn-stroke {
+	stroke: white;
+	transition: stroke 0.3s;
+}
+.btn-route-consult:hover .btn-stroke {
+	stroke: var(--c-black);
+}
+/* Если хочешь эффект вращения или движения стрелки как в хедере */
+.btn-route-consult:hover svg {
+	transform: rotate(180deg);
+}

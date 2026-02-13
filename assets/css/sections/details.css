@@ -272,3 +272,113 @@
 .conclusion-accent-card .highlight {
 	color: #ff7a00;
 }
+@media (max-width: 1920px) and (min-width: 1440px) {
+	/* --- ОСНОВНАЯ СЕКЦИЯ --- */
+	.mission-details {
+		padding: 5.73vw 0; /* 110px */
+		border-radius: 3.44vw 3.44vw 0 0;
+	}
+
+	.mission-details-container {
+		padding: 0 4.69vw; /* 90px */
+	}
+
+	/* --- БЛОК 1: СЕТКА НА 5 КОЛОНОК --- */
+	.mission-grid-5 {
+		gap: 2.08vw; /* 40px */
+		margin-bottom: 9.38vw; /* 180px */
+	}
+
+	.mission-main-title {
+		font-size: 4.06vw; /* 78px */
+	}
+
+	.mission-text-content {
+		max-width: 31.25vw; /* 600px */
+		padding-top: 1.56vw;
+	}
+
+	.mission-text-content .text-bold {
+		font-size: 1.25vw; /* 24px */
+	}
+
+	.mission-text-content .text-description {
+		font-size: 0.94vw; /* 18px */
+	}
+
+	.mission-accent-box {
+		padding: 1.56vw;
+		font-size: 1.25vw;
+		border-radius: 1.15vw;
+	}
+
+	/* --- БЛОК 2: LAYOUT С ЛИПКОЙ КОЛОНКОЙ --- */
+	.mission-sticky-layout {
+		gap: 4.69vw; /* 90px */
+	}
+
+	.sticky-side {
+		/* Делаем ширину левой колонки резиновой, но ограничиваем её */
+		flex: 0 0 29.4vw; /* ~565px при 1920px */
+		top: 5.2vw; /* 100px */
+	}
+
+	.mission-title {
+		font-size: 4.06vw; /* 78px */
+	}
+
+	.mission-subtitle-text {
+		font-size: 1.25vw; /* 24px */
+		max-width: 23.4vw;
+	}
+
+	/* --- КЕЙСЫ (КАРТОЧКИ) --- */
+	.case-title {
+		font-size: 3.33vw; /* 64px */
+	}
+
+	.case-row {
+		gap: 1.25vw; /* 24px */
+	}
+
+	.case-card {
+		padding: 1.88vw; /* 36px */
+		border-radius: 2.08vw; /* 40px */
+		/* Убираем жесткий max-width, даем картам дышать в сетке */
+		max-width: none;
+	}
+
+	.label {
+		font-size: 1.25vw; /* 24px */
+	}
+
+	.card-info p {
+		font-size: 0.94vw; /* 18px */
+	}
+
+	/* МЕДИА В КАРТОЧКАХ */
+	.case-media {
+		height: 13.96vw; /* ~268px */
+		max-width: none; /* Растягивается по ширине карты */
+		border-radius: 1.15vw;
+		margin-top: 2.08vw;
+	}
+
+	/* --- ВЫВОД --- */
+	.conclusion-title {
+		font-size: 3.33vw; /* 64px */
+	}
+
+	.conclusion-text,
+	.conclusion-accent-card {
+		max-width: 31.25vw; /* 600px */
+	}
+
+	.conclusion-text .text-main,
+	.conclusion-accent-card p {
+		font-size: 1.25vw;
+	}
+	.mission-path-line {
+		right: -140px;
+	}
+}

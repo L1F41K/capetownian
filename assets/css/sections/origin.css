@@ -112,3 +112,71 @@
 .origin-quote-card .highlight {
 	color: var(--c-orange);
 }
+@media (max-width: 1900px) and (min-width: 1440px) {
+	.origin-section {
+		/* Скругления и отступы масштабируются */
+		border-radius: 3.43vw 3.43vw 0 0;
+		margin-top: -3.43vw;
+		padding: 7.29vw 0;
+		padding-bottom: 18.22vw; /* 350px при 1920px */
+		min-height: 110vh;
+	}
+
+	.origin-container {
+		/* Резиновые паддинги сторон */
+		padding: 0 4.68vw;
+		top: 6.25vw; /* 120px при 1920px */
+	}
+
+	/* КАРТА НА ФОНЕ */
+	.origin-bg {
+		/* Используем vw для позиционирования карты, чтобы она не "уплывала" */
+		left: 23.4vw;
+		bottom: 2.6vw;
+		width: 65vw; /* Ограничиваем ширину, чтобы не вылезала за края */
+	}
+
+	.world-map-svg {
+		width: 100%;
+	}
+
+	/* ГИБКАЯ СЕТКА */
+	.origin-grid-5 {
+		/* Соотношение 2:3 остается, но зазоры становятся резиновыми */
+		gap: 2.08vw;
+	}
+
+	.origin-title {
+		/* Шрифт плавно уменьшается с 78px */
+		font-size: 3.6vw;
+		line-height: 0.95;
+		max-width: 100%;
+	}
+
+	.origin-col--text {
+		/* Убираем жесткий padding и даем тексту дышать */
+		padding-left: 1.04vw;
+		max-width: 31.25vw; /* ~600px при 1920px */
+		gap: 2.6vw;
+	}
+
+	.text-main {
+		font-size: 1.25vw; /* ~24px */
+		margin-bottom: 1.25vw;
+	}
+
+	.text-secondary {
+		font-size: 0.93vw; /* ~18px */
+	}
+
+	/* БЕЛАЯ ПЛАШКА */
+	.origin-quote-card {
+		border-radius: 2.08vw;
+		padding: 1.66vw;
+		max-width: 32.29vw; /* ~620px */
+	}
+
+	.origin-quote-card p {
+		font-size: 1.25vw;
+	}
+}

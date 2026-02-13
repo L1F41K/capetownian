@@ -147,3 +147,69 @@
 	height: 279px;
 	/* Прижато к низу по умолчанию за счет align-items: flex-end */
 }
+/* Пересчитываем размеры для экранов меньше Full HD */
+@media (max-width: 1919px) and (min-width: 1440px) {
+	.mission-landing {
+		/* Уменьшаем общую высоту пропорционально, чтобы не было гигантизма */
+		height: 90vh;
+		min-height: 800px;
+	}
+
+	.mission-container {
+		padding: 0 5vw; /* Гибкие отступы вместо жестких 90px */
+	}
+
+	/* --- ЦЕНТРАЛЬНАЯ КОЛОНКА --- */
+	.mission-col--center {
+		top: 180px; /* Поднимаем выше, чтобы освободить место для видео/фото */
+		max-width: 50vw; /* Заголовок занимает не более половины экрана */
+	}
+
+	.mission-title {
+		font-size: 3.7vw !important; /* Плавное уменьшение шрифта */
+		margin-bottom: 30px;
+	}
+
+	.mission-subtitle {
+		font-size: 1.2vw;
+		max-width: 35vw;
+	}
+
+	/* --- ЛЕВАЯ КОЛОНКА (Видео) --- */
+	.video-wrapper {
+		/* Масштабируем видео относительно ширины экрана */
+		width: 20vw;
+		height: 32vw;
+		max-width: 346px;
+		max-height: 562px;
+	}
+
+	/* --- ПРАВАЯ КОЛОНКА --- */
+	.img-wrapper--top {
+		width: 12vw;
+		height: 16vw;
+		max-width: 210px;
+		max-height: 279px;
+		margin-top: -20px;
+	}
+
+	.img-wrapper--bottom {
+		width: 25vw;
+		height: 16vw;
+		max-width: 430px;
+		max-height: 279px;
+	}
+}
+
+/* Точечная фиксация для 1440px, чтобы не было "каши" */
+@media (max-width: 1440px) {
+	.mission-content {
+		padding-top: 180px;
+	}
+
+	.mission-col--center {
+		/* Если на 1440px боковые колонки все еще мешают, 
+       немного раздвигаем их за счет уменьшения z-index или прозрачности */
+		z-index: 10;
+	}
+}

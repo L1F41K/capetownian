@@ -188,3 +188,89 @@
 .btn-route-consult:hover svg {
 	transform: rotate(180deg);
 }
+@media (max-width: 1900px) and (min-width: 1733px) {
+	.route-title {
+		/* Шрифт плавно «сдувается» */
+		font-size: 2.5vw !important;
+	}
+}
+@media (max-width: 1733px) and (min-width: 1540px) {
+	.route-title {
+		/* Шрифт плавно «сдувается» */
+		font-size: 3.2vw !important;
+	}
+}
+
+@media (max-width: 1900px) and (min-width: 1440px) {
+	.route-section {
+		/* Паддинги секции уменьшаются пропорционально ширине экрана */
+		padding: 6.25vw 4.68vw;
+	}
+
+	.route-container {
+		display: flex;
+		flex-direction: row;
+		/* Уменьшаем gap пропорционально, чтобы высвободить место карточкам */
+		gap: 4.68vw;
+		margin-top: 7.29vw;
+		align-items: center;
+	}
+
+	.route-info {
+		/* Левая колонка теперь занимает ровно столько, сколько нужно, но не более 25% */
+		flex: 0 1 25%;
+		min-width: 320px;
+	}
+
+	.route-title {
+		/* Шрифт плавно «сдувается» */
+		font-size: 3.6vw;
+		line-height: 1;
+		margin-bottom: 3.38vw;
+		white-space: normal; /* Разрешаем перенос, если слово "внутренние" совсем не лезет */
+	}
+
+	/* КОНТЕЙНЕР КАРТОЧЕК */
+	.route-cards {
+		display: flex;
+		flex-direction: row;
+		gap: 1.04vw; /* 20px при 1920px */
+		flex: 1 1 auto;
+		min-width: 0; /* Важно для сжатия flex-элементов */
+	}
+
+	.route-card {
+		/* Карточки будут сжиматься одинаково */
+		flex: 1 1 0;
+		min-width: 0;
+		height: 21.8vw; /* Высота тоже становится резиновой (420px при 1920px) */
+		padding: 1.87vw !important; /* Внутренние отступы сжимаются */
+		display: flex;
+		flex-direction: column;
+	}
+
+	.card-number {
+		font-size: 3.33vw; /* 64px при 1920px */
+		margin-bottom: 1.56vw;
+	}
+
+	.card-text {
+		/* Уменьшаем шрифт текста, чтобы он не выталкивал картинку */
+		font-size: 0.93vw; /* ~18px при 1920px, ~13px при 1440px */
+		line-height: 1.3;
+	}
+
+	/* ИЗОБРАЖЕНИЯ */
+	.card-image {
+		/* Картинки сжимаются пропорционально карточке */
+		width: 100% !important;
+		height: 7.8vw !important; /* ~150px при 1920px */
+		max-width: 204px;
+		margin-top: auto; /* Всегда прижаты к низу */
+	}
+
+	.btn-route-consult {
+		padding: 0.6vw 1vw;
+		font-size: 0.83vw;
+	}
+}

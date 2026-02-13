@@ -464,3 +464,80 @@
 .founder-section.misson .btn-link:hover svg {
 	transform: rotate(180deg);
 }
+@media (max-width: 1920px) and (min-width: 1440px) {
+	/* --- КОНТЕЙНЕР --- */
+	.founder-section.misson .founder__container {
+		display: grid;
+		/* Оставляем 3 колонки, но с резиновыми пропорциями */
+		grid-template-columns: 1fr 1.9fr 1fr;
+		gap: 1.04vw; /* 20px */
+		padding: 0 4.68vw; /* Балансируем с остальными секциями */
+	}
+
+	/* --- ЛЕВАЯ КОЛОНКА (Цитата) --- */
+	.founder-section.misson .founder-quote {
+		margin-bottom: 11.97vw; /* ~230px */
+		gap: 1.04vw;
+	}
+
+	.founder-section.misson .quote-text {
+		font-size: 1.25vw; /* 24px */
+		max-width: 15.6vw; /* ~300px */
+	}
+
+	.founder-section.misson .quote-icon {
+		width: 2.5vw; /* Масштабируем иконку кавычек */
+		height: auto;
+	}
+
+	/* --- ПРАВАЯ КОЛОНКА (Карточки) --- */
+	.founder-section.misson .info-card,
+	.contact-card {
+		border-radius: 1.56vw; /* 30px */
+		padding: 1.87vw; /* 36px */
+		margin-bottom: 2.08vw; /* 40px */
+		max-width: 22.9vw; /* 440px */
+	}
+
+	.founder-section.misson .info-card__text,
+	.contact-card__title {
+		font-size: 1.25vw; /* 24px */
+		margin-bottom: 1.04vw;
+		max-width: 19.16vw; /* 368px */
+	}
+
+	.founder-section.misson .info-card__subtext {
+		font-size: 0.93vw; /* 18px */
+		margin-bottom: 1.56vw;
+	}
+
+	/* КНОПКИ (Резиновые размеры) */
+	.founder-section.misson .btn-link,
+	.founder-section.misson .btn-orange {
+		padding: 1.25vw 2.5vw; /* Вместо 24px 48px */
+		font-size: 0.93vw; /* ~18-20px */
+		border-radius: 2.6vw;
+		max-width: 100%; /* Чтобы не вылезали за карточку */
+	}
+
+	.founder-section.misson .small-btn {
+		width: 1.56vw;
+		height: 1.56vw;
+		font-size: 0.8vw;
+	}
+
+	/* --- ЦЕНТР (ФОТО) --- */
+	.founder-section.misson .founder-photo {
+		/* Фото занимает всю ширину центральной колонки и масштабируется */
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+	}
+
+	/* Линия на фоне */
+	.founder-section.misson .bg-line-wrapper img {
+		bottom: 10.1vw; /* ~196px */
+		width: 100vw; /* Линия на всю ширину */
+		left: 0;
+	}
+}

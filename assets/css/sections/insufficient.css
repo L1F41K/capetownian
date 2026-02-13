@@ -192,3 +192,45 @@
 	right: 60px;
 	transform: scaleX(-1) rotate(15deg);
 }
+@media (max-width: 1919px) and (min-width: 1440px) {
+	.insufficient-content {
+		/* Переводим колонки в гибкие значения */
+		grid-template-columns: 20vw 1fr 25vw;
+		padding: 100px 4vw;
+		gap: 0 30px;
+	}
+
+	.ins-title {
+		font-size: 3.6vw; /* Уменьшаем заголовок плавно */
+	}
+
+	.ins-subtitle {
+		font-size: 3.6vw;
+	}
+
+	.insufficient-video {
+		width: 20vw;
+		height: 32vw; /* Сохраняем пропорцию */
+	}
+
+	.ins-col--center {
+		margin-left: 40px; /* Уменьшаем отступ слева */
+	}
+	.ins-description,
+	.ins-quote-card {
+		font-size: 1.6vw; /* Уменьшаем размер текста */
+	}
+	/* Масштабируем правую зону с карточками */
+	.mini-card {
+		width: 12vw !important;
+		height: 13vw !important;
+	}
+	.card-1,
+	.card-3 {
+		left: -15px;
+	}
+	.card-2,
+	.card-4 {
+		right: 0;
+	}
+}

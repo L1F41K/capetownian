@@ -23,5 +23,10 @@
 @import url('./sections/route.css');
 @import url('./sections/origin.css');
 @import url('./sections/details.css');
+@import url('./sections/regions.css');
+@import url('./sections/format.css');
+@import url('./sections/practice.css');
+@import url('./sections/feedback.css');
+@import url('./sections/faq.css');
 /* 4. Подвал */
 @import url('./modules/footer.css');

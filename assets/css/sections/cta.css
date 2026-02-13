@@ -136,27 +136,75 @@
 
 .form-policy {
 	display: flex;
-	align-items: flex-start;
-	gap: 1.5rem;
-	margin-bottom: 4rem;
-	margin-top: 3rem;
+	align-items: center; /* Центрируем по вертикали с текстом */
+	gap: 15px;
+	cursor: pointer;
+	user-select: none;
+	margin-bottom: 30px;
 }
 
+.policy-real-checkbox {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+}
+
+/* Стилизуем круглый чекбокс */
 .policy-check {
-	width: 2.4rem;
-	height: 2.4rem;
-	background-color: var(--c-orange);
-	border-radius: 50%;
+	width: 32px; /* Размер как на скриншоте */
+	height: 32px;
+	background-color: var(
+		--c-orange
+	); /* Сразу оранжевый или серый, если хочешь пустой */
+	border-radius: 50%; /* Делаем идеальный круг */
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-shrink: 0;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Эффект, если чекбокс НЕ нажат (если нужно, чтобы он был серым/пустым до нажатия) */
+.policy-real-checkbox:not(:checked) + .policy-check {
+	background-color: #eee; /* Светло-серый фон для пустого состояния */
+}
+
+/* Галочка */
+.policy-check svg {
+	opacity: 0;
+	transform: translateY(1px) scale(0.7); /* Легкое смещение для оптики */
+	transition: all 0.2s ease;
+}
+
+/* Состояние CHECKED */
+.policy-real-checkbox:checked + .policy-check {
+	background-color: var(--c-orange);
+	transform: scale(1.05); /* Легкий эффект пульсации при нажатии */
+}
+
+.policy-real-checkbox:checked + .policy-check svg {
+	opacity: 1;
+	transform: translateY(1px) scale(1.1);
+}
+
+/* Стили текста */
 .form-policy p {
-	font-size: 1.6rem;
-	line-height: 1.4;
-	opacity: 0.6;
+	font-family: 'Inter', sans-serif;
+	font-size: 16px;
+	color: #666;
+	margin: 0;
+}
+
+.form-policy p a {
+	color: var(--c-orange); /* Оранжевая ссылка как на макете */
+	text-decoration: none;
+	transition: opacity 0.3s;
+}
+
+.form-policy p a:hover {
+	opacity: 0.7;
 }
 
 .form-policy a {

@@ -230,3 +230,32 @@
 		padding: 0 2rem;
 	}
 }
+.world-section.dirrection {
+	position: relative;
+	z-index: 27;
+	background-color: var(--c-orange);
+	border-radius: 66px 66px 0 0;
+	margin-top: -66px;
+}
+.world-section.dirrection .world-title,
+.world-section.dirrection .destinations-desc {
+	color: var(--c-white);
+}
+.world-section.dirrection .world-more {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 60px;
+}
+.world-section.dirrection .btn--primary--border {
+	border: 0.1rem solid var(--c-white);
+	background: transparent;
+	color: var(--c-white);
+}
+.world-section.dirrection .btn--primary--border:hover {
+	background: var(--c-white);
+	color: var(--c-black);
+}
+.world-section.dirrection .btn--primary--border:hover svg path,
+.world-section.dirrection .btn--primary--border:hover .btn-stroke {
+	stroke: var(--c-black);
+}

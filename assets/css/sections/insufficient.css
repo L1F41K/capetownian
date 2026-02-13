@@ -234,3 +234,44 @@
 		right: 0;
 	}
 }
+.insufficient-section.dirrection {
+	position: relative;
+	z-index: 22;
+}
+.insufficient-section.dirrection .insufficient-content {
+	min-height: 120vh;
+}
+.dirrect-text {
+	margin-top: auto;
+}
+.insufficient-section.dirrection .ins-text {
+	margin-top: 20px;
+	margin-bottom: 0;
+}
+/* Общие стили для центральной колонки */
+.insufficient-section.dirrection .ins-col--center {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start; /* Верхний контент остается сверху */
+	margin-left: 150px;
+	height: 100%; /* Обязательно, чтобы колонка растянулась на всю высоту грида */
+}
+
+.insufficient-section.dirrection .ins-text-content {
+	display: flex;
+	flex-direction: column;
+	height: 100%; /* Растягиваем обертку текста на всю высоту */
+	padding-top: 30px;
+	width: 100%;
+	max-width: 550px;
+}
+.insufficient-section.dirrection
+	.ins-text-content
+	.ins-description.ins-description:last-child {
+	margin-top: 20px;
+}
+@media (max-width: 1900px) and (min-width: 1440px) {
+	.insufficient-section.dirrection .ins-text {
+		margin-bottom: 50px;
+	}
+}

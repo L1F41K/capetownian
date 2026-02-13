@@ -285,3 +285,54 @@
 		width: 100%; /* Кнопка во всю ширину */
 	}
 }
+.hero-ui-container .mission-nav {
+	color: var(--c-white);
+	position: relative;
+	z-index: 50;
+}
+.hero-ui-container .mission-nav .nav-link,
+.hero-ui-container .mission-nav .nav-separator {
+	color: var(--c-white);
+}
+.hero-slide__desc.dirrect {
+	font-size: 24px;
+}
+/* Обращаемся именно через комбинированный класс */
+.hero-slider.dirrection {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100dvh; /* Секция занимает весь экран */
+	z-index: 10; /* Уровень слоя, чтобы контент снизу мог перекрывать её или наоборот */
+
+	/* Отключаем max-height, если он мешает sticky на больших экранах */
+	max-height: none;
+}
+
+/* Настраиваем внутренний контейнер, чтобы он корректно отображался 
+   внутри зафиксированной секции */
+.hero-slider.dirrection .hero-ui-container {
+	/* Убеждаемся, что UI не пропадает при фиксации */
+	pointer-events: none;
+}
+.hero-slider.dirrection .hero-slide__overlay {
+	background: none;
+}
+/* Если вам нужно, чтобы кнопки внутри всё еще нажимались */
+.hero-slider.dirrection .static-layer,
+.hero-slider.dirrection .hero-slide__buttons,
+.hero-slider.dirrection .mission-nav {
+	pointer-events: auto;
+}
+
+/* Корректировка для мобильной версии */
+@media (max-width: 768px) {
+	.hero-slider.dirrection {
+		/* На мобилках часто лучше оставить статичным или уменьшить высоту, 
+       но если нужно именно sticky: */
+		position: sticky;
+		height: 100dvh;
+	}
+}

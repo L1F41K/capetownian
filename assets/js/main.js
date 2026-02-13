@@ -311,3 +311,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	})
 })
+document.querySelectorAll('.faq-trigger').forEach(trigger => {
+	trigger.addEventListener('click', () => {
+		const parent = trigger.parentElement
+
+		// Закрыть другие, если нужно (опционально)
+		// document.querySelectorAll('.faq-item').forEach(item => {
+		//   if (item !== parent) item.classList.remove('active');
+		// });
+
+		parent.classList.toggle('active')
+	})
+})

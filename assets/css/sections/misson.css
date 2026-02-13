@@ -154,7 +154,15 @@
 		height: 90vh;
 		min-height: 800px;
 	}
-
+	.mission-col--right {
+		position: absolute;
+		right: 0;
+		top: 70%;
+		transform: translateY(-50%);
+	}
+	.img-wrapper--top {
+		margin-bottom: 100px;
+	}
 	.mission-container {
 		padding: 0 5vw; /* Гибкие отступы вместо жестких 90px */
 	}

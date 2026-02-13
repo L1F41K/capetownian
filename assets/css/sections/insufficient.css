@@ -29,34 +29,60 @@
 	max-width: 100%; /* На всю ширину экрана */
 }
 
+/* --- ЛЕВАЯ КОЛОНКА --- */
 .ins-col--left {
+	position: relative;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between; /* Расталкивает контент к краям */
-	height: 100%;
+	height: 100%; /* Колонки в гриде должны быть одной высоты */
+}
+
+/* Контейнер-ограничитель для заголовка */
+.ins-sticky-wrapper {
+	position: relative;
+	flex-grow: 1; /* Занимает всё место до видео */
+
+	/* ВАЖНО: этот паддинг отключит sticky, когда до видео останется 90px */
+	padding-bottom: 90px;
 }
 
 .ins-title {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 100px; /* По твоему запросу */
+
 	font-family: 'Inter Tight', sans-serif;
 	font-weight: 600;
 	font-size: 78px;
 	line-height: 0.95;
 	letter-spacing: -0.05em;
-	margin-bottom: 0; /* Убираем фиксированный отступ */
 	white-space: nowrap;
+	z-index: 10;
 }
-.ins-title .highlight {
-	color: var(--c-orange);
+
+/* Убираем лишний spacer, так как теперь работаем через padding контейнера */
+.ins-spacer {
+	display: none;
 }
+
+/* ВИДЕО */
 .insufficient-video {
 	width: 346px;
 	height: 562px;
 	border-radius: 22px;
 	overflow: hidden;
 	flex-shrink: 0;
-	/* margin-top: auto; -- можно использовать это вместо space-between, если элементов больше двух */
+
+	/* Видео всегда прижато к низу колонки */
+	margin-top: auto;
 }
 
+/* ПРОВЕРКА РОДИТЕЛЕЙ */
+.insufficient-section,
+.insufficient-content {
+	/* Если тут будет overflow: hidden, sticky НЕ СРАБОТАЕТ */
+	overflow: visible !important;
+}
 /* --- ЦЕНТРАЛЬНАЯ КОЛОНКА --- */
 .ins-col--center {
 	display: flex;

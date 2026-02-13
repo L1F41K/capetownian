@@ -68,7 +68,9 @@
 	white-space: nowrap;
 	z-index: 10;
 }
-
+.ins-title .highlight {
+	color: var(--c-orange);
+}
 /* Убираем лишний spacer, так как теперь работаем через padding контейнера */
 .ins-spacer {
 	display: none;

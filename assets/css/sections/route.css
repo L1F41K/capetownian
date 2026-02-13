@@ -1,8 +1,9 @@
 .route-section {
 	position: relative;
 	background-color: var(--c-cream);
-	border-radius: 66px;
+	border-radius: 66px 66px 0 0;
 	padding: 120px 90px;
+	padding-bottom: 230px;
 	margin-top: -66px;
 	z-index: 5;
 	overflow: visible;

@@ -281,3 +281,186 @@
 		left: -20%;
 	}
 }
+/* === SECTION 5: FOUNDER (ORANGE THEME) === */
+.founder-section.misson {
+	position: relative;
+	background-color: #ff7a00; /* Ярко-оранжевый из макета */
+	overflow: hidden;
+	color: #fff;
+
+	z-index: 22;
+}
+
+.founder-section.misson .founder__container {
+	display: grid;
+	grid-template-columns: 1fr 1.9fr 1fr;
+	gap: 20px;
+	align-items: flex-end;
+	position: relative;
+	z-index: 2;
+}
+
+/* --- ЦИТАТА (СЛЕВА) --- */
+.founder-section.misson .founder-quote {
+	margin-bottom: 230px;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.founder-section.misson .quote-icon {
+	opacity: 0.8;
+}
+
+.founder-section.misson .quote-text {
+	font-family: 'Inter Tight', sans-serif;
+	font-size: 24px;
+	line-height: 1.2;
+	font-weight: 500;
+	max-width: 300px;
+}
+
+/* --- КАРТОЧКИ (БЕЛЫЕ) --- */
+.founder-section.misson .info-card,
+.contact-card {
+	background: #fff;
+	border-radius: 30px;
+	padding: 36px;
+	color: #1a1a1a;
+	margin-bottom: 40px;
+	max-width: 440px;
+}
+
+.founder-section.misson .info-card__text,
+.contact-card__title {
+	font-family: 'Inter Tight', sans-serif;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 1.3;
+	letter-spacing: -0.05em;
+	margin-bottom: 20px;
+	max-width: 368px;
+}
+
+.founder-section.misson .info-card__subtext {
+	font-size: 18px;
+	margin-bottom: 30px;
+	max-width: 368px;
+}
+
+/* Кнопки и ссылки */
+.founder-section.misson .btn-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	background: #ff7a00;
+	border: 1px solid #ff7a00;
+	color: #fff;
+	padding: 24px 48px;
+	border-radius: 50px;
+	text-decoration: none;
+	font-weight: 400;
+	font-size: 20px;
+	letter-spacing: -0.05em;
+}
+
+.founder-section.misson .btn-orange {
+	width: 100%;
+	max-width: 295px;
+	background: #ff7a00;
+	color: #fff;
+	border: 1px solid #ff7a00;
+	padding: 24px 48px;
+	border-radius: 50px;
+	font-size: 18px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+
+/* Инста-тег внутри правой карточки */
+.founder-section.misson .insta-tag-card {
+	background: #fef4e9;
+	border-radius: 20px;
+	padding: 25px;
+	display: block;
+	text-decoration: none;
+	color: #1a1a1a;
+	margin-bottom: 20px;
+}
+.founder-section.misson .insta-tag-card:hover .small-btn {
+	transform: rotate(0deg);
+}
+
+.founder-section.misson .insta-tag-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.founder-section.misson .handle {
+	font-weight: 700;
+	font-size: 20px;
+}
+
+.founder-section.misson .small-btn {
+	width: 30px;
+	height: 30px;
+	background: #ff7a00;
+	color: #fff;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: transform 0.3s ease;
+	transform: rotate(-45deg);
+}
+
+/* --- ЦЕНТР (ФОТО) --- */
+.founder-section.misson .founder__col--center {
+	height: 100%;
+}
+
+.founder-section.misson .founder-photo {
+	width: 100%; /* Выходим за пределы колонки */
+	max-width: none; /* Убираем лимит в 1160px */
+	display: block;
+	z-index: 5;
+}
+
+/* Линия на фоне */
+.founder-section.misson .bg-line-wrapper img {
+	position: absolute;
+	bottom: 196px;
+	left: 0;
+	z-index: 1;
+	pointer-events: none;
+}
+/* Анимация при наведении */
+.founder-section.misson .btn-orange:hover,
+.founder-section.misson .btn-link:hover {
+	background-color: transparent;
+	color: var(--c-black);
+}
+.founder-section.misson .btn-orange svg,
+.founder-section.misson .btn-link svg {
+	transition: transform 0.3s ease;
+}
+/* Стили для SVG внутри кнопки */
+.founder-section.misson .btn-orange .btn-stroke,
+.founder-section.misson .btn-link .btn-stroke {
+	stroke: white;
+	transition: stroke 0.3s;
+}
+.founder-section.misson .btn-orange:hover .btn-stroke,
+.founder-section.misson .btn-link:hover .btn-stroke {
+	stroke: var(--c-black);
+}
+/* Если хочешь эффект вращения или движения стрелки как в хедере */
+.founder-section.misson .btn-orange:hover svg,
+.founder-section.misson .btn-link:hover svg {
+	transform: rotate(180deg);
+}

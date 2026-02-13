@@ -1,0 +1,114 @@
+.origin-section {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0; /* Секция прилипает к верху экрана */
+
+	background-color: var(--c-orange);
+	border-radius: 66px 66px 0 0;
+	margin-top: -66px;
+	z-index: 20;
+
+	/* Высота секции должна быть больше экрана, чтобы было куда скроллить */
+	min-height: 110vh;
+	padding: 140px 0; /* Твой паддинг снизу */
+	padding-bottom: 350px;
+}
+
+.origin-container {
+	/* Внутренний контейнер тоже sticky, чтобы контент не уезжал, 
+     пока мы идем по длинному пути паддинга секции */
+	position: -webkit-sticky;
+	position: sticky;
+	top: 120px;
+	z-index: 5;
+	padding: 0 90px;
+}
+
+/* Карта в этом случае будет двигаться вместе с телом секции */
+.origin-bg {
+	position: absolute;
+	bottom: 50px; /* Прижата к виртуальному "дну" секции */
+	left: 450px;
+	z-index: 1;
+	pointer-events: none;
+}
+.world-map-svg {
+	width: 105%;
+	height: auto;
+	object-fit: contain;
+}
+
+/* СЕТКА НА 5 КОЛОНОК */
+.origin-grid-5 {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 40px;
+	align-items: start;
+}
+
+/* Колонка заголовка (2 из 5) */
+.origin-col--title {
+	grid-column: span 2;
+}
+
+.origin-title {
+	font-family: 'Inter Tight', sans-serif;
+	font-weight: 600;
+	font-size: 78px;
+	line-height: 0.95;
+	letter-spacing: -0.04em;
+	color: #fff;
+}
+
+/* Колонка текста (3 из 5) */
+.origin-col--text {
+	grid-column: span 3;
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	padding-left: 20px; /* Небольшой отступ от заголовка */
+	max-width: 600px;
+}
+
+.origin-description {
+	max-width: 620px; /* Чтобы текст не растягивался слишком широко */
+	color: #fff;
+}
+
+.text-main {
+	font-family: 'Inter Tight', sans-serif;
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 1.3;
+	margin-bottom: 24px;
+	letter-spacing: -0.01em;
+}
+
+.text-secondary {
+	font-family: 'Inter', sans-serif;
+	font-size: 18px;
+	line-height: 1.4;
+	letter-spacing: -0.08em;
+}
+
+/* Белая плашка */
+.origin-quote-card {
+	background: #fff;
+	border-radius: 40px;
+	padding: 32px;
+	max-width: 620px;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.origin-quote-card p {
+	font-family: 'Inter Tight', sans-serif;
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 1.3;
+	color: #1a1a1a;
+	margin: 0;
+}
+
+.origin-quote-card .highlight {
+	color: var(--c-orange);
+}

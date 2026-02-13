@@ -1,13 +1,22 @@
-/* Настройки SVG из твоего ТЗ */
 .dotted-path-container {
 	position: absolute;
 	top: -127px;
 	left: 60%;
-	transform: translateX(-10%) rotate(-4.05deg); /* Угол из ТЗ */
-	pointer-events: none;
+	transform: translateX(-10%) rotate(-4.05deg);
 	z-index: 1;
 }
-
+/* Этот блок берет на себя роль "ножниц" для линии */
+.ins-bg-overflow-clipping {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden; /* Обрезает линию строго по краям секции */
+	z-index: 1;
+	pointer-events: none;
+	border-radius: 66px 66px 0 0; /* Чтобы линия не вылезала за скругления секции */
+}
 .insufficient-section {
 	position: relative;
 	background-color: #fff;

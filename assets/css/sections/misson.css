@@ -148,7 +148,7 @@
 	/* Прижато к низу по умолчанию за счет align-items: flex-end */
 }
 /* Пересчитываем размеры для экранов меньше Full HD */
-@media (max-width: 1919px) and (min-width: 1440px) {
+@media (max-width: 1900px) and (min-width: 1440px) {
 	.mission-landing {
 		/* Уменьшаем общую высоту пропорционально, чтобы не было гигантизма */
 		height: 90vh;

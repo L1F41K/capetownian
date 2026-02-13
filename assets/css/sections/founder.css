@@ -464,7 +464,7 @@
 .founder-section.misson .btn-link:hover svg {
 	transform: rotate(180deg);
 }
-@media (max-width: 1920px) and (min-width: 1440px) {
+@media (max-width: 1900px) and (min-width: 1440px) {
 	/* --- КОНТЕЙНЕР --- */
 	.founder-section.misson .founder__container {
 		display: grid;

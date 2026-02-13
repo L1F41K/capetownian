@@ -272,7 +272,7 @@
 .conclusion-accent-card .highlight {
 	color: #ff7a00;
 }
-@media (max-width: 1920px) and (min-width: 1440px) {
+@media (max-width: 1900px) and (min-width: 1440px) {
 	/* --- ОСНОВНАЯ СЕКЦИЯ --- */
 	.mission-details {
 		padding: 5.73vw 0; /* 110px */

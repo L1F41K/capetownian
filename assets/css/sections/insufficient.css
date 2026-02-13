@@ -192,7 +192,7 @@
 	right: 60px;
 	transform: scaleX(-1) rotate(15deg);
 }
-@media (max-width: 1919px) and (min-width: 1440px) {
+@media (max-width: 1900px) and (min-width: 1440px) {
 	.insufficient-content {
 		/* Переводим колонки в гибкие значения */
 		grid-template-columns: 20vw 1fr 25vw;

@@ -1,0 +1,105 @@
+.v2-itinerary-section {
+	padding: 100px 0;
+	background-color: var(--c-cream); /* Кремовый фон как на макете */
+	position: relative;
+	z-index: 26;
+	border-radius: 66px 66px 0 0;
+	margin-top: -6.6rem;
+	padding-bottom: 140px;
+}
+
+/* Пунктирная линия */
+.v2-itinerary-line {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: auto;
+	height: auto;
+	pointer-events: none;
+	z-index: 1;
+}
+
+.v2-itinerary-grid {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 6rem;
+	position: relative;
+	z-index: 2;
+	align-items: flex-start;
+}
+
+/* Sticky заголовок */
+.v2-itinerary-col-left {
+	position: sticky;
+	top: 10rem; /* Стандартный отступ для sticky */
+	align-self: start;
+}
+
+.v2-itinerary-title {
+	font-family: 'Inter Tight', sans-serif !important;
+	font-weight: 600 !important;
+	font-size: 7.8rem !important; /* */
+	line-height: 100% !important;
+	letter-spacing: -0.05em !important;
+	color: var(--c-orange); /* Основной цвет оранжевый */
+	margin-bottom: 4rem;
+}
+
+.v2-itinerary-title .c-black {
+	color: var(--c-black);
+}
+
+.v2-itinerary-lead {
+	font-family: 'Inter Tight', sans-serif;
+	font-size: 2.4rem;
+	line-height: 1.3;
+	color: var(--c-black);
+}
+
+/* Сетка карточек справа */
+.v2-itinerary-cards {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem; /* Отступ между карточками */
+	max-width: 600px;
+}
+
+.v2-day-card {
+	background: #ffffff;
+	border-radius: 2.4rem;
+	padding: 4rem;
+	transition: transform 0.3s ease;
+}
+
+.v2-day-title {
+	font-family: 'Inter Tight', sans-serif;
+	font-size: 2.4rem;
+	font-weight: 600;
+	margin-bottom: 1.3rem;
+	color: var(--c-black);
+}
+
+.v2-day-text {
+	font-family: 'Inter Tight', sans-serif;
+	font-size: 1.8rem;
+	line-height: 1.4;
+	color: var(--c-purple);
+	opacity: 0.8;
+}
+
+/* Адаптив */
+@media (max-width: 1024px) {
+	.v2-itinerary-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.v2-itinerary-col-left {
+		position: relative;
+		top: 0;
+		margin-bottom: 6rem;
+	}
+
+	.v2-itinerary-line {
+		display: none; /* Скрываем линию на мобильных, чтобы не мешала чтению */
+	}
+}

@@ -28,5 +28,10 @@
 @import url('./sections/practice.css');
 @import url('./sections/feedback.css');
 @import url('./sections/faq.css');
+@import url('./sections/v2-africa.css');
+@import url('./sections/v2-about.css');
+@import url('./sections/v2-suit.css');
+@import url('./sections/v2-live.css');
+@import url('./sections/v2-itinerary.css');
 /* 4. Подвал */
 @import url('./modules/footer.css');

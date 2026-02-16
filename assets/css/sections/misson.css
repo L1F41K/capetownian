@@ -201,6 +201,7 @@
 		width: 19.5vw;
 		max-width: 340px;
 		aspect-ratio: 346 / 562;
+		height: auto;
 	}
 
 	.img-wrapper--top {

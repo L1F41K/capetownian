@@ -1,0 +1,162 @@
+.v2-about-section {
+	position: relative;
+	padding: 120px 0;
+	background-color: #fff;
+	overflow: hidden;
+	z-index: 24;
+	border-radius: 66px 66px 0 0;
+}
+
+/* Фоновая линия */
+.v2-about-bg-line {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: auto;
+	height: 100%;
+	z-index: 0;
+	pointer-events: none;
+	object-fit: contain;
+	object-position: right center;
+}
+.v2-about-grid {
+	position: relative;
+	z-index: 2;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 8rem;
+	align-items: flex-start;
+}
+/* Колонка 1 */
+.v2-about-title {
+	font-family: 'Inter Tight', sans-serif !important;
+	font-weight: 600 !important;
+	font-size: 7.8rem !important;
+	line-height: 100% !important;
+	letter-spacing: -0.05em !important;
+	color: var(--c-black);
+	margin-bottom: 8.3rem;
+}
+.v2-about-title .highlight {
+	color: var(--c-orange);
+}
+/* Колонка 2 */
+.v2-about-content-right {
+	display: flex;
+	flex-direction: column;
+	max-width: 600px;
+	height: 100%; /* Растягиваем на всю высоту родительского грида */
+}
+.v2-text-lead {
+	font-family: 'Inter Tight', sans-serif !important;
+	font-weight: 500 !important;
+	font-size: 2.4rem !important; /* 24px */
+	line-height: 130% !important;
+	letter-spacing: 0 !important;
+	color: var(--c-black);
+	margin-bottom: 2.4rem;
+	margin-bottom: 4.8rem; /* Отступ до карточек, если они вдруг сблизятся */
+}
+
+.v2-text-sub {
+	font-family: 'Inter Tight', sans-serif !important;
+	font-weight: 400 !important;
+	font-size: 1.8rem !important; /* 18px */
+	line-height: 140% !important;
+	letter-spacing: 0 !important;
+	color: var(--c-purple);
+	max-width: 60rem;
+}
+/* Сетка карточек внутри правой колонки */
+.v2-about-cards-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); /* Две колонки для карточек */
+	gap: 2.1rem;
+	margin-top: auto; /* Магия: выталкивает блок максимально вниз */
+}
+
+/* Большая карточка проживания на всю ширину сетки карточек */
+.card-full {
+	grid-column: span 2;
+}
+
+.v2-info-card {
+	padding: 3.7rem;
+	border-radius: 2.4rem;
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+}
+
+.v2-info-card h3 {
+	font-family: 'Inter Tight', sans-serif;
+	font-size: 3.2rem;
+	font-weight: 500;
+}
+
+.v2-info-card p {
+	font-size: 1.6rem;
+	line-height: 1.4;
+	margin: 0;
+}
+
+/* Цвета из макета */
+.card-beige {
+	background-color: #fff2e6;
+}
+.card-green {
+	background-color: #e6f7e6;
+}
+.card-blue {
+	background-color: #e6f5fa;
+}
+.card-pink {
+	background-color: #fce6f0;
+}
+.card-orange-light {
+	background-color: #fff2e6;
+}
+
+/* --- Адаптация (Mobile) --- */
+@media (max-width: 1024px) {
+	.v2-about-grid {
+		grid-template-columns: 1fr;
+		gap: 4rem;
+	}
+
+	.v2-about-title {
+		font-size: 5.6rem !important;
+	}
+}
+
+@media (max-width: 768px) {
+	.v2-about-section {
+		padding: 6rem 0;
+	}
+
+	.v2-about-title {
+		font-size: 4.2rem !important; /* Уменьшаем для мобилок */
+		margin-bottom: 3rem;
+	}
+
+	.v2-text-lead {
+		font-size: 2rem !important;
+	}
+
+	.v2-text-sub {
+		font-size: 1.6rem !important;
+	}
+
+	.v2-about-cards-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.card-full {
+		grid-column: span 1;
+	}
+
+	.v2-info-card {
+		padding: 2.4rem;
+	}
+}

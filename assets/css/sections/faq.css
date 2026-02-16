@@ -47,7 +47,7 @@
 .faq-main-title {
 	font-family: 'Inter Tight', sans-serif;
 	/* Шрифт плавно растет от 48px до 78px */
-	font-size: clamp(48px, 4.2vw, 78px);
+	font-size: 7.8rem;
 	line-height: 1.05;
 	font-weight: 600;
 	letter-spacing: -0.02em;

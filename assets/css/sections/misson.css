@@ -2,23 +2,20 @@
 .mission-landing {
 	position: -webkit-sticky;
 	position: sticky;
-	/* ЛОГИКА STICKY: 
-     Чтобы отступ уменьшился с 232px до 135px, 
-     секция должна "проехать" вверх на 97px (232 - 135 = 97).
-  */
 	top: -97px;
 	z-index: 5;
-
-	height: 1042px;
+	height: 105vh; /* меняем с фиксированных 1042px на 100vh — это безопаснее */
+	min-height: 860px; /* ← ключевой фикс: не даём секции стать меньше этого значения */
+	max-height: 1150px;
 	margin-top: -6.6rem;
 	border-top-left-radius: 6.6rem;
 	border-top-right-radius: 6.6rem;
 	background-size: cover;
-
 	overflow: hidden;
 	display: flex;
 	justify-content: center;
 }
+
 .mission-nav .nav-link {
 	font-family: 'Inter';
 	font-weight: 400;
@@ -27,13 +24,17 @@
 	line-height: 100%;
 	letter-spacing: 0%;
 }
+
 .mission-nav .nav-link.active {
 	opacity: 0.5;
 }
+
 .mission-nav .nav-separator {
 	color: var(--c-black);
+
 	font-size: 18px;
 }
+
 .mission-container {
 	width: 100%;
 	padding: 0 90px;
@@ -45,7 +46,6 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end; /* Видео и нижнее фото прижаты к нижней линии */
-
 	height: 100%;
 	padding-top: 282px; /* Изначальный отступ сверху */
 	padding-bottom: 58px; /* Отступ от низа */
@@ -54,14 +54,12 @@
 }
 
 /* --- ЦЕНТРАЛЬНАЯ КОЛОНКА --- */
+
 .mission-col--center {
-	/* Чтобы заголовок не сжимался боковыми колонками и не прыгал на 4-ю строку,
-     мы вырываем его из общего потока через абсолют, но центрируем по горизонтали. */
 	position: absolute;
 	left: 50%;
 	top: 282px;
 	transform: translateX(-50%);
-
 	width: 100%;
 	/* Подбираем ширину, при которой текст ложится ровно в 3 строки */
 	max-width: 960px;
@@ -85,7 +83,6 @@
 	letter-spacing: -0.05em; /* -5% */
 	color: #1a1a1a;
 	margin-bottom: 60px;
-
 	/* Гарантируем отсутствие лишних переносов */
 	word-break: keep-all;
 	white-space: normal;
@@ -105,6 +102,7 @@
 }
 
 /* --- ЛЕВАЯ КОЛОНКА (Видео) --- */
+
 .mission-col--left {
 	flex-shrink: 0;
 	z-index: 2;
@@ -118,6 +116,7 @@
 }
 
 /* --- ПРАВАЯ КОЛОНКА (Изображения) --- */
+
 .mission-col--right {
 	display: flex;
 	flex-direction: column;
@@ -131,9 +130,11 @@
 	border-radius: 22px;
 	overflow: hidden;
 }
+
 .img-wrapper img {
 	height: 100%;
 }
+
 .img-wrapper--top {
 	width: 210px;
 	height: 279px;
@@ -147,77 +148,70 @@
 	height: 279px;
 	/* Прижато к низу по умолчанию за счет align-items: flex-end */
 }
-/* Пересчитываем размеры для экранов меньше Full HD */
-@media (max-width: 1900px) and (min-width: 1440px) {
+@media (min-width: 1440px) and (max-width: 1900px) {
 	.mission-landing {
-		/* Уменьшаем общую высоту пропорционально, чтобы не было гигантизма */
-		height: 90vh;
-		min-height: 800px;
-	}
-	.mission-col--right {
-		position: absolute;
-		right: 0;
-		top: 70%;
-		transform: translateY(-50%);
-	}
-	.img-wrapper--top {
-		margin-bottom: 100px;
-	}
-	.mission-container {
-		padding: 0 5vw; /* Гибкие отступы вместо жестких 90px */
+		min-height: 880px; /* чуть выше, чем общий минимум — для комфорта на 900–1000 px высоты */
+		height: 94vh; /* меньше, чем 100vh, чтобы был запас снизу при sticky */
+		max-height: 1080px;
 	}
 
-	/* --- ЦЕНТРАЛЬНАЯ КОЛОНКА --- */
+	.mission-container {
+		padding: 0 5vw; /* 5vw ≈ 72–95 px — комфортный отступ по бокам */
+		padding-bottom: clamp(50px, 6vh, 100px); /* гибкий воздух снизу */
+	}
+
+	.mission-content {
+		padding-top: clamp(
+			160px,
+			20vh,
+			260px
+		); /* гибкий верхний отступ — не улетает слишком высоко */
+		padding-bottom: 0; /* убираем жёсткий нижний отступ здесь */
+		align-items: flex-end; /* низ прижат */
+	}
+
+	/* Правая колонка — стабильный отступ между картинками */
+	.mission-col--right {
+		gap: 28px; /* фиксированный и всегда одинаковый промежуток */
+		justify-content: flex-end;
+	}
+
+	.img-wrapper--top {
+		margin-top: -32px; /* небольшой подъём верхней картинки, чтобы не висела слишком низко */
+	}
+
+	/* Центр — корректируем позицию, чтобы не конфликтовал с высотой */
 	.mission-col--center {
-		top: 180px; /* Поднимаем выше, чтобы освободить место для видео/фото */
-		max-width: 50vw; /* Заголовок занимает не более половины экрана */
+		top: clamp(200px, 24vh, 280px); /* гибкое позиционирование заголовка */
+		max-width: 880px; /* чуть уже, чтобы текст не растягивался */
 	}
 
 	.mission-title {
-		font-size: 3.7vw !important; /* Плавное уменьшение шрифта */
-		margin-bottom: 30px;
+		font-size: clamp(54px, 5.2vw, 78px);
+		margin-bottom: 36px;
 	}
 
 	.mission-subtitle {
-		font-size: 1.2vw;
-		max-width: 35vw;
+		font-size: clamp(18px, 1.45vw, 24px);
+		max-width: 560px;
 	}
 
-	/* --- ЛЕВАЯ КОЛОНКА (Видео) --- */
+	/* Размеры боковых элементов — чуть компактнее */
 	.video-wrapper {
-		/* Масштабируем видео относительно ширины экрана */
-		width: 20vw;
-		height: 32vw;
-		max-width: 346px;
-		max-height: 562px;
+		width: 19.5vw;
+		max-width: 340px;
+		aspect-ratio: 346 / 562;
 	}
 
-	/* --- ПРАВАЯ КОЛОНКА --- */
 	.img-wrapper--top {
-		width: 12vw;
-		height: 16vw;
-		max-width: 210px;
-		max-height: 279px;
-		margin-top: -20px;
+		width: 12.8vw;
+		max-width: 215px;
+		aspect-ratio: 210 / 279;
 	}
 
 	.img-wrapper--bottom {
-		width: 25vw;
-		height: 16vw;
-		max-width: 430px;
-		max-height: 279px;
-	}
-}
-
-/* Точечная фиксация для 1440px, чтобы не было "каши" */
-@media (max-width: 1440px) {
-	.mission-content {
-		padding-top: 180px;
-	}
-
-	.mission-col--center {
-		/* Если на 1440px боковые колонки все еще мешают, 
-       немного раздвигаем их за счет уменьшения z-index или прозрачности */
-		z-index: 10;
+		width: 23.8vw;
+		max-width: 415px;
+		aspect-ratio: 430 / 279;
 	}
 }

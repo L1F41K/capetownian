@@ -100,7 +100,7 @@
 .feedback-cards-side .contact-card,
 .feedback-cards-side .reviews-card {
 	/* Немного уменьшаем внутренние отступы для 1440px */
-	padding: clamp(25px, 2.5vw, 40px);
+	padding: clamp(25px, 2.2vw, 40px);
 	border-radius: 30px;
 	max-width: none;
 }
@@ -243,43 +243,54 @@
 		padding: 16px 24px; /* Уменьшаем кнопку, чтобы влезла по высоте */
 	}
 }
-@media (min-height: 900px) {
+@media (min-height: 800px) {
 	.feedback-section {
 		position: sticky;
 		top: 0;
-		height: 100vh;
 	}
 }
+@media (max-width: 1900px) and (min-width: 1440px) {
+	.feedback-container {
+		padding: 0 4.2vw;
+	}
+	.contact-card.feedback {
+		margin-bottom: 0;
+	}
+}
+
 /* Специальный блок для низких экранов */
-@media (max-height: 850px) {
+@media (min-height: 800px) and (max-height: 950px) {
 	.feedback-section {
-		padding: 80px 0;
-		align-items: flex-start; /* На низких экранах лучше прижать к верху, чем центровать */
+		min-height: 88vh; /* чуть больше, но всё ещё < 100vh */
+		align-items: flex-start; /* лучше прижать вверх на низких экранах */
+		padding: clamp(50px, 7vh, 80px) 0;
+		padding-top: 4vh;
+		padding-bottom: 10vh;
+	}
+
+	.bg-person {
+		max-height: 68vh; /* сильно уменьшаем фото Виктора */
 	}
 
 	.feedback-title {
-		font-size: clamp(32px, 4vw, 56px); /* Уменьшаем заголовок еще сильнее */
-		margin-bottom: 20px;
+		font-size: clamp(42px, 4.5vw, 56px);
+		margin-bottom: 24px;
 	}
 
 	.feedback-intro-card,
 	.contact-card,
 	.reviews-card {
-		padding: 20px 25px !important; /* Сжимаем карточки */
-	}
-
-	.contact-footer {
-		margin-top: 15px;
-		flex-wrap: wrap; /* Чтобы кнопка и иконки не вылетали в бок */
+		padding: clamp(20px, 2.5vw, 32px);
 	}
 
 	.btn-contact {
-		padding: 12px 20px;
-		font-size: 14px;
+		padding: 18px 28px;
+		font-size: 15px;
 	}
-
-	/* Виктор не должен занимать много места, чтобы не мешать тексту */
-	.bg-person {
-		max-height: 70vh;
+}
+@media (max-height: 799px) {
+	.feedback-section {
+		position: relative;
+		min-height: auto; /* или 700px — как тебе удобнее */
 	}
 }

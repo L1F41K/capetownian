@@ -122,7 +122,7 @@
 	padding: 32px;
 	border-radius: 30px;
 	margin-top: 282px;
-	margin-bottom: 60px;
+
 	width: 100%; /* Занимает все 600px */
 	font-family: 'Inter Tight';
 	font-weight: 500;
@@ -134,7 +134,8 @@
 	font-family: 'Inter Tight', sans-serif;
 	font-size: 64px;
 	line-height: 1;
-	margin-bottom: 30px;
+	margin-bottom: 90px;
+	padding-top: 60px;
 }
 .ins-subtitle .highlight {
 	color: var(--c-orange);
@@ -153,6 +154,7 @@
 	line-height: 140%;
 	letter-spacing: 0%;
 	margin-bottom: 18px;
+	color: var(--c-purple);
 }
 .mini-card {
 	position: absolute;
@@ -192,6 +194,21 @@
 	right: 60px;
 	transform: scaleX(-1) rotate(15deg);
 }
+@media (min-width: 1500px) and (max-width: 1900px) {
+	.ins-description,
+	.ins-quote-card {
+		font-size: 1.3vw;
+	}
+	.ins-quote-card {
+		margin-top: 40vh;
+	}
+}
+@media (min-width: 1440px) and (max-width: 1500px) {
+	.ins-description,
+	.ins-quote-card {
+		font-size: 1.6vw; /* Уменьшаем размер текста */
+	}
+}
 @media (max-width: 1900px) and (min-width: 1440px) {
 	.insufficient-content {
 		/* Переводим колонки в гибкие значения */
@@ -215,10 +232,6 @@
 
 	.ins-col--center {
 		margin-left: 40px; /* Уменьшаем отступ слева */
-	}
-	.ins-description,
-	.ins-quote-card {
-		font-size: 1.6vw; /* Уменьшаем размер текста */
 	}
 	/* Масштабируем правую зону с карточками */
 	.mini-card {

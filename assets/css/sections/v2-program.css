@@ -1,0 +1,479 @@
+/* Основная секция */
+.itinerary-section {
+	position: relative;
+	padding: 100px 0;
+	overflow: hidden;
+	background-color: #fff;
+	z-index: 26;
+	border-radius: 66px 66px 0 0;
+	margin-top: -6.6rem;
+}
+
+/* Пунктир на фоне */
+.itinerary-bg-path {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: auto;
+	z-index: 1;
+	pointer-events: none;
+}
+.itinerary-title {
+	font-family: 'Inter Tight', sans-serif;
+	font-weight: 600;
+	font-size: 7.8rem;
+	line-height: 100%;
+	letter-spacing: -0.04em;
+	color: var(--c-orange);
+}
+.itinerary-title span {
+	color: var(--c-black);
+}
+.itinerary-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 6rem;
+	position: relative;
+	z-index: 2;
+}
+
+/* Слайд: связка бейджа и карточки */
+.itinerary-item {
+	display: flex !important; /* Чтобы стояли в ряд */
+	gap: 30px;
+	width: auto; /* Для Swiper slidesPerView: 'auto' */
+	align-items: flex-start;
+}
+
+/* Левый блок (Бейдж) */
+.itinerary-badge {
+	width: 310px;
+	padding: 30px;
+	border-radius: 20px;
+	flex-shrink: 0;
+}
+
+/* Правый блок (Карточка) */
+.itinerary-card {
+	width: 528px; /* 468px видео + padding 30px с двух сторон */
+	padding: 30px;
+	border-radius: 30px;
+	flex-shrink: 0;
+}
+.card-body h3 {
+	font-family: 'Inter Tight';
+	font-weight: 500;
+	font-size: 3.6rem;
+	line-height: 100%;
+	margin: 3rem 0;
+}
+.card-body p {
+	font-family: 'Inter Tight';
+	font-weight: 400;
+	font-size: 1.8rem;
+	line-height: 140%;
+	color: var(--c-purple);
+	max-height: 12.5rem;
+	overflow: hidden;
+	transition: max-height 0.3s ease;
+}
+
+/* Цвета из твоего HTML */
+.badge-orange,
+.card-orange {
+	background-color: #fff2e7;
+}
+.badge-green,
+.card-green {
+	background-color: #e6ffd9;
+}
+
+/* Видео строго по ТЗ */
+.video-container {
+	width: 468px;
+	height: 250px;
+	border-radius: 20px;
+	overflow: hidden;
+	margin-bottom: 25px;
+}
+
+.video-container video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* Элементы внутри */
+.day-label {
+	display: block;
+	font-size: 3.6rem;
+	font-weight: 700;
+	color: #ff6b00;
+	margin-bottom: 3rem;
+}
+
+.feature-tag {
+	font-family: 'Inter Tight', sans-serif;
+	display: inline-block;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	background: #fff;
+	padding: 4px 12px;
+	border-radius: 20px;
+	margin-bottom: 2rem;
+	color: #000;
+}
+.feature-descr {
+	font-family: 'Inter Tight';
+	font-weight: 500;
+	font-size: 1.8rem;
+	line-height: 140%;
+}
+.read-more {
+	margin-top: 3rem;
+	padding: 2.4rem 3.2rem;
+	border: 1px solid var(--c-orange);
+	border-radius: 50px;
+	background: transparent;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-weight: 400;
+	font-size: 2rem;
+	color: #000; /* Цвет текста */
+	transition: all 0.3s ease;
+}
+
+/* Стили для SVG внутри кнопки */
+.read-more svg {
+	flex-shrink: 0;
+	transition: transform 0.3s ease;
+}
+
+/* Эффект при наведении */
+.read-more:hover {
+	background-color: var(--c-orange);
+	color: #fff;
+}
+
+.read-more:hover svg {
+	color: #fff;
+}
+
+/* Убеждаемся, что обводка внутри SVG слушается цвета родителя */
+.btn-stroke {
+	stroke: currentColor !important;
+}
+.swiper-slide.itinerary-item {
+	position: static !important;
+}
+.itinerary-slider {
+	overflow: visible !important;
+	position: relative !important;
+}
+.itinerary-full-card {
+	display: none;
+	position: absolute;
+	top: 0;
+
+	left: 50%;
+	transform: translateX(-50%);
+
+	width: 100%;
+	max-width: 1320px; /* ширина твоего .container */
+
+	height: 100%;
+	z-index: 999;
+
+	border-radius: 30px;
+	overflow: hidden;
+}
+
+.itinerary-item {
+	position: relative; /* обязательно */
+}
+
+.itinerary-item.is-open {
+	z-index: 50;
+}
+.itinerary-item.is-open .itinerary-full-card {
+	display: flex;
+}
+/* Внутренняя сетка как на макете image_32aee8.png */
+.full-card-container {
+	display: flex;
+	gap: 4rem;
+	padding: 40px;
+	height: 100%;
+	border-radius: 32px;
+}
+.itinerary-slider:has(.is-open) .swiper-wrapper {
+	transform: none !important;
+}
+.full-card-video {
+	flex: 0 0 50%; /* Видео занимает половину */
+	height: 100%;
+}
+
+.full-card-video video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 24px;
+}
+
+.full-card-info {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.badge-white {
+	background: #fff !important;
+	padding: 20px !important;
+	margin-bottom: 3rem !important;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+.badge-white.green .feature-tag {
+	background-color: #e6ffd9 !important;
+}
+.badge-white .feature-tag {
+	background-color: var(--c-cream);
+}
+
+.full-card-text {
+	font-size: 2rem;
+	line-height: 1.5;
+	margin-top: 3rem;
+	font-weight: 400;
+	color: var(--c-purple);
+}
+.full-card-info h3 {
+	font-family: 'Inter Tight', sans-serif;
+	font-weight: 500;
+	font-size: 3.6rem;
+}
+/* Кнопка закрытия */
+.close-full {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	z-index: 101;
+}
+.itinerary-full-card-global {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 30px;
+	z-index: 999;
+
+	opacity: 0;
+	visibility: hidden;
+	transform: scale(0.96);
+	transition:
+		opacity 0.4s ease,
+		transform 0.4s ease,
+		visibility 0.4s;
+
+	pointer-events: none;
+}
+.itinerary-full-card-global.is-visible {
+	opacity: 1;
+	visibility: visible;
+	transform: scale(1);
+	pointer-events: auto;
+}
+.full-card-container.orange {
+	background-color: var(--c-cream);
+}
+.full-card-container.green {
+	background-color: #e6ffd9;
+}
+.card-body p.expanded {
+	max-height: 500px;
+}
+/* ===========================
+   LAPTOP 1440px – 1900px
+   =========================== */
+@media (max-width: 1900px) and (min-width: 1440px) {
+	.itinerary-section {
+		padding: 80px 0;
+		border-radius: 50px 50px 0 0;
+		margin-top: -5rem;
+	}
+
+	/* Слайды */
+	.itinerary-item {
+		gap: 24px;
+	}
+
+	/* Бейдж */
+	.itinerary-badge {
+		width: 260px;
+		padding: 24px;
+		border-radius: 18px;
+	}
+
+	.day-label {
+		font-size: 3rem;
+		margin-bottom: 2rem;
+	}
+
+	/* Карточка */
+	.itinerary-card {
+		width: 460px;
+		padding: 24px;
+		border-radius: 24px;
+	}
+
+	.video-container {
+		width: 100%;
+		height: 220px;
+		border-radius: 18px;
+		margin-bottom: 20px;
+	}
+
+	.read-more {
+		padding: 1.8rem 2.6rem;
+		font-size: 1.8rem;
+	}
+
+	/* FULL CARD */
+	.itinerary-full-card-global {
+		border-radius: 24px;
+	}
+
+	.full-card-container {
+		padding: 30px;
+		gap: 3rem;
+		border-radius: 24px;
+	}
+
+	.full-card-video video {
+		border-radius: 20px;
+	}
+
+	.full-card-info h3 {
+		font-size: 3rem;
+	}
+
+	.full-card-text {
+		font-size: 1.8rem;
+		margin-top: 2rem;
+	}
+
+	.close-full {
+		top: 20px;
+		right: 20px;
+	}
+}
+@media (max-width: 1200px) {
+	.itinerary-title {
+		font-size: 5.2rem;
+	}
+
+	.itinerary-item {
+		flex-direction: column;
+	}
+
+	.itinerary-badge,
+	.itinerary-card {
+		width: 100%;
+	}
+
+	.video-container {
+		width: 100%;
+		height: 220px;
+	}
+
+	.full-card-container {
+		flex-direction: column;
+	}
+
+	.full-card-video {
+		flex: none;
+		height: 300px;
+	}
+}
+@media (max-width: 768px) {
+	.itinerary-section {
+		padding: 60px 0;
+		border-radius: 40px 40px 0 0;
+	}
+
+	.itinerary-title {
+		font-size: 3.6rem;
+	}
+
+	.itinerary-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 2rem;
+	}
+
+	.itinerary-badge {
+		padding: 20px;
+	}
+
+	.itinerary-card {
+		padding: 20px;
+	}
+
+	.card-body h3 {
+		font-size: 2.4rem;
+	}
+
+	.card-body p {
+		font-size: 1.6rem;
+	}
+
+	.video-container {
+		height: 200px;
+		border-radius: 16px;
+	}
+
+	.day-label {
+		font-size: 2.4rem;
+		margin-bottom: 2rem;
+	}
+
+	.full-card-container {
+		padding: 20px;
+		gap: 2rem;
+	}
+
+	.full-card-info h3 {
+		font-size: 2.4rem;
+	}
+
+	.full-card-text {
+		font-size: 1.6rem;
+	}
+
+	.close-full {
+		top: 15px;
+		right: 15px;
+	}
+}
+@media (max-width: 480px) {
+	.itinerary-title {
+		font-size: 3rem;
+	}
+
+	.read-more {
+		font-size: 1.6rem;
+		padding: 1.6rem 2.4rem;
+	}
+
+	.video-container {
+		height: 180px;
+	}
+}

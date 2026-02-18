@@ -1,0 +1,113 @@
+.travel-diff-section {
+	position: relative;
+	padding: 10rem 0;
+	background-color: var(--c-cream); /* Фоновый бежевый цвет из дизайна */
+	overflow: hidden;
+	z-index: 28;
+	border-radius: 66px 66px 0 0;
+	margin-top: -6.6rem;
+	padding-bottom: 160px;
+}
+
+/* Линия на заднем плане */
+.travel-diff-bg-line {
+	position: absolute;
+	top: 270px;
+	left: 0;
+	width: auto;
+	height: auto;
+	pointer-events: none;
+	z-index: 1;
+}
+
+.travel-diff-section .container {
+	position: relative;
+	z-index: 2;
+}
+
+/* Главный контейнер: Заголовок занимает 1 часть, Грид — 2 части */
+.travel-diff-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 2fr; /* Соотношение 1 к 2 */
+	gap: 6rem;
+	align-items: start;
+}
+
+/* Заголовок */
+.travel-diff-title {
+	font-family: 'Inter Tight', sans-serif;
+	font-size: 7.8rem;
+	font-weight: 600;
+	line-height: 1;
+	letter-spacing: -0.04em;
+	color: var(--c-black);
+	max-width: 45rem;
+}
+
+.travel-diff-title .c-orange {
+	color: var(--c-orange);
+	display: block;
+}
+
+/* Сетка карточек */
+.travel-diff-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); /* 3 колонки в правой части */
+	gap: 3rem;
+}
+
+/* Карточка */
+.travel-diff-card {
+	background: #fff;
+	border-radius: 2.4rem;
+	padding: 3.6rem;
+	min-height: 28rem;
+	display: flex;
+	flex-direction: column;
+	transition: transform 0.3s ease;
+}
+
+.travel-diff-card:hover {
+	transform: translateY(-5px);
+}
+
+/* Номер в карточке */
+.travel-diff-number {
+	font-family: 'Inter Tight', sans-serif;
+	font-size: 7.8rem;
+	font-weight: 600;
+	color: var(--c-orange);
+	margin-bottom: 3rem;
+	line-height: 1;
+}
+
+/* Текст в карточке */
+.travel-diff-text {
+	font-size: 1.8rem;
+	line-height: 1.4;
+	color: #000;
+	font-weight: 400;
+}
+
+/* Адаптив под планшеты и мобилки */
+@media (max-width: 1200px) {
+	.travel-diff-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 991px) {
+	.travel-diff-wrapper {
+		grid-template-columns: 1fr;
+	}
+	.travel-diff-title {
+		font-size: 4rem;
+		margin-bottom: 4rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.travel-diff-grid {
+		grid-template-columns: 1fr;
+	}
+}

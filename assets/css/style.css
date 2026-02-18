@@ -34,5 +34,7 @@
 @import url('./sections/v2-live.css');
 @import url('./sections/v2-itinerary.css');
 @import url('./sections/v2-program.css');
+@import url('./sections/v2-team.css');
+@import url('./sections/v2-travel-diff.css');
 /* 4. Подвал */
 @import url('./modules/footer.css');

@@ -38,5 +38,6 @@
 @import url('./sections/v2-travel-diff.css');
 @import url('./sections/v2-benefits.css');
 @import url('./sections/v2-payment.css');
+@import url('./sections/blog.css');
 /* 4. Подвал */
 @import url('./modules/footer.css');

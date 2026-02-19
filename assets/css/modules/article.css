@@ -1,0 +1,393 @@
+.blog-hero-section {
+	position: relative;
+	padding: 180px 0;
+	background-size: cover;
+	background-position: center;
+	color: #fff;
+	min-height: 80rem;
+	display: flex;
+	align-items: center; /* Текст прижат к низу как на фото */
+	padding-top: 270px;
+}
+
+/* Затемнение фона для читаемости */
+.blog-hero-section::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		180deg,
+		rgba(0, 0, 0, 0.2) 0%,
+		rgba(0, 0, 0, 0.6) 100%
+	);
+	z-index: 1;
+}
+
+.blog-hero-section .container {
+	position: relative;
+	z-index: 2;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+.blog-hero-section .container .v2-breadcrumbs {
+	margin-bottom: 0;
+}
+.blog-hero-section .container .v2-breadcrumbs .nav-link {
+	color: var(--c-white);
+}
+.blog-hero-section .container .v2-breadcrumbs .nav-separator {
+	color: var(--c-white);
+}
+.blog-hero-title {
+	font-size: 7.8rem;
+	font-weight: 600;
+	line-height: 1.1;
+	max-width: 160rem;
+	margin: 6rem 0;
+	text-align: center;
+}
+
+.v2-breadcrumbs {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	font-size: 0.9rem;
+	margin-bottom: 40px;
+}
+
+.v2-breadcrumbs .nav-link {
+	color: rgba(255, 255, 255, 0.8);
+	text-decoration: none;
+}
+
+.v2-breadcrumbs .nav-link.active {
+	color: #fff;
+}
+
+.date-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	background: #fff;
+	color: #000;
+	padding: 8px 16px;
+	border-radius: 50px;
+	font-size: 1.6rem;
+	font-weight: 400;
+}
+.blog-hero-date {
+	text-align: center;
+}
+
+/* POST */
+.post-content-section {
+	padding: 100px 0;
+	background-color: #fff;
+	padding-bottom: 140px;
+}
+
+.post-grid {
+	display: grid;
+	/* Первая колонка 300px, вторая занимает остаток */
+	grid-template-columns: 56.4rem 1fr;
+	gap: 9rem;
+	align-items: start;
+}
+
+/* Фиксация левой колонки */
+.sticky-sidebar {
+	position: sticky;
+	top: 100px; /* Отступ сверху при скролле */
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
+/* Текстовый блок, который внутри делится на 2 колонки */
+.post-columns-text {
+	max-width: 85rem;
+}
+
+/* Заголовок внутри текста, который растягивается на 2 колонки */
+.section-title {
+	font-family: 'Inter Tight';
+	font-size: 7.8rem;
+	font-weight: 600;
+	margin: 40px 0 30px;
+	line-height: 1;
+}
+
+/* Стили плашки содержания */
+.post-toc {
+	background: var(--c-cream);
+	padding: 6rem;
+	border-radius: 32px;
+}
+.toc-title {
+	font-family: 'Inter Tight';
+	font-weight: 500;
+	font-size: 3.6rem;
+	margin-bottom: 3.2rem;
+}
+.toc-list {
+	list-style: disc;
+	padding: 0;
+	margin: 0;
+}
+
+.toc-list li {
+	font-family: 'Inter Tight';
+	font-weight: 400;
+	font-size: 2.1rem;
+	margin-bottom: 1.3rem;
+}
+.toc-list li::marker {
+	color: var(--c-orange);
+}
+/* Автор */
+.post-author {
+	padding: 3.6rem;
+	border-radius: 22px;
+	border: 1px solid #ececec;
+}
+.author-avatar {
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	margin-bottom: 15px;
+}
+
+.author-name {
+	font-weight: 700;
+	font-size: 2.4rem;
+	margin-bottom: 8px;
+}
+
+.author-desc {
+	font-size: 1.8rem;
+	color: var(--c-black);
+}
+.author-info svg {
+	margin-top: 1.6rem;
+	transition: transform 0.3s ease;
+}
+.post-author:hover .author-info svg {
+	transform: rotate(45deg);
+}
+
+.post-columns-text p {
+	font-family: 'Inter Tight';
+	font-weight: 400;
+	font-size: 2.1rem;
+	line-height: 1.4;
+}
+.post-columns-text p a {
+	color: var(--c-orange);
+	text-decoration: underline;
+}
+.post-columns-text p span {
+	text-decoration: underline;
+}
+/* Адаптив */
+@media (max-width: 1024px) {
+	.post-grid {
+		grid-template-columns: 1fr; /* На планшетах всё в одну колонку */
+	}
+	.sticky-sidebar {
+		position: static;
+		margin-bottom: 40px;
+	}
+	.post-columns-text {
+		column-count: 1; /* Убираем две колонки текста на малых экранах */
+	}
+}
+/* POST-INFO */
+.post-info-section {
+	position: relative;
+	z-index: 30;
+	padding: 100px 0;
+	background-color: #fff;
+	padding-bottom: 140px;
+	border-radius: 66px 66px 0 0;
+	margin-top: -66px;
+}
+
+/* Стили для Sticky заголовка */
+.info-sidebar {
+	position: sticky;
+	top: 120px; /* Отступ сверху для эффекта свободного пространства */
+}
+
+.sticky-title {
+	font-size: 7.8rem; /* Крупный акцентный шрифт */
+	font-weight: 600;
+	line-height: 1;
+	margin: 0;
+	letter-spacing: -2px;
+}
+
+/* Контентная часть */
+.info-content {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	max-width: 85rem;
+}
+
+.info-image-wrapper {
+	width: 100%;
+}
+
+.info-main-image {
+	width: 100%;
+	height: auto;
+	border-radius: 30px; /* Закругление как на макете */
+	display: block;
+}
+
+.post-info-section.season-prep {
+	background-color: var(
+		--c-cream
+	); /* Нежно-бежевый, если секция должна отличаться */
+}
+.info-text-columns p {
+	font-size: 1.1rem;
+	line-height: 1.6;
+	margin-bottom: 25px;
+	color: #1a1a1a;
+}
+
+.lead-text {
+	font-size: 1.25rem !important;
+	line-height: 1.4;
+	font-weight: 500;
+}
+
+/* Адаптив */
+@media (max-width: 1100px) {
+	.sticky-title {
+		font-size: 3rem;
+	}
+}
+/* TELEGRAM */
+.telegram-section {
+	background-color: var(--c-orange); /* Используем ваш оранжевый из конфига */
+	padding: 100px 0;
+	color: white;
+	padding-bottom: 140px;
+	border-radius: 66px 66px 0 0;
+	margin-top: -66px;
+	position: relative;
+	z-index: 31;
+}
+
+/* Переиспользуем сетку из предыдущих этапов */
+.telegram-section .post-grid {
+	display: grid;
+	grid-template-columns: 56.4rem 1fr;
+	gap: 60px;
+	align-items: start;
+}
+
+.telegram-sidebar .sticky-content {
+	position: sticky;
+	top: 100px;
+}
+
+.telegram-title {
+	font-family: 'Inter Tight', sans-serif;
+	font-size: 7.8rem;
+	font-weight: 600;
+	line-height: 1;
+	margin-bottom: 3.6rem;
+	color: var(--c-white);
+	letter-spacing: -0.05em;
+}
+
+.telegram-subtitle {
+	font-size: 2.4rem;
+	line-height: 1.4;
+	margin-bottom: 3.6rem;
+	opacity: 1;
+	letter-spacing: -0.05em;
+}
+
+/* Кнопка с SVG */
+.btn-telegram {
+	display: inline-flex;
+	align-items: center;
+	gap: 15px;
+	padding: 3.2rem 5rem 3.2rem 3.2rem;
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	border-radius: 50px;
+	color: white;
+	text-decoration: none;
+	font-weight: 500;
+	transition: all 0.3s ease;
+}
+
+.btn-telegram:hover {
+	background: white;
+	color: var(--c-orange);
+}
+
+.btn-telegram:hover .social-fill {
+	fill: var(--c-orange);
+}
+
+.btn-telegram:hover .social-stroke {
+	stroke: var(--c-orange);
+}
+
+/* Список карточек */
+.tg-cards-list {
+	display: grid;
+	grid-template-columns: 1fr; /* Карточки идут одна за другой в контентной зоне */
+	gap: 16px;
+	list-style: none;
+	padding: 0;
+}
+
+.tg-card {
+	background: white;
+	color: black;
+	padding: 40px;
+	border-radius: 20px;
+	font-size: 2.4rem;
+	line-height: 1.5;
+	position: relative;
+	padding-left: 50px; /* Место для маркера */
+}
+
+/* Маркер карточки */
+.tg-card::before {
+	content: '•';
+	color: var(--c-orange);
+	font-size: 2rem;
+	position: absolute;
+	left: 25px;
+	top: 38%;
+}
+
+.tg-card a {
+	color: var(--c-orange);
+	text-decoration: underline;
+	text-underline-offset: 4px;
+}
+
+/* Адаптив */
+@media (max-width: 992px) {
+	.telegram-section .post-grid {
+		grid-template-columns: 1fr;
+	}
+	.telegram-sidebar .sticky-content {
+		position: static;
+		margin-bottom: 50px;
+	}
+	.telegram-title {
+		font-size: 2.5rem;
+	}
+}

@@ -5,6 +5,7 @@
 
 /* 2. Основные модули сайта */
 @import url('./modules/header.css');
+@import url('./modules/article.css');
 
 /* 3. Секции (по порядку появления на сайте) */
 @import url('./sections/hero.css');

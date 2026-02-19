@@ -1,0 +1,135 @@
+.benefits-section {
+	position: relative;
+	padding: 10rem 0;
+	background-color: #fff;
+	z-index: 29;
+	border-radius: 66px 66px 0 0;
+	margin-top: -6.6rem;
+	padding-bottom: 160px;
+}
+
+/* Декоративная линия */
+.benefits-bg-line {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: auto;
+	pointer-events: none;
+	z-index: 1;
+}
+
+.benefits-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 2fr; /* 3 колонки суммарно (1 под заголовок, 2 под грид) */
+	gap: 4rem;
+	position: relative;
+	z-index: 2;
+}
+
+/* Sticky заголовок */
+.benefits-aside {
+	position: relative;
+}
+
+.benefits-main-title {
+	position: sticky;
+	top: 10rem; /* Отступ сверху при залипании */
+	font-family: 'Inter Tight', sans-serif;
+	font-size: 7.8rem;
+	font-weight: 600;
+	line-height: 1.1;
+	color: var(--c-orange);
+}
+
+.benefits-main-title .c-orange {
+	color: var(--c-black);
+	display: block;
+}
+
+/* Сетки карточек */
+.benefits-group {
+	margin-bottom: 3.7rem;
+}
+
+.benefits-sub-title {
+	font-size: 7.8rem;
+	font-weight: 600;
+	margin-bottom: 3.6rem;
+	font-family: 'Inter Tight', sans-serif;
+	letter-spacing: -0.05em;
+}
+
+.benefits-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); /* 2 колонки в ширину */
+	gap: 3rem;
+}
+
+/* Карточка */
+.benefit-card {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	padding: 4.4rem 3.6rem;
+	border-radius: 22px;
+	background-color: #d9f7ff; /* Светло-голубой для "Включено" */
+	min-height: 10rem;
+}
+
+.benefit-card.is-negative {
+	background-color: #fff1e3; /* Бежевый для "Не включено" */
+}
+
+/* Широкая карточка на 2 колонки */
+.wide-card {
+	grid-column: span 2;
+}
+
+/* Иконки */
+.benefit-icon {
+	flex-shrink: 0;
+	width: 4rem;
+	height: 4rem;
+	background: #fff;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.8rem;
+	font-weight: bold;
+}
+
+.benefit-card:not(.is-negative) .benefit-icon {
+	color: #00bcd4; /* Цвет галочки */
+}
+
+.benefit-card.is-negative .benefit-icon {
+}
+
+.benefit-text {
+	font-family: 'Inter Tight', sans-serif;
+	font-size: 1.8rem;
+	line-height: 1.4;
+	color: var(--c-purple);
+}
+
+/* Адаптив */
+@media (max-width: 1024px) {
+	.benefits-wrapper {
+		grid-template-columns: 1fr;
+	}
+	.benefits-main-title {
+		position: static;
+		margin-bottom: 4rem;
+		font-size: 4rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.benefits-grid {
+		grid-template-columns: 1fr;
+	}
+	.wide-card {
+		grid-column: span 1;
+	}
+}

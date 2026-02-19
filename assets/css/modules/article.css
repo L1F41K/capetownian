@@ -391,3 +391,135 @@
 		font-size: 2.5rem;
 	}
 }
+/* More Articles */
+.more-articles-section {
+	background-color: var(--c-orange);
+	padding: 100px 0;
+	position: relative;
+	overflow: hidden; /* Чтобы пунктир не вылезал за края */
+	color: white;
+	z-index: 31;
+	padding-bottom: 140px;
+	border-radius: 66px 66px 0 0;
+	margin-top: -66px;
+}
+
+.bg-decor-dashed {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: auto;
+	pointer-events: none;
+	z-index: 1;
+}
+.section-title.text-center {
+	text-align: center;
+	margin-bottom: 6rem;
+}
+.btn-arrow.prev {
+	transform: rotateY(180deg);
+}
+/* Стили карточки */
+.article-card-v2 {
+	background: white;
+	border-radius: 24px;
+	padding: 3.6rem;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	transition: transform 0.3s ease;
+	max-width: 41.3rem;
+}
+.article-card-v2 .card-image {
+	width: auto !important;
+	height: auto !important;
+}
+
+.article-card-v2 .card-title {
+	color: black;
+	font-size: 2.4rem;
+	font-weight: 500;
+	line-height: 1.3;
+	margin: 0;
+}
+
+.date-badge {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	background: #f0f7f9;
+	padding: 6px 12px;
+	border-radius: 50px;
+	width: fit-content;
+	font-size: 0.85rem;
+	color: #444;
+}
+.article-card-v2 .date-badge {
+	margin-top: 3.6rem;
+	background-color: #d9f7ff;
+}
+/* Линия управления */
+.slider-controls {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.nav-arrows {
+	display: flex;
+	gap: 15px;
+}
+
+.btn-arrow {
+	width: 7.5rem;
+	height: 7.5rem;
+	border-radius: 50%;
+	border: none;
+	background: white;
+	cursor: pointer;
+	font-size: 1.2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid var(--c-white);
+	transition: all 0.4s ease;
+}
+.btn-arrow:hover {
+	background-color: transparent;
+}
+.btn-arrow svg path {
+	transition: all 0.4s ease;
+}
+.btn-arrow:hover svg path {
+	stroke: var(--c-white);
+}
+.btn-all-articles {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	background: var(--c-white);
+	color: black;
+	border: 1px solid var(--c-white);
+	padding: 2.4rem 3.2rem;
+	border-radius: 100px;
+	text-decoration: none;
+	font-weight: 400;
+	font-size: 2rem;
+	transition: all 0.4s ease;
+}
+.btn-all-articles:hover {
+	background-color: transparent;
+	color: var(--c-white);
+}
+.btn-all-articles:hover svg {
+	transition: transform 0.4s ease;
+}
+.btn-all-articles:hover svg {
+	transform: rotate(-45deg);
+	stroke: var(--c-white);
+}
+.btn-all-articles svg .btn-stroke {
+	stroke: black; /* перекрашиваем в черный для контраста на белой кнопке */
+}

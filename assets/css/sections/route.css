@@ -46,7 +46,7 @@
 .route-title {
 	font-family: 'Inter Tight', sans-serif;
 	font-weight: 600;
-	font-size: 78px;
+	font-size: 7.8rem;
 	line-height: 1; /* Плотный межстрочный интервал для эффекта из макета */
 	letter-spacing: -0.04em;
 	margin-bottom: 65px;
@@ -82,7 +82,9 @@
 	gap: 20px;
 	flex-grow: 1;
 }
-
+.route-cards-wrapper {
+	gap: 30px;
+}
 .route-card {
 	background: var(--c-white);
 	border-radius: 22px;
@@ -272,5 +274,72 @@
 	.btn-route-consult {
 		padding: 0.6vw 1vw;
 		font-size: 0.83vw;
+	}
+}
+/* --- ПЛАНШЕТЫ (от 768px до 1440px) --- */
+@media (max-width: 1440px) {
+	.route-container {
+		flex-direction: column; /* Текст сверху, карточки снизу */
+		align-items: flex-start;
+		gap: 40px;
+		margin-top: 0;
+	}
+
+	.route-info {
+		flex: none;
+		width: 100%;
+		max-width: 700px;
+	}
+
+	/* Позволяем карточкам перекидываться на новую строку */
+	.route-cards-wrapper {
+		display: flex;
+		flex-wrap: wrap; /* Автоматический перенос */
+		gap: 20px;
+	}
+
+	.route-card {
+		flex: 1 1 calc(50% - 20px); /* По 2 карточки в ряд */
+		min-width: 300px;
+		height: 400px;
+	}
+}
+
+/* --- МОБИЛЬНЫЕ (до 768px) --- */
+@media (max-width: 768px) {
+	.route-section {
+		padding: 60px 30px;
+		border-radius: 40px 40px 0 0;
+		padding-bottom: 100px;
+	}
+
+	.route-title {
+		text-align: center;
+		font-size: 4.8rem;
+	}
+
+	/* Готовим контейнер к работе Swiper */
+	.swiper-route {
+		width: 100vw;
+		margin-left: -20px; /* Вылет за края */
+		padding: 0 20px;
+		overflow: hidden;
+	}
+
+	.route-cards-wrapper {
+		flex-wrap: nowrap; /* Отключаем перенос для работы слайдера */
+		display: flex;
+		gap: 0; /* Swiper сам управляет расстоянием через spaceBetween */
+	}
+
+	.route-card {
+		flex-shrink: 0;
+		width: 280px; /* Фиксированная ширина слайда */
+		height: 380px;
+		margin-right: 15px; /* Отступ между слайдами */
+	}
+
+	.card-number {
+		font-size: 48px;
 	}
 }

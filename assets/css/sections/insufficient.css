@@ -63,7 +63,7 @@
 
 	font-family: 'Inter Tight', sans-serif;
 	font-weight: 600;
-	font-size: 78px;
+	font-size: 7.8rem;
 	line-height: 0.95;
 	letter-spacing: -0.05em;
 	white-space: nowrap;
@@ -132,7 +132,7 @@
 
 .ins-subtitle {
 	font-family: 'Inter Tight', sans-serif;
-	font-size: 64px;
+	font-size: 6.4rem;
 	line-height: 1;
 	margin-bottom: 90px;
 	padding-top: 60px;
@@ -286,5 +286,186 @@
 @media (max-width: 1900px) and (min-width: 1440px) {
 	.insufficient-section.dirrection .ins-text {
 		margin-bottom: 50px;
+	}
+}
+.ins-video-slider-container {
+	display: none;
+}
+/* Адаптация для устройств меньше 1440px */
+@media (max-width: 1439px) {
+	.mission-landing {
+		height: auto;
+		min-height: 100vh;
+		max-height: none;
+		padding-bottom: 60px;
+		position: relative;
+		top: 0;
+		margin-top: -4rem; /* Немного уменьшаем наплыв */
+	}
+
+	.mission-container {
+		padding: 0 40px;
+	}
+
+	.mission-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-top: 120px;
+		height: auto;
+	}
+
+	/* Расфиксируем центральную колонку, чтобы она не перекрывала боковые */
+	.mission-col--center {
+		position: relative;
+		left: auto;
+		top: auto;
+		transform: none;
+		order: 1; /* Заголовок идет первым */
+		margin-bottom: 60px;
+		max-width: 100%;
+	}
+
+	.mission-title {
+		font-size: clamp(42px, 6vw, 68px);
+		margin-bottom: 30px;
+	}
+
+	.mission-subtitle {
+		font-size: 20px;
+		max-width: 100%;
+	}
+
+	.mission-nav {
+		margin-bottom: 40px;
+	}
+
+	/* Группируем визуал под текстом */
+	.mission-col--left {
+		order: 2;
+		margin-bottom: 40px;
+	}
+
+	.video-wrapper {
+		width: 100%;
+		max-width: 500px;
+		height: auto;
+		aspect-ratio: 16 / 9; /* Для мобильных горизонтальное видео часто лучше, либо сохрани пропорции */
+	}
+
+	.mission-col--right {
+		order: 3;
+		flex-direction: row;
+		gap: 20px;
+		width: 100%;
+		justify-content: center;
+		height: auto;
+	}
+
+	.img-wrapper--top,
+	.img-wrapper--bottom {
+		width: 45%;
+		height: auto;
+		aspect-ratio: 1 / 1;
+		margin-top: 0;
+	}
+
+	.img-wrapper img {
+		width: 100%;
+		object-fit: cover;
+	}
+	.ins-col--right {
+		display: none;
+	}
+	.insufficient-content {
+		grid-template-columns: 346px 1fr;
+	}
+	/* Основной контейнер слайдера */
+	.ins-video-slider-container {
+		width: 100%;
+		max-width: 100vw; /* Гарантируем, что он не шире экрана */
+		overflow: hidden; /* Скрываем вылезающие слайды */
+		position: relative;
+	}
+
+	/* Если вы используете стандартную разметку Swiper, 
+   убедитесь, что wrapper не растягивает родителя */
+	.swiper-wrapper {
+		display: flex;
+		box-sizing: content-box;
+	}
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+	/* 1. Переключаем видимость */
+	.desktop-only {
+		display: none !important;
+	}
+
+	.mobile-only {
+		display: block !important;
+		margin: 30px 0; /* Отступы для слайдера в тексте */
+	}
+
+	/* 2. Контент в одну колонку */
+	.insufficient-content {
+		display: flex;
+		flex-direction: column;
+		padding: 60px 20px;
+	}
+
+	.ins-col--center {
+		margin-left: 0;
+		width: 100%;
+	}
+	.ins-title,
+	.ins-subtitle {
+		font-size: 4.8rem;
+	}
+	.ins-title,
+	.ins-subtitle {
+		text-align: center;
+	}
+	.ins-quote-card {
+		margin-top: 30px;
+	}
+	/* 3. Настройка слайдера */
+	.ins-video-slider-container {
+		overflow: hidden;
+	}
+
+	.swiper-slide {
+		width: 280px !important; /* Ширина карточки видео */
+	}
+
+	.insufficient-video {
+		width: 100%;
+		height: 450px;
+		border-radius: 20px;
+	}
+	.ins-sticky-wrapper {
+		padding-bottom: 3rem;
+	}
+	.ins-col--right {
+		display: none;
+	}
+	.ins-text,
+	.ins-description {
+		text-align: center;
+	}
+	.ins-subtitle {
+		margin-bottom: 3rem;
+	}
+	/* Убираем лишние переносы текста для мобилок */
+	.ins-text br,
+	.ins-description br {
+		display: none;
+	}
+	.swiper-slide .video-wrapper {
+		aspect-ratio: 9/16;
+	}
+	.play-btn {
+		bottom: 6rem;
 	}
 }

@@ -180,3 +180,111 @@
 		font-size: 1.25vw;
 	}
 }
+/* --- ПЛАНШЕТЫ (от 769px до 1439px) --- */
+@media (max-width: 1439px) {
+	.origin-section {
+		position: relative;
+		top: auto;
+		min-height: auto;
+		padding: 100px 0;
+		padding-bottom: 150px;
+		border-radius: 40px 40px 0 0;
+		margin-top: -40px;
+	}
+
+	.origin-container {
+		position: relative;
+		top: auto;
+		padding: 0 40px; /* На планшетах даем чуть больше воздуха по бокам */
+	}
+
+	.origin-grid-5 {
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+		align-items: center; /* Центрируем содержимое колонки */
+	}
+
+	.origin-col--title,
+	.origin-col--text {
+		grid-column: span 5;
+		padding-left: 0;
+		max-width: 800px; /* Ограничиваем ширину для читаемости при центрировании */
+		text-align: center;
+	}
+
+	.origin-col--title {
+		margin: 0 auto;
+	}
+
+	.origin-description,
+	.origin-quote-card {
+		max-width: none;
+	}
+
+	.origin-title {
+		font-size: 56px; /* Промежуточный размер для планшетов */
+		line-height: 1.05;
+		text-align: center;
+	}
+
+	.origin-bg {
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		opacity: 0.2;
+		overflow: hidden;
+	}
+
+	.text-main {
+		font-size: 22px;
+	}
+
+	.text-secondary {
+		font-size: 18px;
+		letter-spacing: normal;
+	}
+
+	.origin-quote-card {
+		padding: 32px;
+		border-radius: 32px;
+	}
+}
+
+/* --- ТЕЛЕФОНЫ (768px и ниже) --- */
+@media (max-width: 768px) {
+	.origin-section {
+		padding: 60px 0;
+		padding-bottom: 100px;
+	}
+
+	.origin-container {
+		padding: 0 20px;
+	}
+
+	.origin-title {
+		font-size: 4.8rem;
+		line-height: 1.1;
+	}
+
+	.origin-grid-5 {
+		gap: 40px;
+	}
+
+	.text-main {
+		font-size: 18px;
+	}
+
+	.origin-quote-card {
+		padding: 24px;
+		border-radius: 24px;
+	}
+
+	.origin-quote-card p {
+		font-size: 18px;
+	}
+
+	.origin-bg {
+		width: 60%; /* На узких экранах карту раздуваем сильнее */
+	}
+}

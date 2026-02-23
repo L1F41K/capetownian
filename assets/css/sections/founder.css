@@ -201,14 +201,6 @@
 		padding: 0 2rem;
 	}
 
-	/* 3. МАГИЯ: "Растворяем" колонки */
-	/* Это позволяет нам управлять порядком элементов ВНУТРИ колонок */
-	.founder__col--left,
-	.founder__col--center,
-	.founder__col--right {
-		display: contents;
-	}
-
 	/* === ПОРЯДОК ЭЛЕМЕНТОВ (ORDER) === */
 
 	/* 1. Заголовок (в самом верху) */
@@ -539,5 +531,138 @@
 		bottom: 10.1vw; /* ~196px */
 		width: 100vw; /* Линия на всю ширину */
 		left: 0;
+	}
+}
+/* --- ПЛАНШЕТЫ (1439px и ниже) --- */
+@media (max-width: 1439px) {
+	.founder-section.misson {
+		padding: 80px 0 0 0; /* Убираем нижний паддинг, так как фото прижато к низу */
+		margin-top: -50px;
+		border-radius: 40px 40px 0 0;
+		padding-bottom: 80px;
+	}
+
+	.founder-section.misson .founder__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0;
+		padding: 0 40px;
+	}
+
+	/* Порядок элементов для логики повествования */
+	.founder__col--left {
+		order: 1;
+		width: 100%;
+	}
+	.founder__col--right {
+		order: 3;
+		width: 100%;
+	}
+	.founder__col--center {
+		order: 2;
+		width: 100%;
+	} /* Фото уходит в самый низ, к краю секции */
+
+	.founder-header {
+		text-align: center;
+		margin-bottom: 30px;
+	}
+
+	.founder-title {
+		font-size: 52px;
+	}
+
+	.founder-section.misson .info-card,
+	.contact-card {
+		max-width: 700px;
+		margin: 0 auto 30px auto;
+		text-align: center;
+	}
+
+	.founder-section.misson .info-card__text,
+	.contact-card__title,
+	.founder-section.misson .info-card__subtext {
+		max-width: 100%;
+	}
+
+	.founder-section.misson .founder-quote {
+		margin-bottom: 40px;
+		justify-content: center;
+		text-align: left;
+	}
+
+	.founder-section.misson .btn-link,
+	.founder-section.misson .btn-orange {
+		margin: 0 auto;
+	}
+
+	/* Фото внизу секции */
+	.founder-section.misson .founder-photo {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	.founder-section.misson .bg-line-wrapper img {
+		display: none; /* Линия на фоне будет только мешать на узких экранах */
+	}
+	.tag-desc {
+		font-size: 2.4rem;
+	}
+}
+
+/* --- ТЕЛЕФОНЫ (768px и ниже) --- */
+@media (max-width: 768px) {
+	.founder-section.misson {
+		padding-top: 60px;
+		padding-bottom: 100px !important;
+	}
+
+	.founder-section.misson .founder__container {
+		padding: 0 20px;
+		gap: 0;
+	}
+
+	.founder-title {
+		font-size: 38px;
+	}
+
+	.founder-section.misson .info-card,
+	.contact-card {
+		padding: 24px;
+		border-radius: 24px;
+	}
+
+	.founder-section.misson .info-card__text,
+	.contact-card__title {
+		font-size: 20px;
+	}
+
+	.founder-section.misson .quote-text {
+		font-size: 18px;
+	}
+
+	.founder-section.misson .btn-link,
+	.founder-section.misson .btn-orange {
+		width: 100%;
+		padding: 20px;
+		font-size: 18px;
+		justify-content: center;
+		max-width: 90%;
+	}
+
+	.founder-section.misson .insta-tag-card {
+		padding: 20px;
+		text-align: left;
+	}
+
+	.founder-section.misson .founder-photo {
+		width: 100%; /* На мобилке фото на всю ширину */
+	}
+	.founder__col--left {
+		flex-direction: column-reverse;
+	}
+	.tag-desc {
+		font-size: 1.6rem;
 	}
 }

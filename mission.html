@@ -10,6 +10,10 @@
 			href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500&display=swap"
 			rel="stylesheet"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+		/>
 		<link rel="stylesheet" href="assets/css/style.css" />
 	</head>
 	<body>
@@ -361,7 +365,7 @@
 						<div class="ins-spacer"></div>
 					</div>
 
-					<div class="video-wrapper">
+					<div class="video-wrapper desktop-only">
 						<video
 							src="assets/video/capetown.mp4"
 							class="about-video"
@@ -446,6 +450,63 @@
 						<img src="assets/img/example-4.png" alt="" />
 					</div>
 				</div>
+
+				<div class="ins-video-slider-container mobile-only">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide insufficient-video">
+							<div class="video-wrapper">
+								<video
+									src="assets/video/capetown.mp4"
+									class="about-video"
+									preload="metadata"
+									muted
+									playsinline
+									loop
+								></video>
+								<div class="video-cover">
+									<button class="play-btn" aria-label="Play / Pause video">
+										<svg class="play-icon" viewBox="0 0 11 12">
+											<path
+												d="M10.0792 4.41185C10.3573 4.5651 10.5899 4.79386 10.7521 5.07363C10.9143 5.35339 11 5.67362 11 6.00001C11 6.32639 10.9143 6.64662 10.7521 6.92639C10.5899 7.20615 10.3573 7.43492 10.0792 7.58816L2.66151 11.7682C1.4671 12.442 0 11.566 0 10.1807V1.81993C0 0.433972 1.4671 -0.441402 2.66151 0.231178L10.0792 4.41185Z"
+												fill="white"
+											/>
+										</svg>
+										<svg class="pause-icon" viewBox="0 0 11 12">
+											<rect x="3" y="1" width="2" height="10" fill="white" />
+											<rect x="6" y="1" width="2" height="10" fill="white" />
+										</svg>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide video-wrapper insufficient-video">
+							<div class="video-wrapper">
+								<video
+									src="assets/video/capetown.mp4"
+									class="about-video"
+									preload="metadata"
+									muted
+									playsinline
+									loop
+								></video>
+								<div class="video-cover">
+									<button class="play-btn" aria-label="Play / Pause video">
+										<svg class="play-icon" viewBox="0 0 11 12">
+											<path
+												d="M10.0792 4.41185C10.3573 4.5651 10.5899 4.79386 10.7521 5.07363C10.9143 5.35339 11 5.67362 11 6.00001C11 6.32639 10.9143 6.64662 10.7521 6.92639C10.5899 7.20615 10.3573 7.43492 10.0792 7.58816L2.66151 11.7682C1.4671 12.442 0 11.566 0 10.1807V1.81993C0 0.433972 1.4671 -0.441402 2.66151 0.231178L10.0792 4.41185Z"
+												fill="white"
+											/>
+										</svg>
+										<svg class="pause-icon" viewBox="0 0 11 12">
+											<rect x="3" y="1" width="2" height="10" fill="white" />
+											<rect x="6" y="1" width="2" height="10" fill="white" />
+										</svg>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 		<section class="route-section">
@@ -476,67 +537,68 @@
 					</div>
 				</div>
 
-				<div class="route-cards">
-					<div class="route-card">
-						<span class="card-number">01</span>
-						<p class="card-text">как мягко погрузить в новую страну</p>
-						<div class="card-image">
-							<img src="assets/img/example-2.png" alt="" />
+				<div class="route-cards swiper-route">
+					<div class="swiper-wrapper route-cards-wrapper">
+						<div class="swiper-slide route-card">
+							<span class="card-number">01</span>
+							<p class="card-text">как мягко погрузить в новую страну</p>
+							<div class="card-image">
+								<img src="assets/img/example-2.png" alt="" />
+							</div>
 						</div>
-					</div>
 
-					<div class="route-card">
-						<div class="card-image card-image--top">
-							<img src="assets/img/example-4.png" alt="" />
+						<div class="swiper-slide route-card">
+							<div class="card-image card-image--top">
+								<img src="assets/img/example-4.png" alt="" />
+							</div>
+							<span class="card-number">02</span>
+							<p class="card-text">когда расширить масштаб впечатлений</p>
 						</div>
-						<span class="card-number">02</span>
-						<p class="card-text">когда расширить масштаб впечатлений</p>
-					</div>
 
-					<div class="route-card">
-						<span class="card-number">03</span>
-						<p class="card-text">где уместно лёгкое испытание</p>
-						<div class="card-image">
-							<img src="assets/img/example-5.png" alt="" />
+						<div class="swiper-slide route-card">
+							<span class="card-number">03</span>
+							<p class="card-text">где уместно лёгкое испытание</p>
+							<div class="card-image">
+								<img src="assets/img/example-5.png" alt="" />
+							</div>
 						</div>
-					</div>
 
-					<div class="route-card card--cta">
-						<span class="card-number">04</span>
-						<p class="card-text">
-							и как завершить всё особенным моментом — или, наоборот, позволить
-							себе «ничего не делать»
-						</p>
-
-						<a href="#" class="btn-route-consult">
-							<span>Консультация</span>
-							<svg
-								width="24"
-								height="24"
-								viewBox="0 0 24 24"
-								fill="none"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<rect
-									class="btn-stroke"
-									x="0.1"
-									y="0.1"
-									width="23.8"
-									height="23.8"
-									rx="11.9"
-									stroke="white"
-									stroke-width="0.2"
-									stroke-dasharray="2 2"
-								/>
-								<path
-									class="btn-stroke"
-									d="M7.5 11.625L12 7.125L16.5 11.625M12 7.75V16.875"
-									stroke="white"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-						</a>
+						<div class="swiper-slide route-card card--cta">
+							<span class="card-number">04</span>
+							<p class="card-text">
+								и как завершить всё особенным моментом — или, наоборот,
+								позволить себе «ничего не делать»
+							</p>
+							<a href="#" class="btn-route-consult"
+								>Консультация
+								<svg
+									width="24"
+									height="24"
+									viewBox="0 0 24 24"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<rect
+										class="btn-stroke"
+										x="0.1"
+										y="0.1"
+										width="23.8"
+										height="23.8"
+										rx="11.9"
+										stroke="white"
+										stroke-width="0.2"
+										stroke-dasharray="2 2"
+									/>
+									<path
+										class="btn-stroke"
+										d="M7.5 11.625L12 7.125L16.5 11.625M12 7.75V16.875"
+										stroke="white"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+								</svg>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -1319,6 +1381,58 @@
 				</div>
 			</div>
 		</div>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+		<script>
+			// 1. Слайдер с видео (Работает ВСЕГДА)
+			// Используем проверку на наличие элемента, чтобы не было ошибок в консоли
+			const videoSliderElem = document.querySelector(
+				'.ins-video-slider-container',
+			)
+			if (videoSliderElem) {
+				new Swiper('.ins-video-slider-container', {
+					slidesPerView: 'auto',
+					spaceBetween: 15,
+					centeredSlides: false,
+					observer: true,
+					watchOverflow: true, // Добавлено: скрывает навигацию, если слайдов мало
+					observeParents: true,
+					pagination: {
+						el: '.swiper-pagination',
+						clickable: true,
+					},
+				})
+			}
+
+			// 2. Слайдер маршрута (Только мобилки)
+			let routeSwiper = null
+
+			function manageRouteSlider() {
+				const isMobile = window.innerWidth <= 768
+				const sliderElem = document.querySelector('.swiper-route')
+
+				if (!sliderElem) return // Если на странице нет этого блока, выходим
+
+				if (isMobile && !routeSwiper) {
+					// Инициализируем, если мобилка и еще не создан
+					routeSwiper = new Swiper('.swiper-route', {
+						slidesPerView: 'auto',
+						spaceBetween: 15,
+						slidesOffsetAfter: 20,
+						grabCursor: true,
+						observer: true,
+						observeParents: true,
+					})
+				} else if (!isMobile && routeSwiper) {
+					// Уничтожаем, если ушли с мобилки на десктоп
+					routeSwiper.destroy(true, true)
+					routeSwiper = null
+				}
+			}
+
+			// Слушатели событий
+			window.addEventListener('load', manageRouteSlider)
+			window.addEventListener('resize', manageRouteSlider)
+		</script>
 		<script src="assets/js/main.js"></script>
 	</body>
 </html>

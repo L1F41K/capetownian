@@ -904,7 +904,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="post-info-section">
+		<section class="post-info-section turist">
 			<div class="container post-grid">
 				<aside class="info-sidebar">
 					<h2 class="sticky-title">
@@ -2175,27 +2175,55 @@
 		<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 		<script>
 			const articlesSlider = new Swiper('.articles-slider', {
-				// Настройки отображения
-				slidesPerView: 1,
-				spaceBetween: 30,
-				loop: true, // Зацикливание
+				// 1. Убираем loop, если слайдов мало.
+				// Если слайдов много, loop можно оставить, но тогда нужно убрать slidesOffset.
+				loop: false,
 
-				// Кнопки управления (вынесены в slider-controls)
+				// 2. Оптимизация свайпа
+				speed: 600, // Скорость перелистывания (в мс)
+				touchRatio: 1, // Чувствительность касания
+				touchAngle: 45, // Угол, при котором начинается свайп (чтобы не дергалось при вертикальном скролле)
+				grabCursor: true,
+
+				// 3. Настройки для мобилок
+				slidesPerView: 1.15,
+				spaceBetween: 20,
+				slidesOffsetBefore: 20, // Оставляем, раз loop: false
+				slidesOffsetAfter: 20,
+
+				// 4. Улучшенный FreeMode (убираем sticky, если дергается)
+				freeMode: {
+					enabled: true,
+					momentum: true, // Добавляет плавную инерцию
+					momentumRatio: 0.5, // Сила инерции
+					momentumBounce: false, // Убирает "отскок" в конце, который часто выглядит как дерганье
+				},
+
 				navigation: {
 					nextEl: '.btn-arrow.next',
 					prevEl: '.btn-arrow.prev',
 				},
 
-				// Адаптивность (Breakpoints)
 				breakpoints: {
 					640: {
-						slidesPerView: 2,
+						slidesPerView: 1.8,
+						spaceBetween: 25,
+						slidesOffsetBefore: 20,
+						slidesOffsetAfter: 20,
 					},
-					1024: {
+					992: {
+						slidesPerView: 2.5,
+						spaceBetween: 30,
+						freeMode: false, // Выключаем freeMode на десктопе для четкого перелистывания
+						slidesOffsetBefore: 0,
+						slidesOffsetAfter: 0,
+					},
+					1280: {
 						slidesPerView: 3,
-					},
-					1200: {
-						slidesPerView: 4, // 4 карточки как на макете
+						spaceBetween: 40,
+						freeMode: false,
+						slidesOffsetBefore: 0,
+						slidesOffsetAfter: 0,
 					},
 				},
 			})

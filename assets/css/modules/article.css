@@ -81,6 +81,53 @@
 .blog-hero-date {
 	text-align: center;
 }
+/* --- Адаптив для планшетов и малых ноутбуков (1439px и ниже) --- */
+@media (max-width: 1439px) {
+	.blog-hero-section {
+		min-height: 60rem; /* Уменьшаем общую высоту */
+		padding-top: 200px;
+		padding-bottom: 100px;
+	}
+
+	.blog-hero-title {
+		font-size: 5.2rem; /* Уменьшаем шрифт заголовка */
+		max-width: 110rem; /* Ограничиваем ширину для читаемости */
+		margin: 4rem 0;
+	}
+}
+
+/* --- Адаптив для мобильных устройств (784px и ниже) --- */
+@media (max-width: 784px) {
+	.blog-hero-section {
+		min-height: 50rem; /* Еще меньше на мобильных */
+		padding-top: 150px; /* Отступ под шапку сайта */
+		padding-bottom: 80px;
+	}
+
+	.blog-hero-title {
+		font-size: 40px; /* Компактный размер для смартфонов */
+		margin: 3rem 0;
+		line-height: 1.2;
+		padding: 0 1rem; /* Доп. отступ, чтобы текст не лип к краям */
+	}
+
+	.v2-breadcrumbs {
+		font-size: 1.4rem; /* Делаем текст крошек чуть крупнее для кликабельности */
+		margin-bottom: 2rem;
+	}
+
+	.date-badge {
+		padding: 6px 14px;
+		font-size: 1.4rem; /* Чуть меньше плашка даты */
+	}
+
+	.date-badge svg {
+		width: 16px;
+		height: 16px; /* Уменьшаем иконку календаря */
+	}
+}
+
+/* Оптимизация для совсем маленьких экранов (по желанию) */
 
 /* POST */
 .post-content-section {
@@ -129,7 +176,7 @@
 .toc-title {
 	font-family: 'Inter Tight';
 	font-weight: 500;
-	font-size: 3.6rem;
+	font-size: 36px;
 	margin-bottom: 3.2rem;
 }
 .toc-list {
@@ -141,7 +188,7 @@
 .toc-list li {
 	font-family: 'Inter Tight';
 	font-weight: 400;
-	font-size: 2.1rem;
+	font-size: 21px;
 	margin-bottom: 1.3rem;
 }
 .toc-list li::marker {
@@ -162,12 +209,12 @@
 
 .author-name {
 	font-weight: 700;
-	font-size: 2.4rem;
+	font-size: 24px;
 	margin-bottom: 8px;
 }
 
 .author-desc {
-	font-size: 1.8rem;
+	font-size: 18px;
 	color: var(--c-black);
 }
 .author-info svg {
@@ -181,7 +228,7 @@
 .post-columns-text p {
 	font-family: 'Inter Tight';
 	font-weight: 400;
-	font-size: 2.1rem;
+	font-size: 21px;
 	line-height: 1.4;
 }
 .post-columns-text p a {
@@ -202,6 +249,16 @@
 	}
 	.post-columns-text {
 		column-count: 1; /* Убираем две колонки текста на малых экранах */
+		max-width: none;
+	}
+	.toc-list {
+		padding-left: 20px;
+	}
+	.post-columns-text p {
+		text-align: center;
+	}
+	.section-title {
+		text-align: center;
 	}
 }
 /* POST-INFO */
@@ -267,9 +324,79 @@
 }
 
 /* Адаптив */
-@media (max-width: 1100px) {
+/* --- Адаптив для планшетов и малых ноутбуков (1439px и ниже) --- */
+@media (max-width: 1439px) {
+	.post-info-section {
+		padding: 8rem 0;
+	}
+
+	/* Переходим на двухколоночную сетку, если у вас используется grid/flex */
+	.post-grid {
+		display: flex;
+		gap: 4rem;
+		padding: 0 4rem;
+	}
+
 	.sticky-title {
-		font-size: 3rem;
+		font-size: 5.2rem; /* Уменьшаем гигантский шрифт */
+		letter-spacing: -1px;
+	}
+
+	.info-content {
+		max-width: 100%; /* Позволяем контенту занять больше места */
+	}
+}
+
+/* --- Адаптив для мобильных устройств (784px и ниже) --- */
+@media (max-width: 784px) {
+	.post-info-section {
+		padding: 6rem 0;
+		margin-top: -40px; /* Уменьшаем отрицательный отступ */
+		border-radius: 40px 40px 0 0;
+		padding-bottom: 100px;
+	}
+
+	.post-grid {
+		display: block; /* Отключаем сетку, всё в один столбец */
+		padding: 0 2rem;
+	}
+
+	.info-sidebar {
+		position: static; /* Отключаем sticky эффект */
+		margin-bottom: 3rem;
+	}
+
+	.sticky-title {
+		font-size: 3.6rem;
+		line-height: 1.1;
+		text-align: center; /* Можно по центру, если стиль требует */
+	}
+
+	.info-image-wrapper {
+		margin-bottom: 2.5rem;
+	}
+
+	.info-main-image {
+		border-radius: 20px; /* Чуть меньше скругление для мобильных */
+	}
+
+	.post-columns-text p {
+		font-size: 1.6rem; /* Стандартный читабельный размер для текста статьи */
+		line-height: 1.5;
+	}
+
+	/* Исправляем отступы между параграфами */
+	.post-columns-text br {
+		display: block;
+		content: '';
+		margin-top: 10px;
+	}
+}
+
+/* Дополнительная правка для совсем узких экранов */
+@media (max-width: 480px) {
+	.post-columns-text {
+		text-align: left; /* Убираем возможную оправку по ширине */
 	}
 }
 /* TELEGRAM */
@@ -379,17 +506,89 @@
 }
 
 /* Адаптив */
-@media (max-width: 992px) {
+/* --- Адаптив для планшетов и малых ноутбуков (1439px и ниже) --- */
+@media (max-width: 1439px) {
+	.telegram-section {
+		padding: 8rem 0 10rem;
+	}
+
 	.telegram-section .post-grid {
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr 1fr; /* Равные колонки вместо фиксированных rem */
+		gap: 40px;
+		padding: 0 4rem;
 	}
-	.telegram-sidebar .sticky-content {
-		position: static;
-		margin-bottom: 50px;
-	}
+
 	.telegram-title {
-		font-size: 2.5rem;
+		font-size: 5.2rem;
 	}
+
+	.tg-card {
+		padding: 30px 30px 30px 45px;
+		font-size: 2rem; /* Немного уменьшаем текст в карточках */
+	}
+}
+
+/* --- Адаптив для мобильных устройств (784px и ниже) --- */
+@media (max-width: 784px) {
+	.telegram-section {
+		padding: 6rem 0 8rem;
+		margin-top: -40px;
+		border-radius: 40px 40px 0 0;
+	}
+
+	.telegram-section .post-grid {
+		grid-template-columns: 1fr; /* Одна колонка */
+		gap: 30px;
+		padding: 0 2rem;
+	}
+
+	.telegram-sidebar .sticky-content {
+		position: static; /* Отключаем залипание */
+		margin-bottom: 20px;
+	}
+
+	.telegram-title {
+		font-size: 3.4rem;
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+
+	.telegram-subtitle {
+		font-size: 1.8rem;
+		margin-bottom: 3rem;
+	}
+
+	.btn-telegram {
+		width: 100%; /* Кнопка на всю ширину */
+		justify-content: center;
+		padding: 2.4rem 2rem;
+		font-size: 1.6rem;
+	}
+
+	.tg-card {
+		padding: 25px 20px 25px 40px;
+		font-size: 1.7rem; /* Компактный текст для мобильных */
+		line-height: 1.4;
+	}
+
+	.tg-card::before {
+		left: 15px;
+		top: 28px; /* Выравниваем маркер по первой строке */
+	}
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+	.telegram-title {
+		font-size: 2.8rem;
+	}
+
+	.tg-card {
+		border-radius: 15px;
+	}
+}
+.post-info-section.turist {
+	z-index: 31;
 }
 /* More Articles */
 .more-articles-section {
@@ -452,7 +651,7 @@
 	padding: 6px 12px;
 	border-radius: 50px;
 	width: fit-content;
-	font-size: 0.85rem;
+	font-size: 16px !important;
 	color: #444;
 }
 .article-card-v2 .date-badge {
@@ -522,4 +721,83 @@
 }
 .btn-all-articles svg .btn-stroke {
 	stroke: black; /* перекрашиваем в черный для контраста на белой кнопке */
+}
+/* --- Адаптив для More Articles Section --- */
+
+@media (max-width: 1439px) {
+	.more-articles-section {
+		padding: 8rem 0 10rem;
+	}
+
+	.article-card-v2 {
+		padding: 2.5rem;
+		max-width: 100%; /* Позволяем Swiper управлять шириной */
+	}
+
+	.section-title.text-center {
+		font-size: 4.8rem;
+		margin-bottom: 4rem;
+	}
+}
+
+@media (max-width: 784px) {
+	.more-articles-section {
+		padding: 6rem 0 8rem;
+		margin-top: -40px;
+		border-radius: 40px 40px 0 0;
+	}
+
+	/* Декоративный пунктир на мобильных может мешать, уменьшаем или скрываем */
+	.bg-decor-dashed {
+		display: none;
+	}
+	.section-title {
+		font-size: 4rem;
+		margin-bottom: 4rem;
+	}
+	.section-title.text-center {
+		font-size: 4rem;
+		text-align: center; /* На мобилках часто лучше смотрится по левому краю */
+		margin-bottom: 3rem;
+		padding: 0 2rem;
+	}
+
+	.article-card-v2 {
+		padding: 2rem;
+		gap: 15px;
+	}
+
+	.article-card-v2 .card-title {
+		font-size: 1.8rem;
+	}
+
+	/* Перестраиваем панель управления */
+	.slider-controls {
+		gap: 3rem;
+		margin-top: 4rem;
+		padding: 0 2rem;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.nav-arrows {
+		width: 100%;
+	}
+
+	.btn-arrow {
+		width: 6rem;
+		height: 6rem;
+	}
+
+	.btn-all-articles {
+		width: 100%;
+		justify-content: center;
+		padding: 2rem;
+		font-size: 1.8rem;
+	}
+
+	.article-card-v2 .date-badge {
+		margin-top: 2rem;
+		font-size: 1.4rem !important;
+	}
 }

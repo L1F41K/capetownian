@@ -110,11 +110,80 @@
 	}
 }
 
-@media (max-width: 768px) {
-	.payment-methods-grid {
-		grid-template-columns: 1fr;
+/* Мобильная версия (до 784px) */
+@media (max-width: 784px) {
+	.payment-section {
+		padding: 60px 0;
+		padding-bottom: 120px;
+		border-radius: 40px 40px 0 0;
+		margin-top: -40px;
+	}
+	.payment-info-val {
+		margin-bottom: 30px;
 	}
 	.payment-card {
-		min-height: auto;
+		min-height: 0;
+	}
+	.payment-title {
+		font-size: 40px;
+		margin-bottom: 2rem;
+	}
+	.payment-info-grid {
+		padding: 0 20px;
+	}
+	.payment-subtitle {
+		font-size: 18px;
+		margin-bottom: 4rem;
+		padding: 0 20px;
+	}
+
+	/* Swiper требует flex для wrapper */
+	.payment-methods-grid.swiper-wrapper {
+		display: flex !important;
+		gap: 0;
+	}
+
+	.payment-methods-slider {
+		overflow: visible !important; /* Чтобы карточки не обрезались по бокам при centeredSlides */
+		margin-bottom: 4rem;
+	}
+
+	.white-card.swiper-slide {
+		height: auto !important;
+		min-height: 200px;
+	}
+
+	.payment-card-num {
+		font-size: 78px;
+		margin-bottom: 2rem;
+	}
+	.payment-methods-grid.swiper-wrapper {
+		display: flex !important;
+		gap: 0; /* Отступы теперь только через spaceBetween в JS */
+	}
+
+	.white-card.swiper-slide {
+		/* Swiper сам рассчитает ширину, исходя из 1.1 */
+		height: auto !important;
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+/* Фикс десктопа: возвращаем Grid, когда слайдер выключен */
+@media (min-width: 785px) {
+	.payment-methods-grid.swiper-wrapper {
+		display: grid !important;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 3rem;
+		transform: none !important;
+		width: 100% !important;
+	}
+
+	/* Планшетная версия */
+	@media (max-width: 1200px) {
+		.payment-methods-grid.swiper-wrapper {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 }

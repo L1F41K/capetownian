@@ -67,7 +67,7 @@
 	justify-content: flex-start;
 	gap: 2rem;
 	padding: 2.4rem 4rem;
-	font-size: 2.4rem;
+	font-size: 24px;
 	border-radius: 6rem;
 	border: 0.1rem solid rgba(255, 255, 255, 0.4);
 }
@@ -238,7 +238,7 @@
 	.cta__container {
 		display: flex;
 		flex-direction: column;
-		gap: 5rem; /* Отступ между текстом/кнопками и формой */
+		gap: 4rem; /* Отступ между текстом/кнопками и формой */
 		padding: 0 2rem;
 	}
 
@@ -250,7 +250,7 @@
 	}
 
 	.cta-title {
-		font-size: 3.6rem; /* Уменьшаем заголовок */
+		font-size: 40px; /* Уменьшаем заголовок */
 		line-height: 1;
 		margin-bottom: 2rem;
 	}
@@ -332,5 +332,11 @@
 		left: -80%;
 		top: 0;
 		opacity: 0.3;
+	}
+	.btn--messenger {
+		gap: 1rem;
+		padding: 2.4rem 18px;
+		margin: 0 0 2rem 0;
+		width: 100% !important;
 	}
 }

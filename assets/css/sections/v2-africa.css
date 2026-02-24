@@ -32,7 +32,7 @@
 	letter-spacing: -0.05em !important;
 	text-align: center;
 	color: var(--c-white);
-	max-width: 100rem;
+	max-width: 93rem;
 	position: relative !important;
 	opacity: 1 !important;
 	visibility: visible !important;
@@ -54,7 +54,7 @@
 .v2-tag-item {
 	font-family: 'Inter Tight', sans-serif !important;
 	font-weight: 400 !important;
-	font-size: 1.2rem !important; /* 12px */
+	font-size: 12px !important; /* 12px */
 	line-height: 100% !important;
 	text-transform: uppercase;
 	border: 1px solid var(--c-orange) !important;
@@ -67,7 +67,7 @@
 .v2-btn-accent,
 .v2-btn-glass {
 	font-family: var(--f-body);
-	font-size: 1.8rem;
+	font-size: 18px;
 	border-radius: 10rem !important;
 	padding: 24px 48px !important; /* Точные паддинги 24/48 */
 	display: inline-flex;
@@ -114,26 +114,87 @@
 	margin-bottom: 0;
 	font-family: 'Inter Tight', sans-serif;
 	font-weight: 600;
-	font-size: 1.4rem;
+	font-size: 14px;
 	color: var(--c-black);
 	margin: 60px 0;
 }
 /* --- Адаптив --- */
-@media (max-width: 768px) {
-	.v2-main-title {
-		font-size: 4.2rem !important;
-		margin: 4rem auto !important; /* На мобилках 60px может быть многовато */
-	}
-
-	.v2-features-row {
-		margin: 0 auto 4rem !important;
+/* --- Планшеты и ноутбуки (до 1439px) --- */
+@media (max-width: 1439px) {
+	.v2-features-row,
+	.v2-hero-date-box {
+		margin: 40px 0 !important; /* Уменьшаем гигантские отступы в 60px */
 	}
 
 	.v2-btn-accent,
 	.v2-btn-glass {
-		padding: 1.8rem 3.2rem !important;
+		padding: 20px 40px !important; /* Чуть компактнее кнопки */
+	}
+}
+
+/* --- Смартфоны и узкие экраны (до 784px) --- */
+@media (max-width: 784px) {
+	.v2-africa-hero.dirrection {
+		height: auto;
+		min-height: 100dvh; /* Чтобы контент мог растягивать экран вниз */
+		padding: 40px 20px;
+		position: relative; /* Отключаем sticky для стабильности скролла */
+	}
+
+	.v2-ui-layout {
+		justify-content: center;
+		padding-bottom: 0;
+		padding-top: 100px;
+	}
+
+	.v2-hero-date-box {
+		display: none;
+	}
+
+	.v2-africa-hero .v2-main-title {
+		line-height: 1.1 !important;
+		letter-spacing: -0.02em !important;
+		margin-bottom: 24px !important;
+		max-width: 380px;
+		font-size: 48px !important;
+	}
+
+	.v2-features-row {
+		margin: 0 0 32px 0 !important;
+		gap: 0.5rem;
+	}
+
+	.v2-tag-item {
+		font-size: 12px !important;
+		padding: 0.4rem 0.8rem;
+	}
+
+	/* Кнопки друг под другом */
+	.v2-btn-group {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		gap: 10px;
+	}
+
+	.v2-btn-accent,
+	.v2-btn-glass {
 		width: 100%;
 		justify-content: center;
-		font-size: 1.6rem;
+		padding: 18px 24px !important;
+		font-size: 16px;
+	}
+	.v2-title-height {
+		height: auto !important;
+	}
+}
+
+/* Фикс для очень низких экранов (горизонтальный режим) */
+@media (max-height: 500px) and (max-width: 784px) {
+	.v2-africa-hero.dirrection {
+		padding-top: 80px;
+	}
+	.v2-features-row {
+		display: none; /* Убираем теги, чтобы видеть кнопки без скролла */
 	}
 }

@@ -83,7 +83,7 @@
 
 /* Текст в карточке */
 .travel-diff-text {
-	font-size: 1.8rem;
+	font-size: 18px;
 	line-height: 1.4;
 	color: #000;
 	font-weight: 400;
@@ -101,13 +101,93 @@
 		grid-template-columns: 1fr;
 	}
 	.travel-diff-title {
-		font-size: 4rem;
 		margin-bottom: 4rem;
 	}
 }
 
-@media (max-width: 768px) {
-	.travel-diff-grid {
-		grid-template-columns: 1fr;
+/* АДАПТИВ 784px */
+@media (max-width: 784px) {
+	.travel-diff-section {
+		padding: 60px 20px;
+		padding-bottom: 120px;
 	}
+	.travel-diff-title {
+		font-size: 40px;
+		margin-bottom: 4rem;
+		text-align: center;
+		margin: 0 auto;
+	}
+	.travel-diff-bg-line {
+		display: none;
+	}
+	/* Превращаем грид в флекс-контейнер для Swiper */
+	.travel-diff-grid {
+		display: flex;
+		gap: 0; /* Swiper сам управляет отступами через spaceBetween */
+	}
+
+	.travel-diff-card {
+		padding: 3rem;
+		min-height: 220px;
+		height: 100% !important; /* Одинаковая высота */
+	}
+
+	.travel-diff-number {
+		font-size: 78px;
+	}
+
+	.travel-diff-text {
+		font-size: 18px;
+	}
+
+	/* Делаем так, чтобы слайдер не обрезал тени, если они есть */
+	.travel-diff-slider {
+		overflow: visible !important;
+	}
+}
+@media (min-width: 785px) {
+	.travel-diff-grid.swiper-wrapper {
+		display: grid !important; /* Перебиваем инлайновый flex от Swiper */
+		transform: none !important; /* Отключаем смещение слайдов */
+		grid-template-columns: repeat(3, 1fr); /* Твои 3 колонки */
+		gap: 3rem;
+		width: 100% !important;
+	}
+
+	.travel-diff-card.swiper-slide {
+		width: auto !important; /* Сбрасываем расчетную ширину Swiper */
+		margin-right: 0 !important;
+	}
+
+	/* Если на больших экранах нужно 2 колонки (согласно твоему коду до 1200px) */
+	@media (max-width: 1200px) {
+		.travel-diff-grid.swiper-wrapper {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}
+
+/* На мобилках возвращаем как должно быть для Swiper */
+/* На мобилках (до 784px) */
+@media (max-width: 784px) {
+	.travel-diff-grid.swiper-wrapper {
+		display: flex !important; /* Swiper работает только с flex */
+		flex-direction: row;
+	}
+
+	.travel-diff-card.swiper-slide {
+		width: 100% !important; /* Карточка на всю ширину контейнера */
+		min-width: 0;
+		margin: 0;
+		flex-shrink: 0; /* Чтобы Swiper не сплющивал карточки */
+		height: auto;
+	}
+
+	.travel-diff-slider {
+		overflow: hidden !important; /* Чтобы не было горизонтального скролла у всей страницы */
+		width: 100%;
+	}
+
+	/* Если хочешь, чтобы следующая карточка чуть-чуть выглядывала (0.1), 
+     поставь в JS slidesPerView: 1.1 и тогда overflow: visible здесь */
 }

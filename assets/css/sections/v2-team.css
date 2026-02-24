@@ -40,26 +40,31 @@
 	max-width: 57rem;
 	width: 100%;
 }
-
+.team-slide {
+	height: auto; /* Позволяет Swiper растягивать слайды */
+	display: flex; /* Чтобы вложенная карточка могла растянуться */
+	flex-shrink: 0; /* Не дает Swiper сжимать слайд меньше контента */
+}
 .team-card h3 {
 	font-family: 'Inter Tight';
 	font-weight: 500;
-	font-size: 3.6rem;
+	font-size: 36px;
 	text-align: center;
 	margin-bottom: 1rem;
 }
 
 .team-role {
-	font-size: 1.8rem;
+	font-size: 18px;
 	color: #929292;
 	margin-bottom: 2rem;
 	display: block;
+	text-align: center;
 }
 
 .team-text {
 	font-family: 'Inter Tight';
 	font-weight: 400;
-	font-size: 1.8rem;
+	font-size: 18px;
 	line-height: 1.4;
 	text-align: center;
 	vertical-align: center;
@@ -102,7 +107,7 @@
 		transform 0.4s ease,
 		visibility 0.4s;
 
-	z-index: 20;
+	z-index: 1000;
 }
 .read-more-team {
 	display: flex;
@@ -112,7 +117,7 @@
 	border-radius: 5rem;
 	border: 1px solid var(--c-orange);
 	background: transparent;
-	font-size: 1.6rem;
+	font-size: 16px;
 	cursor: pointer;
 	transition: all 0.3s ease;
 }
@@ -264,4 +269,96 @@
 	margin-bottom: 0;
 	display: flex;
 	color: var(--c-black);
+}
+@media (max-width: 784px) {
+	.team-section {
+		padding: 60px 0 100px;
+		border-radius: 40px 40px 0 0;
+		margin-top: -40px;
+		padding-bottom: 120px;
+	}
+
+	.team-title {
+		font-size: 3.4rem;
+		margin-bottom: 4rem;
+		padding: 0 2rem;
+	}
+
+	.team-card {
+		padding: 2.4rem;
+		max-width: 100%;
+	}
+	.team-slider {
+		overflow: hidden;
+	}
+	.team-card h3 {
+		font-size: 2.8rem;
+	}
+	.team-dashed-line {
+		display: none;
+	}
+	.team-photo {
+		max-height: 28rem;
+	}
+
+	/* Попап на мобилке */
+	.team-full {
+		position: fixed; /* На мобилке фиксируем на весь экран */
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		z-index: 1000;
+		padding: 2rem;
+		background: rgba(0, 0, 0, 0.5); /* Затемнение фона */
+	}
+	.team-slide {
+		width: 100% !important;
+	}
+	.team-full-inner {
+		flex-direction: column;
+		padding: 3rem 2rem;
+		gap: 2rem;
+		overflow-y: auto;
+		height: 100%;
+		position: relative;
+		margin-top: 4rem;
+	}
+	.team-whatsapp {
+		margin: auto auto;
+	}
+	.team-full-info h3 {
+		font-size: 3.2rem;
+	}
+
+	.team-full-info span {
+		margin-bottom: 2rem;
+	}
+
+	.team-full-info p {
+		font-size: 1.8rem;
+		max-width: 100%;
+	}
+
+	.team-full-photo {
+		align-items: center;
+	}
+
+	.team-full-photo img {
+		max-height: 250px;
+	}
+
+	.team-controls {
+		gap: 2rem;
+		align-items: center;
+	}
+	.team-controls .v2-slider-controls {
+		display: flex !important;
+	}
+	.team-about-btn {
+		justify-content: center;
+	}
+	.team-section .container {
+		padding: 0 20px;
+	}
 }

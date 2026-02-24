@@ -20,6 +20,16 @@
 	object-fit: contain;
 	object-position: right center;
 }
+
+.v2-about-col-left {
+	display: flex;
+	flex-direction: column;
+	height: 100%; /* Обязательно, чтобы колонка растянулась */
+}
+
+.v2-about-col-left .video-wrapper {
+	margin-top: auto; /* Магия прижатия к низу */
+}
 .v2-about-grid {
 	position: relative;
 	z-index: 2;
@@ -41,6 +51,7 @@
 .v2-about-title .highlight {
 	color: var(--c-orange);
 }
+
 /* Колонка 2 */
 .v2-about-content-right {
 	display: flex;
@@ -51,7 +62,7 @@
 .v2-text-lead {
 	font-family: 'Inter Tight', sans-serif !important;
 	font-weight: 500 !important;
-	font-size: 2.4rem !important; /* 24px */
+	font-size: 24px !important; /* 24px */
 	line-height: 130% !important;
 	letter-spacing: 0 !important;
 	color: var(--c-black);
@@ -62,11 +73,12 @@
 .v2-text-sub {
 	font-family: 'Inter Tight', sans-serif !important;
 	font-weight: 400 !important;
-	font-size: 1.8rem !important; /* 18px */
+	font-size: 18px !important; /* 18px */
 	line-height: 140% !important;
 	letter-spacing: 0 !important;
 	color: var(--c-purple);
 	max-width: 60rem;
+	margin-bottom: 8rem;
 }
 /* Сетка карточек внутри правой колонки */
 .v2-about-cards-grid {
@@ -91,12 +103,12 @@
 
 .v2-info-card h3 {
 	font-family: 'Inter Tight', sans-serif;
-	font-size: 3.2rem;
+	font-size: 32px;
 	font-weight: 500;
 }
 
 .v2-info-card p {
-	font-size: 1.6rem;
+	font-size: 16px;
 	line-height: 1.4;
 	margin: 0;
 }
@@ -118,38 +130,86 @@
 	background-color: #fff2e6;
 }
 
-/* --- Адаптация (Mobile) --- */
-@media (max-width: 1024px) {
+/* --- Адаптация для ноутбуков (до 1439px) --- */
+@media (max-width: 1439px) {
+	.v2-about-section {
+		padding: clamp(80px, 8vh, 120px) 0;
+		border-radius: 40px 40px 0 0; /* Смягчаем радиус под меньший экран */
+	}
+
 	.v2-about-grid {
-		grid-template-columns: 1fr;
-		gap: 4rem;
+		gap: clamp(4rem, 5vw, 8rem);
 	}
 
 	.v2-about-title {
-		font-size: 5.6rem !important;
+		font-size: clamp(4.2rem, 5.5vw, 6.4rem) !important;
+		margin-bottom: 4rem;
+	}
+
+	.v2-about-content-right {
+		max-width: 100%;
+	}
+	.v2-text-lead,
+	.v2-text-sub {
+		max-width: none !important;
+	}
+	.v2-about-col-left .video-wrapper {
+		aspect-ratio: 9/16;
+		max-height: 562px;
 	}
 }
 
-@media (max-width: 768px) {
+/* --- Адаптация для смартфонов и узких экранов (до 784px) --- */
+@media (max-width: 784px) {
 	.v2-about-section {
-		padding: 6rem 0;
+		padding: 60px 20px;
+		margin-top: -30px; /* Нахлест на предыдущую секцию */
+	}
+
+	.v2-about-grid {
+		grid-template-columns: 1fr; /* В одну колонку */
+		gap: 32px;
 	}
 
 	.v2-about-title {
-		font-size: 4.2rem !important; /* Уменьшаем для мобилок */
-		margin-bottom: 3rem;
+		font-size: 40px !important;
+		line-height: 1.1 !important;
+		margin-bottom: 24px;
+		text-align: center;
 	}
 
+	.v2-about-title br {
+		display: none; /* Убираем переносы из десктопной версии */
+	}
+	/* Видео блок */
+	.v2-about-content-right .video-wrapper.mobile-only {
+		aspect-ratio: 9/16;
+		border-radius: 20px;
+		overflow: hidden;
+		max-width: 362px !important;
+		max-height: 562px !important;
+		margin: 0 auto;
+		margin-bottom: 40px;
+	}
+	.v2-about-content-right .video-wrapper.mobile-only .play-btn {
+		bottom: 3rem;
+	}
 	.v2-text-lead {
-		font-size: 2rem !important;
+		font-size: 24px !important;
+		margin-bottom: 20px;
 	}
 
 	.v2-text-sub {
-		font-size: 1.6rem !important;
+		font-size: 18px !important;
+		margin-bottom: 32px;
 	}
 
+	/* Карточки: делаем их в 2 колонки даже на мобилках, если текст короткий, 
+     либо в 1 колонку для лучшей читаемости */
 	.v2-about-cards-grid {
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr; /* Для мобильных лучше 1 колонка, чтобы текст не жался */
+		gap: 16px;
+		margin-top: 0;
 	}
 
 	.card-full {
@@ -157,6 +217,34 @@
 	}
 
 	.v2-info-card {
-		padding: 2.4rem;
+		padding: 24px;
+		gap: 16px;
+		border-radius: 20px;
+	}
+
+	.v2-info-card h3 {
+		font-size: 24px;
+	}
+
+	.v2-info-card p {
+		font-size: 18px;
+	}
+
+	/* Скрываем сложную фоновую линию, если она мешает контенту */
+	.v2-about-bg-line {
+		display: none;
+	}
+	.v2-about-col-left .video-wrapper {
+		display: none;
+	}
+}
+
+/* Фикс для средних экранов (планшеты), где 2 колонки еще ок */
+@media (min-width: 481px) and (max-width: 784px) {
+	.v2-about-cards-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.card-full {
+		grid-column: span 2;
 	}
 }

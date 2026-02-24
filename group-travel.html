@@ -282,15 +282,7 @@
 				<div class="hero-slide is-active">
 					<div class="hero-slide__bg">
 						<video
-							class="hero-slide__video desktop-only"
-							src="assets/video/australia.mp4"
-							autoplay
-							muted
-							loop
-							playsinline
-						></video>
-						<video
-							class="hero-slide__video mobile-only"
+							class="hero-slide__video"
 							src="assets/video/australia.mp4"
 							autoplay
 							muted
@@ -329,7 +321,7 @@
 
 				<div class="titles-wrapper v2-title-height">
 					<h1 class="hero-title is-active v2-main-title">
-						Кейптаун: почему это <br />лучший город на Земле
+						Кейптаун: почему это лучший город на Земле
 					</h1>
 				</div>
 
@@ -383,7 +375,8 @@
 			<div class="container v2-about-grid">
 				<div class="v2-about-col-left">
 					<h2 class="v2-about-title">
-						9 дней в<br /><span class="highlight">Кейптауне</span><br />
+						9 дней в<br />
+						<span class="highlight">Кейптауне</span><br />
 						и окрестностях
 					</h2>
 
@@ -425,7 +418,30 @@
 							лишнего шума.
 						</p>
 					</div>
-
+					<div class="video-wrapper mobile-only">
+						<video
+							src="assets/video/capetown.mp4"
+							class="about-video"
+							preload="metadata"
+							muted
+							playsinline
+							loop
+						></video>
+						<div class="video-cover">
+							<button class="play-btn" aria-label="Play / Pause video">
+								<svg class="play-icon" viewBox="0 0 11 12">
+									<path
+										d="M10.0792 4.41185C10.3573 4.5651 10.5899 4.79386 10.7521 5.07363C10.9143 5.35339 11 5.67362 11 6.00001C11 6.32639 10.9143 6.64662 10.7521 6.92639C10.5899 7.20615 10.3573 7.43492 10.0792 7.58816L2.66151 11.7682C1.4671 12.442 0 11.566 0 10.1807V1.81993C0 0.433972 1.4671 -0.441402 2.66151 0.231178L10.0792 4.41185Z"
+										fill="white"
+									/>
+								</svg>
+								<svg class="pause-icon" viewBox="0 0 11 12">
+									<rect x="3" y="1" width="2" height="10" fill="white" />
+									<rect x="6" y="1" width="2" height="10" fill="white" />
+								</svg>
+							</button>
+						</div>
+					</div>
 					<div class="v2-about-cards-grid">
 						<div class="v2-info-card card-beige card-full">
 							<h3>Проживание</h3>
@@ -554,23 +570,29 @@
 						<h3 class="v2-suit-step-title static">
 							Скорее не подойдёт, если вы:
 						</h3>
-						<div class="v2-suit-static-grid">
-							<div class="v2-suit-card is-negative">
-								<span class="v2-card-number">01</span>
-								<p class="v2-card-text">ждёте all inclusive в одном отеле</p>
-								<img src="assets/img/pir.png" alt="Hotel" class="v2-card-img" />
-							</div>
-							<div class="v2-suit-card is-negative is-reversed">
-								<p class="v2-card-text">
-									хотите галопом «успеть всё» и отстреляться по чек-листу
-									достопримечательностей.
-								</p>
-								<span class="v2-card-number">02</span>
-								<img
-									src="assets/img/people.png"
-									alt="Sightseeing"
-									class="v2-card-img"
-								/>
+						<div class="swiper v2-suit-negative-slider">
+							<div class="v2-suit-static-grid swiper-wrapper">
+								<div class="v2-suit-card is-negative swiper-slide">
+									<span class="v2-card-number">01</span>
+									<p class="v2-card-text">ждёте all inclusive в одном отеле</p>
+									<img
+										src="assets/img/pir.png"
+										alt="Hotel"
+										class="v2-card-img"
+									/>
+								</div>
+								<div class="v2-suit-card is-negative is-reversed swiper-slide">
+									<p class="v2-card-text">
+										хотите галопом «успеть всё» и отстреляться по чек-листу
+										достопримечательностей.
+									</p>
+									<span class="v2-card-number">02</span>
+									<img
+										src="assets/img/people.png"
+										alt="Sightseeing"
+										class="v2-card-img"
+									/>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -925,6 +947,7 @@
 									</div>
 								</div>
 							</div>
+							<div class="itinerary-mobile-full"></div>
 						</div>
 						<div class="swiper-slide itinerary-item">
 							<div class="itinerary-badge badge-green">
@@ -1051,9 +1074,10 @@
 									</div>
 								</div>
 							</div>
+							<div class="itinerary-mobile-full"></div>
 						</div>
-						<div class="itinerary-full-card-global"></div>
 					</div>
+					<div class="itinerary-full-card-global"></div>
 				</div>
 			</div>
 		</section>
@@ -1365,47 +1389,56 @@
 						</h2>
 					</div>
 
-					<div class="travel-diff-grid">
-						<div class="travel-diff-card">
-							<div class="travel-diff-number">01</div>
-							<p class="travel-diff-text">
-								мы живем в Кейптауне, а не прилетаем «отработать группу»;
-							</p>
+					<div class="travel-diff-slider swiper">
+						<div class="travel-diff-grid swiper-wrapper">
+							<div class="travel-diff-card swiper-slide">
+								<div class="travel-diff-number">01</div>
+								<p class="travel-diff-text">
+									мы живем в Кейптауне, а не прилетаем «отработать группу»;
+								</p>
+							</div>
+
+							<div class="travel-diff-card swiper-slide">
+								<div class="travel-diff-number">02</div>
+								<p class="travel-diff-text">
+									у нас есть доступ к людям и местам, где обычно не оказываются
+									туристы;
+								</p>
+							</div>
+
+							<div class="travel-diff-card swiper-slide">
+								<div class="travel-diff-number">03</div>
+								<p class="travel-diff-text">
+									мы не делаем сомнительные активности с животными и людьми ради
+									контента;
+								</p>
+							</div>
+
+							<div class="travel-diff-card swiper-slide">
+								<div class="travel-diff-number">04</div>
+								<p class="travel-diff-text">
+									маршрут продуман так, чтобы не было ни гонки, ни «провисаний»;
+								</p>
+							</div>
+
+							<div class="travel-diff-card swiper-slide">
+								<div class="travel-diff-number">05</div>
+								<p class="travel-diff-text">
+									мы не возим только по супер-туристическим локациям, а если
+									едем туда — знаем, как избежать толпы;
+								</p>
+							</div>
+
+							<div class="travel-diff-card swiper-slide">
+								<div class="travel-diff-number">06</div>
+								<p class="travel-diff-text">
+									за эти годы мы работали со звездами, блогерами и
+									корпоративными клиентами, и каждый раз адаптировали формат под
+									людей.
+								</p>
+							</div>
 						</div>
-						<div class="travel-diff-card">
-							<div class="travel-diff-number">02</div>
-							<p class="travel-diff-text">
-								у нас есть доступ к людям и местам, где обычно не оказываются
-								туристы;
-							</p>
-						</div>
-						<div class="travel-diff-card">
-							<div class="travel-diff-number">03</div>
-							<p class="travel-diff-text">
-								мы не делаем сомнительные активности с животными и людьми ради
-								контента;
-							</p>
-						</div>
-						<div class="travel-diff-card">
-							<div class="travel-diff-number">04</div>
-							<p class="travel-diff-text">
-								маршрут продуман так, чтобы не было ни гонки, ни «провисаний»;
-							</p>
-						</div>
-						<div class="travel-diff-card">
-							<div class="travel-diff-number">05</div>
-							<p class="travel-diff-text">
-								мы не возим только по супер-туристическим локациям, а если едем
-								туда — знаем, как избежать толпы;
-							</p>
-						</div>
-						<div class="travel-diff-card">
-							<div class="travel-diff-number">06</div>
-							<p class="travel-diff-text">
-								за эти годы мы работали со звездами, блогерами и корпоративными
-								клиентами, и каждый раз адаптировали формат под людей.
-							</p>
-						</div>
+						<div class="travel-diff-pagination swiper-pagination"></div>
 					</div>
 				</div>
 			</div>
@@ -1696,28 +1729,30 @@
 					</p>
 				</div>
 
-				<div class="payment-methods-grid">
-					<div class="payment-card white-card">
-						<div class="payment-card-num">01</div>
-						<p class="payment-card-text">
-							оплата в валюте через SWIFT-перевод на нашу компанию в Южной
-							Африке;
-						</p>
-					</div>
-					<div class="payment-card white-card">
-						<div class="payment-card-num">02</div>
-						<p class="payment-card-text">оплата в криптовалюте;</p>
-					</div>
-					<div class="payment-card white-card">
-						<div class="payment-card-num">03</div>
-						<p class="payment-card-text">рублёвые переводы по QR-коду;</p>
-					</div>
-					<div class="payment-card white-card">
-						<div class="payment-card-num">04</div>
-						<p class="payment-card-text">
-							оплата от юридических лиц из России (для корпоративных групп и
-							команд).
-						</p>
+				<div class="payment-methods-slider swiper">
+					<div class="payment-methods-grid swiper-wrapper">
+						<div class="payment-card white-card swiper-slide">
+							<div class="payment-card-num">01</div>
+							<p class="payment-card-text">
+								оплата в валюте через SWIFT-перевод на нашу компанию в Южной
+								Африке;
+							</p>
+						</div>
+						<div class="payment-card white-card swiper-slide">
+							<div class="payment-card-num">02</div>
+							<p class="payment-card-text">оплата в криптовалюте;</p>
+						</div>
+						<div class="payment-card white-card swiper-slide">
+							<div class="payment-card-num">03</div>
+							<p class="payment-card-text">рублёвые переводы по QR-коду;</p>
+						</div>
+						<div class="payment-card white-card swiper-slide">
+							<div class="payment-card-num">04</div>
+							<p class="payment-card-text">
+								оплата от юридических лиц из России (для корпоративных групп и
+								команд).
+							</p>
+						</div>
 					</div>
 				</div>
 
@@ -2782,17 +2817,36 @@
 		<script>
 			document.addEventListener('DOMContentLoaded', function () {
 				// 1. Слайдер "Подойдет ли вам путешествие"
-				const suitabilitySwiper = new Swiper('.v2-suit-slider', {
+				const suitSlider = new Swiper('.v2-suit-slider', {
 					slidesPerView: 'auto',
 					spaceBetween: 30,
-					centeredSlides: false,
 					navigation: {
-						nextEl: '.v2-suitability-section .v2-arrow--next',
-						prevEl: '.v2-suitability-section .v2-arrow--prev',
+						nextEl: '.v2-arrow--next',
+						prevEl: '.v2-arrow--prev',
 					},
-					observer: true,
-					observeParents: true,
+					breakpoints: {
+						785: {
+							slidesPerView: 2,
+							spaceBetween: 21,
+						},
+					},
+				})
+
+				// Второй слайдер (Не подходит)
+				const negSlider = new Swiper('.v2-suit-negative-slider', {
+					slidesPerView: 'auto',
+					spaceBetween: 30,
 					grabCursor: true,
+					breakpoints: {
+						1440: {
+							enabled: false,
+							spaceBetween: 0,
+						},
+						0: {
+							enabled: true,
+							slidesOffsetBefore: 0,
+						},
+					},
 				})
 
 				// 2. Слайдер "Где мы живём"
@@ -2809,10 +2863,9 @@
 				})
 
 				// 3. Слайдер "Программа по дням"
-				const itinerarySwiper = new Swiper('.itinerary-slider', {
+				window.itinerarySwiper = new Swiper('.itinerary-slider', {
 					slidesPerView: 'auto',
-					spaceBetween: 30, // Расстояние 30px между слайдами по ТЗ
-					// Включаем свободный режим или привязку к началу контейнера
+					spaceBetween: 30,
 					centeredSlides: false,
 					initialSlide: 0,
 					navigation: {
@@ -2821,58 +2874,154 @@
 					},
 					observer: true,
 					observeParents: true,
-					// Чтобы слайды не обрезались по краям контейнера, если нужно видеть следующий
 					watchSlidesProgress: true,
 				})
+
+				// 4. Слайдер "Команда"
 				const teamSwiper = new Swiper('.team-slider', {
-					slidesPerView: '3',
-					spaceBetween: 30,
+					slidesPerView: 1,
+					spaceBetween: 20,
 					grabCursor: true,
+					autoHeight: false,
 					navigation: {
 						nextEl: '.team-section .v2-arrow--next.team',
 						prevEl: '.team-section .v2-arrow--prev.team',
 					},
+					breakpoints: {
+						785: {
+							slidesPerView: 'auto',
+							spaceBetween: 30,
+						},
+					},
 					observer: true,
 					observeParents: true,
+				})
+
+				// 5. Слайдер "Чем отличается" (ТОЛЬКО ЭТА ИНИЦИАЛИЗАЦИЯ ДОБАВЛЕНА)
+				const diffSwiper = new Swiper('.travel-diff-slider', {
+					slidesPerView: 1, // Одна карточка на экран
+					spaceBetween: 20, // Расстояние между карточками
+					centeredSlides: false, // Выключаем центрирование, если слайд один
+
+					breakpoints: {
+						785: {
+							enabled: false, // Выключаем на десктопе
+						},
+					},
+				})
+				const paymentSlider = new Swiper('.payment-methods-slider', {
+					slidesPerView: 1.2, // 1 полная карточка + 20% следующей
+					spaceBetween: 16, // Отступ между карточками
+					centeredSlides: false, // Не центрируем, чтобы первая была у левого края
+					grabCursor: true,
+					slidesOffsetBefore: 20, // Отступ первой карточки от края экрана (вместо padding в CSS)
+					slidesOffsetAfter: 20, // Чтобы последний слайд не прилипал к правому краю
+					breakpoints: {
+						785: {
+							enabled: false,
+						},
+					},
 				})
 			})
 		</script>
 		<script>
-			document.addEventListener('DOMContentLoaded', function () {
-				const globalFull = document.querySelector('.itinerary-full-card-global')
+			document.addEventListener('click', function (e) {
+				const openBtn = e.target.closest('.js-open-full')
+				const closeBtn = e.target.closest('.js-close-full')
+				const slider = document.querySelector('.itinerary-slider')
+				const swiper = window.itinerarySwiper
+				const isMobile = window.innerWidth <= 784
+				console.log('ACTIVE:', swiper.activeIndex)
+				console.log('REAL:', swiper.realIndex)
+				/* ===================== OPEN ===================== */
 
-				document.addEventListener('click', function (e) {
-					// ОТКРЫТЬ
-					const openBtn = e.target.closest('.js-open-full')
-					if (openBtn) {
-						e.preventDefault()
+				if (openBtn) {
+					e.preventDefault()
+					e.stopPropagation()
 
-						const slide = openBtn.closest('.itinerary-item')
-						const template = slide.querySelector('.itinerary-full-template')
+					const currentSlide = openBtn.closest('.itinerary-item')
+					if (!currentSlide) return
 
-						if (!template) return
+					const template = currentSlide.querySelector(
+						'.itinerary-full-template',
+					)
+					const mobilePopup = currentSlide.querySelector(
+						'.itinerary-mobile-full',
+					)
 
-						globalFull.innerHTML = template.innerHTML
-						globalFull.classList.add('is-visible')
+					if (!template) return
 
-						if (typeof itinerarySwiper !== 'undefined') {
-							itinerarySwiper.allowTouchMove = false
+					/* Сначала закрываем все открытые */
+					document.querySelectorAll('.itinerary-item').forEach(slide => {
+						slide.classList.remove('is-open')
+						const popup = slide.querySelector('.itinerary-mobile-full')
+						if (popup) {
+							popup.classList.remove('is-visible')
+							popup.innerHTML = ''
+						}
+					})
+
+					if (window.innerWidth <= 784 && mobilePopup) {
+						// Вставляем template прямо в текущий слайд
+						mobilePopup.innerHTML = template.innerHTML
+						mobilePopup.classList.add('is-visible')
+						currentSlide.classList.add('is-open')
+						document.body.style.overflow = 'hidden'
+					} else {
+						// Для десктопа используем глобальный блок
+						const globalFull = document.querySelector(
+							'.itinerary-full-card-global',
+						)
+						if (globalFull) {
+							globalFull.innerHTML = template.innerHTML
+							globalFull.classList.add('is-visible')
 						}
 					}
 
-					// ЗАКРЫТЬ
-					const closeBtn = e.target.closest('.js-close-full')
-					if (closeBtn) {
+					// Автовоспроизведение видео
+					const target =
+						window.innerWidth <= 784
+							? mobilePopup
+							: document.querySelector('.itinerary-full-card-global')
+					const video = target.querySelector('video')
+					if (video) video.play()
+				}
+
+				/* ===================== CLOSE ===================== */
+
+				if (closeBtn) {
+					e.preventDefault()
+					e.stopPropagation()
+
+					document.querySelectorAll('.itinerary-item').forEach(slide => {
+						slide.classList.remove('is-open')
+
+						const popup = slide.querySelector('.itinerary-mobile-full')
+						if (popup) {
+							popup.classList.remove('is-visible')
+							popup.innerHTML = ''
+						}
+					})
+
+					const globalFull = document.querySelector(
+						'.itinerary-full-card-global',
+					)
+					if (globalFull) {
 						globalFull.classList.remove('is-visible')
 						globalFull.innerHTML = ''
-
-						if (typeof itinerarySwiper !== 'undefined') {
-							itinerarySwiper.allowTouchMove = true
-						}
 					}
-				})
+
+					slider.classList.remove('has-open')
+
+					if (swiper) swiper.allowTouchMove = true
+
+					document.body.style.overflow = ''
+
+					return
+				}
 			})
 		</script>
+
 		<script>
 			document.addEventListener('DOMContentLoaded', function () {
 				const teamFull = document.querySelector('.team-full')
@@ -2956,7 +3105,6 @@
 				})
 			})
 		</script>
-
 		<script src="assets/js/main.js"></script>
 	</body>
 </html>

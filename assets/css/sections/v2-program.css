@@ -45,6 +45,8 @@
 	gap: 30px;
 	width: auto; /* Для Swiper slidesPerView: 'auto' */
 	align-items: flex-start;
+	position: relative;
+	z-index: 1;
 }
 
 /* Левый блок (Бейдж) */
@@ -65,14 +67,14 @@
 .card-body h3 {
 	font-family: 'Inter Tight';
 	font-weight: 500;
-	font-size: 3.6rem;
+	font-size: 36px;
 	line-height: 100%;
 	margin: 3rem 0;
 }
 .card-body p {
 	font-family: 'Inter Tight';
 	font-weight: 400;
-	font-size: 1.8rem;
+	font-size: 18px;
 	line-height: 140%;
 	color: var(--c-purple);
 	max-height: 12.5rem;
@@ -108,7 +110,7 @@
 /* Элементы внутри */
 .day-label {
 	display: block;
-	font-size: 3.6rem;
+	font-size: 36px;
 	font-weight: 700;
 	color: #ff6b00;
 	margin-bottom: 3rem;
@@ -117,7 +119,7 @@
 .feature-tag {
 	font-family: 'Inter Tight', sans-serif;
 	display: inline-block;
-	font-size: 1.2rem;
+	font-size: 12px;
 	text-transform: uppercase;
 	background: #fff;
 	padding: 4px 12px;
@@ -128,7 +130,7 @@
 .feature-descr {
 	font-family: 'Inter Tight';
 	font-weight: 500;
-	font-size: 1.8rem;
+	font-size: 18px;
 	line-height: 140%;
 }
 .read-more {
@@ -195,9 +197,11 @@
 .itinerary-item {
 	position: relative; /* обязательно */
 }
-
+.itinerary-slider.has-open .swiper-wrapper {
+	transform: none !important;
+}
 .itinerary-item.is-open {
-	z-index: 50;
+	z-index: 9999;
 }
 .itinerary-item.is-open .itinerary-full-card {
 	display: flex;
@@ -210,9 +214,7 @@
 	height: 100%;
 	border-radius: 32px;
 }
-.itinerary-slider:has(.is-open) .swiper-wrapper {
-	transform: none !important;
-}
+
 .full-card-video {
 	flex: 0 0 50%; /* Видео занимает половину */
 	height: 100%;
@@ -266,6 +268,14 @@
 	border: none;
 	cursor: pointer;
 	z-index: 101;
+}
+.itinerary-mobile-full {
+	display: none;
+	position: fixed; /* ВАЖНО */
+	inset: 0; /* вместо top/left/width/height */
+	background: #fff;
+	z-index: 9999;
+	overflow-y: auto;
 }
 .itinerary-full-card-global {
 	position: absolute;
@@ -377,105 +387,151 @@
 		right: 20px;
 	}
 }
-@media (max-width: 1200px) {
-	.itinerary-title {
-		font-size: 5.2rem;
+/* ===========================
+   LAPTOP & TABLET (до 1439px)
+   =========================== */
+@media (max-width: 1439px) {
+	.itinerary-section {
+		padding: 80px 0;
+		margin-top: -5rem;
+		padding-bottom: 120px;
 	}
 
 	.itinerary-item {
-		flex-direction: column;
-	}
-
-	.itinerary-badge,
-	.itinerary-card {
-		width: 100%;
-	}
-
-	.video-container {
-		width: 100%;
-		height: 220px;
-	}
-
-	.full-card-container {
-		flex-direction: column;
-	}
-
-	.full-card-video {
-		flex: none;
-		height: 300px;
-	}
-}
-@media (max-width: 768px) {
-	.itinerary-section {
-		padding: 60px 0;
-		border-radius: 40px 40px 0 0;
-	}
-
-	.itinerary-title {
-		font-size: 3.6rem;
-	}
-
-	.itinerary-header {
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 2rem;
+		gap: 20px;
 	}
 
 	.itinerary-badge {
-		padding: 20px;
+		width: 280px;
+		padding: 24px;
 	}
 
 	.itinerary-card {
-		padding: 20px;
-	}
-
-	.card-body h3 {
-		font-size: 2.4rem;
-	}
-
-	.card-body p {
-		font-size: 1.6rem;
+		width: 480px;
+		padding: 24px;
 	}
 
 	.video-container {
-		height: 200px;
-		border-radius: 16px;
+		height: 220px;
+		width: auto;
+	}
+}
+
+/* ===========================
+   MOBILE (до 784px)
+   =========================== */
+@media (max-width: 784px) {
+	/* Прячем десктопный глобальный попап совсем, чтобы не мешался */
+	.itinerary-full-card-global {
+		display: none !important;
+		visibility: hidden !important;
+		pointer-events: none !important;
 	}
 
-	.day-label {
-		font-size: 2.4rem;
-		margin-bottom: 2rem;
+	.itinerary-section {
+		padding: 60px 0 100px;
+		border-radius: 40px 40px 0 0;
+		margin-top: -4rem;
+	}
+	.itinerary-header {
+		justify-content: center;
+	}
+	.read-more {
+		font-size: 18px;
+		padding: 18.5px 66px;
+		text-align: center;
+		margin: 0 auto;
+		margin-top: 20px;
+	}
+	.itinerary-slider {
+		padding: 0 15px;
+		overflow: visible !important;
+	}
+	.itinerary-title {
+		font-size: 40px;
+		text-align: center;
+	}
+	.itinerary-bg-path {
+		display: none;
+	}
+	.itinerary-item {
+		position: relative !important;
+		flex-direction: column !important;
+		gap: 0 !important;
+		width: 100% !important;
+		z-index: 10;
+		overflow: visible !important;
 	}
 
+	/* Состояние когда попап открыт - поднимаем слайд на самый верх */
+	.itinerary-item.is-open {
+		z-index: 2000 !important;
+		opacity: 1 !important;
+		visibility: visible !important;
+	}
+
+	/* Склеиваем бейдж и карточку */
+	.itinerary-badge {
+		width: 100% !important;
+		padding: 24px;
+		border-radius: 24px 24px 0 0;
+	}
+	.itinerary-card {
+		width: 100% !important;
+		padding: 24px;
+		border-radius: 0 0 24px 24px;
+	}
+
+	.itinerary-mobile-full.is-visible {
+		display: block !important;
+	}
+
+	/* Контент внутри мобильного попапа */
 	.full-card-container {
-		padding: 20px;
-		gap: 2rem;
+		flex-direction: column !important;
+		height: 100% !important;
+		width: 100% !important;
+		overflow-y: auto !important;
+		padding: 20px !important;
+		-webkit-overflow-scrolling: touch;
+		display: flex;
+	}
+	.card-body p {
+		max-height: 155px;
+	}
+	/* Кнопка закрытия */
+	.close-full {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		z-index: 1000;
+		width: 36px;
+		height: 36px;
+		background: #fff !important;
+		border-radius: 50%;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.v2-slider-controls {
+		display: none !important;
+	}
+	/* Адаптация видео и текста внутри попапа */
+	.full-card-video {
+		flex: 0 0 200px !important;
+		width: 100% !important;
+		height: 200px !important;
+		border-radius: 12px;
+		overflow: hidden;
 	}
 
 	.full-card-info h3 {
-		font-size: 2.4rem;
+		font-size: 24px !important;
+		margin: 15px 0 !important;
 	}
-
 	.full-card-text {
-		font-size: 1.6rem;
-	}
-
-	.close-full {
-		top: 15px;
-		right: 15px;
-	}
-}
-@media (max-width: 480px) {
-	.itinerary-title {
-		font-size: 3rem;
-	}
-
-	.read-more {
-		font-size: 1.6rem;
-		padding: 1.6rem 2.4rem;
-	}
-
-	.video-container {
-		height: 180px;
+		font-size: 16px !important;
+		line-height: 1.5;
 	}
 }

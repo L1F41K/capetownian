@@ -468,4 +468,8 @@
 	.play-btn {
 		bottom: 6rem;
 	}
+	.insufficient-section.dirrection .ins-col--center {
+		margin-left: 0;
+		align-items: center;
+	}
 }

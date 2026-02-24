@@ -176,3 +176,115 @@
 		border-radius: 2vw;
 	}
 }
+/* --- СРЕДНИЕ ЭКРАНЫ (до 1440px) --- */
+@media (max-width: 1439px) {
+	.mission-practice-container {
+		padding: 0 40px;
+		gap: 40px;
+		grid-template-columns: 1.2fr 1.5fr 0.5fr; /* Сужаем колонку с картинками */
+	}
+
+	.practice-title {
+		font-size: 56px;
+	}
+
+	.mission-col-images {
+		gap: 30px;
+	}
+	.btn-mission {
+		font-size: 16px;
+	}
+}
+
+/* --- ПЛАНШЕТЫ (до 1024px) --- */
+@media (max-width: 1024px) {
+	.mission-practice-container {
+		grid-template-columns: 1fr; /* Переход в одну колонку */
+		gap: 50px;
+	}
+
+	.mission-col-title,
+	.mission-col-text {
+		max-width: 800px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.mission-col-images {
+		flex-direction: row; /* На планшетах картинки в ряд, а не в колонку */
+		justify-content: center;
+		align-items: center;
+		padding-top: 0;
+	}
+
+	.practice-img-wrapper {
+		width: 140px;
+		height: 140px;
+	}
+	.mission-bg-overflow {
+		display: none;
+	}
+}
+
+/* --- МОБИЛЬНЫЕ (до 768px) --- */
+@media (max-width: 768px) {
+	.mission-practice-section {
+		padding: 80px 0;
+		border-radius: 40px 40px 0 0;
+		margin-top: -40px;
+		padding-bottom: 100px;
+	}
+
+	.mission-practice-container {
+		padding: 0 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	/* Заголовок 4rem по твоему правилу */
+	.practice-title {
+		font-size: 4rem;
+		line-height: 1.1;
+		text-align: center;
+	}
+
+	.practice-lead {
+		font-size: 20px;
+		text-align: center;
+	}
+
+	.practice-main-text {
+		font-size: 16px;
+		text-align: center;
+	}
+
+	.mission-cta-block {
+		padding: 30px 20px;
+		text-align: left;
+	}
+
+	.mission-cta-block p {
+		font-size: 24px;
+		text-align: left;
+	}
+
+	.btn-mission {
+		width: auto;
+		display: inline-flex;
+		padding: 18px 32px; /* Чуть компактнее для мобилок */
+		align-self: flex-start;
+	}
+
+	/* УБИРАЕМ ИЗОБРАЖЕНИЯ НА МОБИЛКАХ */
+	.mission-col-images {
+		display: none;
+	}
+
+	/* Прячем или сильно уменьшаем фоновую линию */
+	.mission-svg-path {
+		opacity: 0.2;
+		right: -50px;
+		transform: scale(0.7);
+	}
+}

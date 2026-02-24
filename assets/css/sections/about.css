@@ -220,6 +220,9 @@
 
 /* === MOBILE ADAPTIVE === */
 @media (max-width: 768px) {
+	.bg-line-wrapper {
+		display: none;
+	}
 	/* 1. Отключаем Sticky и правим отступы */
 	.about-section {
 		position: relative; /* Убрал sticky, чтобы не ломалось */

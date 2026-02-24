@@ -222,3 +222,153 @@
 		font-size: 1.45vw;
 	}
 }
+/* --- АДАПТАЦИЯ (1439px - 1025px) --- */
+@media (max-width: 1439px) {
+	.formats-container {
+		padding: 0 40px;
+		gap: 40px;
+		grid-template-columns: 1fr 1.8fr;
+	}
+
+	.formats-title {
+		font-size: 56px;
+	}
+
+	.formats-top-cards {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 15px;
+	}
+
+	.format-card {
+		padding: 20px;
+	}
+
+	.format-card-title {
+		font-size: 22px;
+	}
+	.formats-section {
+		margin-top: -10rem;
+	}
+}
+
+/* --- ТАБЛЕТЫ (1024px - 769px) --- */
+@media (max-width: 1024px) {
+	.formats-container {
+		grid-template-columns: 1fr; /* В одну колонку */
+		display: flex;
+		flex-direction: column;
+	}
+
+	.formats-info {
+		max-width: 100%;
+		text-align: center;
+		margin-bottom: 40px;
+	}
+
+	.formats-top-cards {
+		grid-template-columns: 1fr 1fr 1fr; /* Пока держим 3 в ряд */
+	}
+
+	.formats-bottom-wide-card {
+		grid-template-columns: 1fr; /* Широкая карточка в одну колонку */
+		text-align: center;
+		gap: 20px;
+	}
+
+	.wide-card-title {
+		max-width: 100%;
+	}
+
+	.wide-card-list {
+		text-align: left;
+		display: inline-block;
+		margin: 0 auto;
+	}
+}
+
+/* --- МОБИЛЬНЫЕ (768px и ниже) --- */
+@media (max-width: 768px) {
+	.formats-section {
+		padding: 80px 0;
+		border-radius: 40px 40px 0 0;
+		margin-top: -40px;
+	}
+
+	.formats-container {
+		padding: 0 20px;
+	}
+
+	/* Заголовок по твоему требованию: 4rem */
+	.formats-title {
+		font-size: 4rem;
+		line-height: 1.1;
+		margin-bottom: 25px;
+	}
+
+	.formats-main-text {
+		font-size: 20px;
+	}
+
+	/* Карточки в одну колонку */
+	.formats-top-cards {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+
+	.format-card {
+		height: auto;
+		padding: 25px;
+	}
+
+	/* Для второй карточки убираем реверс на мобилках, 
+     чтобы все выглядели одинаково: Номер -> Заголовок -> Текст -> Фото */
+	.format-card.card-reverse {
+		flex-direction: column;
+	}
+
+	.format-card.card-reverse .format-card-media {
+		order: 4; /* Переносим медиа вниз */
+		margin-top: 20px;
+		margin-bottom: 0;
+	}
+
+	.format-card.card-reverse .format-card-content {
+		order: 1;
+		margin-top: 0;
+		padding-top: 0;
+	}
+
+	.format-number {
+		font-size: 48px;
+		margin-bottom: 20px;
+	}
+
+	.format-card-title {
+		font-size: 24px;
+		font-weight: 500;
+	}
+
+	.format-card-media img {
+		height: 180px; /* Немного ниже на мобилках */
+	}
+
+	.formats-bottom-wide-card {
+		padding: 25px;
+		border-radius: 30px;
+	}
+
+	.wide-card-title {
+		font-size: 24px;
+	}
+
+	.wide-card-list li {
+		font-size: 16px;
+	}
+
+	/* Скрываем или уменьшаем SVG линию, чтобы не мешала скроллу */
+	.formats-svg-line {
+		width: 150%;
+		left: -25%;
+		bottom: -100px;
+	}
+}

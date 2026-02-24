@@ -158,6 +158,9 @@
 	background: var(--h-btn-bg);
 	color: var(--c-black);
 }
+.header.var2 .mobile-trigger {
+	color: var(--c-black);
+}
 .btn--book svg {
 	width: 2.4rem;
 	height: 2.4rem;

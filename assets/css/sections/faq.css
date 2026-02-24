@@ -3,7 +3,7 @@
 	background-color: #fff;
 	/* Резиновый паддинг: минимум 80px, максимум 140px */
 	padding: clamp(120px, 8vh, 180px) 0;
-	z-index: 29;
+	z-index: 30;
 	border-radius: 66px 66px 0 0;
 	margin-top: -6.6rem;
 }
@@ -131,4 +131,82 @@
 	line-height: 1.5;
 	color: var(--c-purple);
 	max-width: 90%; /* Чтобы текст не растягивался на всю ширину на 1900px */
+}
+/* Адаптация для ноутбуков и планшетов */
+@media (max-width: 1439px) {
+	.faq-section {
+		padding: 80px 0;
+		margin-top: -4rem;
+		border-radius: 40px 40px 0 0;
+	}
+
+	.faq-container {
+		display: flex;
+		flex-direction: column; /* Переключаем в одну колонку */
+		gap: 40px;
+		padding: 0 40px;
+	}
+
+	.faq-sticky-col {
+		position: relative; /* Отключаем липкость */
+		top: 0;
+		text-align: left;
+	}
+
+	/* Скрываем или корректируем фоновую линию, чтобы не ломала ширину */
+	.faq-line-wrapper img {
+		width: auto;
+		height: auto;
+	}
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+	.faq-section {
+		padding: 60px 0;
+		margin-top: -3rem;
+		padding-bottom: 100px;
+	}
+
+	.faq-container {
+		padding: 0 20px;
+		gap: 40px;
+	}
+
+	.faq-main-title {
+		font-size: 4rem; /* Компактный размер для смартфонов */
+		line-height: 1.1;
+		text-align: center;
+	}
+
+	.faq-item {
+		border-radius: 16px; /* Чуть меньше скругления для узких экранов */
+	}
+
+	.faq-trigger {
+		padding: 20px;
+	}
+
+	.faq-question {
+		font-size: 20px;
+		padding-right: 15px;
+	}
+
+	.answer-inner {
+		padding: 0 20px 20px;
+		font-size: 16px;
+		max-width: 100%;
+	}
+
+	/* Иконка чуть меньше на мобилках */
+	.faq-icon-box svg {
+		width: 20px;
+		height: 20px;
+	}
+	.faq-line-wrapper {
+		display: none;
+	}
+	.btn--primary {
+		gap: 1rem;
+	}
 }

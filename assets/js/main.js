@@ -194,18 +194,25 @@ document.addEventListener('DOMContentLoaded', () => {
 	const mobileTrigger = document.getElementById('mobile-trigger')
 	const mobileMenu = document.getElementById('mobile-menu')
 	const header = document.getElementById('header')
+	const header2 = document.getElementById('header2') // Добавили переменную
 
-	if (mobileTrigger && mobileMenu && header) {
+	// Проверяем главные элементы меню
+	if (mobileTrigger && mobileMenu) {
 		mobileTrigger.addEventListener('click', () => {
 			mobileTrigger.classList.toggle('is-active')
 			mobileMenu.classList.toggle('is-open')
-			header.classList.toggle('is-menu-open')
 
+			// Переключаем классы у хедеров по отдельности (если они есть на странице)
+			if (header) header.classList.toggle('is-menu-open')
+			if (header2) header2.classList.toggle('is-menu-open')
+
+			// Блокировка скролла
 			document.body.style.overflow = mobileMenu.classList.contains('is-open')
 				? 'hidden'
 				: ''
 		})
 	}
+
 	/* === 5. WORLD VIDEO CARDS INTERACTION === */
 	const worldCards = document.querySelectorAll('.world-card')
 
@@ -224,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		})
 	}
-})
+}) // <--- Эта скобка закрывает самый первый document.addEventListener
 
 document.addEventListener('DOMContentLoaded', () => {
 	// === ЛОГИКА ДЛЯ СЛАЙДЕРА ОТЗЫВОВ ===

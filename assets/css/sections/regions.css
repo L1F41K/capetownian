@@ -196,3 +196,139 @@
 		height: auto;
 	}
 }
+/* --- ПЛАНШЕТЫ И НОУТБУКИ (1439px - 769px) --- */
+@media (max-width: 1439px) {
+	.regions-container {
+		padding: 0 40px;
+		gap: 40px;
+		grid-template-columns: 1fr 1.5fr; /* Немного меняем пропорции */
+	}
+
+	.regions-title {
+		font-size: 56px;
+	}
+
+	.regions-main-text {
+		font-size: 20px;
+	}
+
+	.region-card {
+		padding: 30px;
+		gap: 30px;
+	}
+
+	.card-image-side {
+		flex: 0 0 240px; /* Уменьшаем ширину видео */
+	}
+
+	.card-title {
+		font-size: 28px;
+	}
+	.region-card {
+		flex-direction: column;
+	}
+	.card-image-side {
+		height: 250px;
+	}
+}
+
+/* --- МАЛЕНЬКИЕ ПЛАНШЕТЫ И ПЕРЕХОД В ОДНУ КОЛОНКУ (до 1024px) --- */
+@media (max-width: 1024px) {
+	.regions-container {
+		grid-template-columns: 1fr; /* Убираем две колонки */
+		display: flex;
+		flex-direction: column;
+	}
+
+	.regions-info-sticky {
+		margin-bottom: 40px;
+	}
+
+	.regions-sticky-content {
+		position: static; /* Отключаем sticky на планшетах, чтобы не перекрывало контент */
+		max-width: 100%;
+		text-align: center;
+		align-items: center;
+	}
+
+	.regions-map-wrapper {
+		max-width: 400px; /* Чтобы карта не была на весь экран */
+	}
+
+	.regions-title {
+		font-size: 48px;
+	}
+	.regions-bg-overflow-clipping {
+		display: none;
+	}
+}
+
+/* --- МОБИЛЬНЫЕ УСТРОЙСТВА (768px и ниже) --- */
+@media (max-width: 768px) {
+	.regions-section {
+		padding: 80px 0;
+		margin-top: -40px; /* Уменьшаем нахлест */
+		border-radius: 40px 40px 0 0;
+		padding-bottom: 100px;
+	}
+
+	.regions-bg-overflow-clipping {
+		border-radius: 40px 40px 0 0;
+	}
+
+	.regions-container {
+		padding: 0 20px;
+	}
+
+	.regions-title {
+		font-size: 36px;
+		line-height: 1.1;
+	}
+
+	.regions-main-text {
+		font-size: 18px;
+	}
+
+	/* Перестраиваем карточку: Видео сверху, Текст снизу */
+	.region-card {
+		flex-direction: column;
+		padding: 20px;
+		gap: 20px;
+		border-radius: 30px;
+	}
+
+	.card-image-side {
+		flex: none;
+		width: 100%;
+		height: 250px; /* Фиксированная высота видео на мобилках */
+		border-radius: 20px;
+	}
+
+	.region-card .card-title {
+		font-size: 3.2rem;
+		margin-bottom: 15px;
+		font-weight: 500;
+	}
+
+	.region-card .card-intro {
+		font-size: 16px;
+		margin-bottom: 20px;
+	}
+
+	.region-card .card-list li {
+		font-size: 16px;
+	}
+
+	.region-card .card-footer-note {
+		padding: 16px;
+		font-size: 16px;
+		border-radius: 12px;
+	}
+
+	/* Скрываем сложную линию на мобилках, если она мешает или ломает скролл */
+	.regions-dotted-path-container {
+		opacity: 0.4;
+		right: -20%;
+		transform: scale(0.8);
+	}
+}

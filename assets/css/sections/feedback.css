@@ -108,7 +108,7 @@
 /* КАРТОЧКА КОНТАКТОВ */
 .card-small-title {
 	font-family: 'Inter Tight', sans-serif;
-	font-size: 22px;
+	font-size: 24px;
 	font-weight: 600;
 	line-height: 1.2;
 	margin-bottom: 20px;
@@ -224,7 +224,10 @@
 .reviews-card .review-text {
 	font-size: 18px;
 	line-height: 1.4;
-	color: var(--c-black);
+	color: var(--c-purple);
+}
+.bg-person.tablet {
+	display: none;
 }
 @media (max-height: 850px) and (min-width: 1440px) {
 	.feedback-section {
@@ -292,5 +295,125 @@
 	.feedback-section {
 		position: relative;
 		min-height: auto; /* или 700px — как тебе удобнее */
+	}
+}
+@media (max-width: 1439px) {
+	.feedback-section {
+		position: relative !important;
+		top: auto !important;
+		min-height: auto;
+		display: block;
+		padding: 80px 0 60px 0;
+		margin-top: -5.5rem;
+		border-radius: 40px 40px 0 0;
+		padding-bottom: 100px;
+	}
+
+	.feedback-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 0 40px;
+		gap: 0; /* Управляем отступами через margin блоков */
+	}
+
+	/* 1. ТЕКСТОВЫЙ БЛОК */
+	.feedback-info-side {
+		order: 1;
+		width: 100%;
+		max-width: 700px;
+		margin-bottom: 40px;
+	}
+
+	/* 2. НОВОЕ ФОТО (вставленное в HTML) */
+	.bg-person.tablet {
+		display: block; /* Показываем только здесь */
+		order: 2;
+		position: relative;
+		width: 100%;
+		max-width: 700px; /* Оптимально для планшета */
+		height: auto;
+		margin: 0 auto;
+
+		object-fit: contain;
+		left: auto;
+		transform: none;
+	}
+
+	/* 3. КАРТОЧКИ */
+	.feedback-cards-side {
+		order: 3;
+		width: 100%;
+		max-width: 700px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	/* Скрываем старый фоновый слой, чтобы не мешал */
+
+	.feedback-title {
+		font-size: clamp(38px, 5vw, 52px);
+		text-align: center;
+	}
+}
+
+/* Мобильные правки */
+@media (max-width: 768px) {
+	.feedback-container {
+		padding: 0 20px;
+	}
+
+	.feedback-title {
+		font-size: 4rem;
+		text-align: left;
+	}
+
+	.feedback-info-side {
+		text-align: left;
+	}
+
+	.bg-person.tablet {
+		max-width: 100%; /* На смартфонах чуть крупнее */
+	}
+
+	.contact-footer {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+/* Доп. правки для мобильных (768px) */
+@media (max-width: 768px) {
+	.feedback-container {
+		padding: 0 20px;
+	}
+
+	.feedback-title {
+		font-size: 4rem; /* Твой стандарт */
+		text-align: center;
+		margin-bottom: 40px;
+	}
+
+	.feedback-info-side {
+		text-align: left;
+		margin-bottom: 30px;
+	}
+	.feedback-intro-card p,
+	.card-desc {
+		font-size: 16px;
+		text-align: left;
+	}
+	.bg-person {
+		max-width: 100%; /* На мобилке можно чуть пошире */
+	}
+
+	.contact-footer {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+	}
+	.card-small-title {
+		text-align: left;
 	}
 }

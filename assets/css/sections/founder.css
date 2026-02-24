@@ -569,10 +569,6 @@
 		margin-bottom: 30px;
 	}
 
-	.founder-title {
-		font-size: 52px;
-	}
-
 	.founder-section.misson .info-card,
 	.contact-card {
 		max-width: 700px;
@@ -624,7 +620,7 @@
 	}
 
 	.founder-title {
-		font-size: 38px;
+		font-size: 4rem;
 	}
 
 	.founder-section.misson .info-card,
@@ -637,7 +633,12 @@
 	.contact-card__title {
 		font-size: 20px;
 	}
-
+	.founder-section.misson .info-card {
+		order: 2;
+	}
+	.founder-section.misson .founder-quote {
+		order: 3;
+	}
 	.founder-section.misson .quote-text {
 		font-size: 18px;
 	}
@@ -660,7 +661,13 @@
 		width: 100%; /* На мобилке фото на всю ширину */
 	}
 	.founder__col--left {
-		flex-direction: column-reverse;
+		gap: 40px;
+	}
+	.info-card {
+		margin-bottom: 0;
+	}
+	.founder-header {
+		margin-bottom: 0;
 	}
 	.tag-desc {
 		font-size: 1.6rem;

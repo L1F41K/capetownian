@@ -44,7 +44,7 @@
 .mission-main-title {
 	font-family: 'Inter Tight', sans-serif;
 	font-weight: 600;
-	font-size: 78px;
+	font-size: 7.8rem;
 	line-height: 0.95;
 	letter-spacing: -0.04em;
 	color: #1a1a1a;
@@ -223,7 +223,7 @@
 .conclusion-title {
 	font-family: 'Inter Tight', sans-serif;
 	font-weight: 600;
-	font-size: 64px;
+	font-size: 6.4rem;
 	line-height: 1;
 	margin: 0;
 	margin-bottom: 60px;
@@ -287,10 +287,6 @@
 	.mission-grid-5 {
 		gap: 2.08vw; /* 40px */
 		margin-bottom: 9.38vw; /* 180px */
-	}
-
-	.mission-main-title {
-		font-size: 4.06vw; /* 78px */
 	}
 
 	.mission-text-content {
@@ -364,11 +360,6 @@
 		margin-top: 2.08vw;
 	}
 
-	/* --- ВЫВОД --- */
-	.conclusion-title {
-		font-size: 3.33vw; /* 64px */
-	}
-
 	.conclusion-text,
 	.conclusion-accent-card {
 		max-width: 31.25vw; /* 600px */
@@ -410,10 +401,6 @@
 		width: 100%;
 	}
 
-	.mission-main-title {
-		font-size: 52px;
-	}
-
 	.mission-text-content {
 		max-width: 100%;
 		padding-top: 0;
@@ -449,7 +436,6 @@
 
 	/* Вывод */
 	.conclusion-title {
-		font-size: 48px;
 		text-align: center;
 	}
 
@@ -479,7 +465,7 @@
 	}
 	.case-title,
 	.conclusion-title {
-		font-size: 32px;
+		font-size: 4rem;
 	}
 
 	/* Карточки Раньше/Сейчас в колонку */
@@ -505,14 +491,31 @@
 		height: 200px;
 		margin-top: 24px;
 	}
-
+	.mission-grid-5 {
+		margin-bottom: 40px;
+	}
+	.mission-container2 {
+		margin-top: 0;
+	}
+	.mission-sticky-layout {
+		gap: 40px;
+	}
 	.mission-accent-box,
-	.conclusion-accent-card p {
-		font-size: 18px;
+	.conclusion-accent-card {
+		font-size: 2.4rem;
 		padding: 20px;
 	}
-
+	.mission-accent-box,
+	.conclusion-accent-card {
+		text-align: left;
+	}
+	.mission-text-content .text-bold {
+		margin-bottom: 30px;
+	}
 	.text-bold {
 		font-size: 20px;
+	}
+	.mission-main-title {
+		font-size: 4rem;
 	}
 }
